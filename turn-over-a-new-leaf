@@ -104,23 +104,25 @@
 
 
 
-  <meta name="description" content="Life is short, use technique. Long live technology!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kiliwalk">
-<meta property="og:url" content="https://blog.kiliwalk.com/archives/2019/index.html">
+  <meta name="description" content="时隔近十年，心里又重新动起了写点文字的念头。倒不是说要达到著书立说的高度，而是觉得把东西公开写出来，比自己私下做些日记或笔记会更多一点东西。在一定程度上，它可以促使我以更加严谨地态度去对待经验。虽然是我个人的经验，但可能对别人也会有一些用，满足一下虚荣❤。">
+<meta name="keywords" content="Misc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Turn over a new leaf">
+<meta property="og:url" content="https://blog.kiliwalk.com/turn-over-a-new-leaf">
 <meta property="og:site_name" content="kiliwalk">
-<meta property="og:description" content="Life is short, use technique. Long live technology!">
+<meta property="og:description" content="时隔近十年，心里又重新动起了写点文字的念头。倒不是说要达到著书立说的高度，而是觉得把东西公开写出来，比自己私下做些日记或笔记会更多一点东西。在一定程度上，它可以促使我以更加严谨地态度去对待经验。虽然是我个人的经验，但可能对别人也会有一些用，满足一下虚荣❤。">
 <meta property="og:locale" content="en-US">
+<meta property="og:updated_time" content="2019-01-13T08:06:13.375Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kiliwalk">
-<meta name="twitter:description" content="Life is short, use technique. Long live technology!">
+<meta name="twitter:title" content="Turn over a new leaf">
+<meta name="twitter:description" content="时隔近十年，心里又重新动起了写点文字的念头。倒不是说要达到著书立说的高度，而是觉得把东西公开写出来，比自己私下做些日记或笔记会更多一点东西。在一定程度上，它可以促使我以更加严谨地态度去对待经验。虽然是我个人的经验，但可能对别人也会有一些用，满足一下虚荣❤。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.kiliwalk.com/archives/2019/">
+  <link rel="canonical" href="https://blog.kiliwalk.com/turn-over-a-new-leaf">
 
 
 
@@ -130,7 +132,7 @@
   };
 </script>
 
-  <title>Archive | kiliwalk</title>
+  <title>Turn over a new leaf | kiliwalk</title>
   
 
 
@@ -196,7 +198,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -272,7 +274,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -343,133 +345,317 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 4 posts in total. Keep on posting.
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/turn-over-a-new-leaf">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kiliwalk">
+      <meta itemprop="description" content="Life is short, use technique. Long live technology!">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kiliwalk">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/micro-frontend-practice" itemprop="url">
-              
-                <span itemprop="name">微前端实践</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Turn over a new leaf
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-11T20:40:18+08:00" content="2019-01-11">
-          01-11
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-03 23:35:42" itemprop="dateCreated datePublished" datetime="2018-05-03T23:35:42+08:00">2018-05-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-13 16:06:13" itemprop="dateModified" datetime="2019-01-13T16:06:13+08:00">2019-01-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Misc/" itemprop="url" rel="index"><span itemprop="name">Misc</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/turn-over-a-new-leaf#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/turn-over-a-new-leaf" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/turn-over-a-new-leaf" class="leancloud_visitors" data-flag-title="Turn over a new leaf">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">457</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">1 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/tool-sharp-of-visual-studio-code-1" itemprop="url">
-              
-                <span itemprop="name">工具利器之 Visual Studio Code（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-09T14:00:00+08:00" content="2019-01-09">
-          01-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>时隔近十年，心里又重新动起了写点文字的念头。倒不是说要达到著书立说的高度，而是觉得把东西公开写出来，比自己私下做些日记或笔记会更多一点东西。在一定程度上，它可以促使我以更加严谨地态度去对待经验。虽然是我个人的经验，但可能对别人也会有一些用，满足一下虚荣❤。<br><a id="more"></a></p>
+<p>作为一个 Web 开发程序员，技术肯定会比较多地谈及。但互联网上已经有千千万万地技术分享、讨论，重复或原创，应接不暇。而我的初心，绝不想做完全重复的事情–像所谓布道士一样去无限强调某种东西来做宣传。我所要谈的内容，只是代表我自己，抑或可能存在的某一些人，以某种思维方式去理解的技术。也许比较粗浅，甚至存在错漏，但没关系，至少它描绘了我学习、成长的轨迹。</p>
+<p>除了技术上的内容，偶尔可能还会夹杂一些“无聊”的东西，譬如随想、生活经验、音乐分享之类。总而言之，这个博客，它将不存在一个明显的主线：零零碎碎，甚至杂乱无章。但是这些我选择发表出来的东西，它们构成了一个一个重要的时间节点。若干年后，当我回顾时，这便是我的人生学习轨迹！乃至激励我：人生不止，奋斗不息！</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat-public-account-qrcode.jpg" alt="kiliwalk wechat" style="width: 200px; max-width: 100%;">
+    <div>Also at wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate and/or comment as you prefer</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-shang.jpg" alt="kiliwalk WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>kiliwalk</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="https://blog.kiliwalk.com/turn-over-a-new-leaf" title="Turn over a new leaf">https://blog.kiliwalk.com/turn-over-a-new-leaf</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</span> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Misc/" rel="tag"># Misc</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/the-developer-i-want" rel="prev" title="我看开发">
+                我看开发 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -785,6 +971,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
