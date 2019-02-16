@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.kiliwalk.com/nodejs-docker-optimize/</loc>
+    <lastmod>2019-02-16</lastmod>
+  </url>  <url>
     <loc>https://blog.kiliwalk.com/micro-frontend-practice/</loc>
-    <lastmod>2019-01-27</lastmod>
+    <lastmod>2019-02-16</lastmod>
   </url>  <url>
     <loc>https://blog.kiliwalk.com/the-developer-i-want/</loc>
     <lastmod>2019-01-27</lastmod>

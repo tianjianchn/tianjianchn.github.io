@@ -113,7 +113,7 @@
 <meta property="og:description" content="在 toB 的前端开发工作中，我们往往就会遇到如下困境：  工程越来越大，打包越来越慢 团队人员多，产品功能复杂，代码冲突频繁、影响面大 内心想做 SaaS 产品，但客户总是要做定制化  不同的团队可能有不同的方法去解决这些问题。在前端开发日新月异、前端工程化蓬勃发展的今天，我想给大家介绍下另一种尝试——微前端。">
 <meta property="og:locale" content="en-US">
 <meta property="og:image" content="https://blog.kiliwalk.com/images/micro-service-vs-micro-frontend.png">
-<meta property="og:updated_time" content="2019-01-27T02:08:37.100Z">
+<meta property="og:updated_time" content="2019-02-16T07:20:46.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微前端实践">
 <meta name="twitter:description" content="在 toB 的前端开发工作中，我们往往就会遇到如下困境：  工程越来越大，打包越来越慢 团队人员多，产品功能复杂，代码冲突频繁、影响面大 内心想做 SaaS 产品，但客户总是要做定制化  不同的团队可能有不同的方法去解决这些问题。在前端开发日新月异、前端工程化蓬勃发展的今天，我想给大家介绍下另一种尝试——微前端。">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-27 10:08:37" itemprop="dateModified" datetime="2019-01-27T10:08:37+08:00">2019-01-27</time>
+                <time title="Modified: 2019-02-16 15:20:46" itemprop="dateModified" datetime="2019-02-16T15:20:46+08:00">2019-02-16</time>
               
             
           </span>
@@ -586,7 +586,7 @@
 </ul>
 <h2 id="如何改造现有工程"><a href="#如何改造现有工程" class="headerlink" title="如何改造现有工程"></a>如何改造现有工程</h2><p>“Talk is cheap，show me the code“。下面就让我们一起来看看具体的改造吧！我们的微前端工程可以划分为 portal 工程、业务工程、common 工程这几类。</p>
 <h3 id="portal-工程"><a href="#portal-工程" class="headerlink" title="portal 工程"></a>portal 工程</h3><p>portal，顾名思义，就是入口。这也就是上面所说的微前端加载器。当用户打开浏览器，首次进入我们的页面时，不管是什么 URL，首先加载的就是 portal。portal 里会配置所有业务工程的地址、匹配哪些 URL、需要加载哪些资源。如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 业务工程的名称</span></span><br><span class="line">customer: &#123;</span><br><span class="line">    <span class="comment">// URL 匹配模式</span></span><br><span class="line">    matchUrlHash: [<span class="string">'^/customer'</span>],</span><br><span class="line">    <span class="comment">// 微前端地址</span></span><br><span class="line">    target: <span class="string">'http://localhost:8101/mfe-customer/index.html'</span>,</span><br><span class="line">    <span class="comment">// 资源匹配模式</span></span><br><span class="line">    resourcePatterns: [<span class="string">'/app.*.css$'</span>, <span class="string">'/vendor.*.css$'</span>, <span class="string">'/manifest.*.js$'</span>, <span class="string">'/vendor.*.js$'</span>, <span class="string">'/app.*.js$'</span>],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>portal 会定时、异步、并发地下载业务工程的资源，并将它们进行注册，此时并不会加载这些业务工程。这里之所以要业务工程的地址（target）、资源（resourcePatterns），是为了加载时确定地知道其所包含的 app.js、vendor.js、app.css 等资源的路径。因为业务工程每次有变更，app.js 等资源路径上都会带有心的文件内容哈希值（Hash），导致路径不可预测。而它的 index.html 的路径是固定的。我们读取该 HTML，解析其内容，通过正则就能匹配到 app.js 等资源的路径。</p>
+<p>portal 会定时、异步、并发地下载业务工程的资源，并将它们进行注册，此时并不会加载这些业务工程。这里之所以要业务工程的地址（target）、资源（resourcePatterns），是为了加载时确定地知道其所包含的 app.js、vendor.js、app.css 等资源的路径。因为业务工程每次有变更，app.js 等资源路径上都会带有新的文件内容哈希值（Hash），导致路径不可预测。而它的 index.html 的路径是固定的。我们读取该 HTML，解析其内容，通过正则就能匹配到 app.js 等资源的路径。</p>
 <p>portal 在运行时，会监听 URL 变化。目前我们只支持 URL Hash（如 #/customer）。当 Hash 发生变更时，匹配到业务工程，然后执行卸载、加载的工作。这个机制主要是利用 <code>single-spa</code> 来实现，但原理就是这么简单。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; registerApplication &#125; <span class="keyword">from</span> <span class="string">'single-spa'</span>;</span><br><span class="line">registerApplication(<span class="string">'customer'</span>, </span><br><span class="line">    <span class="comment">// 下载微前端工程，获取三个函数钩子：bootstrap、mount、unmount</span></span><br><span class="line">    () =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> html = fetch(mfeConfig.target);</span><br><span class="line">        <span class="keyword">const</span> &#123;cssUrls, jsUrls&#125; = match(html, mfeConfig.resourcePatterns);</span><br><span class="line">        loadCss(cssUrls);</span><br><span class="line">        loadJs(jsUrls);</span><br><span class="line">        <span class="keyword">return</span> windows[<span class="string">'mfe:customer'</span>];</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 对当前浏览器 URL Hash 进行匹配，如果匹配（返回 true），则加载该微前端（调用 mount）；否则卸载（调用 unmount）</span></span><br><span class="line">    () =&gt; &#123;</span><br><span class="line">        <span class="keyword">return</span> match(<span class="built_in">window</span>.location.hash, mfeConfig.matchUrlHash);</span><br><span class="line">    &#125;,</span><br><span class="line">    mfeConfig.customProps</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
 <h3 id="业务工程"><a href="#业务工程" class="headerlink" title="业务工程"></a>业务工程</h3><p>业务工程就是普通的微前端工程，一般一个模块一个工程。业务工程要扮演两个角色，一个是可独立运行的前端工程，一个是受 portal 控制的运行时。前者主要用于我们本地开发，后者则是线上集成时使用。在独立运行时，它跟原来的前端工程没有什么区别。以 Vue 工程为例，照样使用 <code>new Vue({el: &#39;#app&#39;})</code> 来启动、渲染页面。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    i18n,</span><br><span class="line">    router,</span><br><span class="line">    store,</span><br><span class="line">    template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">    components: &#123; App &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>而当受控运行时，则是利用 UMD 方式输出几个钩子函数，包括初始化、加载、卸载。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="built_in">window</span>.IS_IN_MFE)&#123; <span class="comment">// 独立运行时</span></span><br><span class="line">    <span class="keyword">new</span> Vue(&#123;...&#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123; <span class="comment">// 受控运行时</span></span><br><span class="line">    <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">        bootstrap()&#123; <span class="comment">// 注册时执行</span></span><br><span class="line">        &#125;,</span><br><span class="line">        mount(customProps)&#123; <span class="comment">// 加载时执行</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Vue(&#123;...&#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        unmount()&#123; <span class="comment">// 卸载时执行</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            instance.$destroy()</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -704,6 +704,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/nodejs-docker-optimize/" rel="prev" title="NodeJS Docker 打包优化">
+                NodeJS Docker 打包优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -778,7 +782,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -801,7 +805,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -828,7 +834,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -953,7 +965,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">12k</span>
+    <span title="Symbols count total">18k</span>
   
 
   
@@ -962,7 +974,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">19 mins.</span>
+    <span title="Reading time total">31 mins.</span>
   
 </div>
 
