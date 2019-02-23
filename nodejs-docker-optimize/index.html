@@ -113,7 +113,7 @@
 <meta property="og:description" content="最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 socket hang up 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。 回到正题。在确认没有其他附带问题">
 <meta property="og:locale" content="en-US">
 <meta property="og:image" content="https://blog.kiliwalk.com/images/nodejs-docker.jpg">
-<meta property="og:updated_time" content="2019-02-16T07:31:51.733Z">
+<meta property="og:updated_time" content="2019-02-21T13:50:28.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJS Docker 打包优化">
 <meta name="twitter:description" content="最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 socket hang up 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。 回到正题。在确认没有其他附带问题">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-16 15:31:51" itemprop="dateModified" datetime="2019-02-16T15:31:51+08:00">2019-02-16</time>
+                <time title="Modified: 2019-02-21 21:50:28" itemprop="dateModified" datetime="2019-02-21T21:50:28+08:00">2019-02-21</time>
               
             
           </span>
@@ -544,7 +544,7 @@
       
 
       
-        <p><img src="/images/nodejs-docker.jpg" alt=""><br>最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 <code>socket hang up</code> 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。</p>
+        <p>最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 <code>socket hang up</code> 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。</p>
 <p>回到正题。在确认没有其他附带问题后，在试点的基础上，又增加了一些新的目标。总的目标大概如下：</p>
 <ul>
 <li>支持优雅停机，要求 Node 进程能够接收到 SIGTERM 软终止信号</li>
@@ -552,7 +552,7 @@
 <li>保证源代码安全，不要将源代码打包到镜像里</li>
 <li>尽可能降低最终镜像大小，不要包含不必要的文件（如 node_modules 中的 devDependencies）</li>
 </ul>
-<p>下面从各个目标一一介绍下我们的优化实践之路。<br><a id="more"></a></p>
+<p>下面从各个目标一一介绍下我们的优化实践之路。<br><a id="more"></a><br><img src="/images/nodejs-docker.jpg" alt=""></p>
 <h2 id="基础镜像设置"><a href="#基础镜像设置" class="headerlink" title="基础镜像设置"></a>基础镜像设置</h2><p>由于之前的基础镜像使用的是 <code>FROM node:6</code>，只有 major version，没有指定 minor version、patch version。当该基础镜像 minor 或 patch 版本更新后，如果本地的镜像缓存也被清除了，那么打包就会使用新版本的基础镜像。这也是上面不经意升级到 node 6.15.0 的原因。所以这里我们限定了基础镜像的全版本：<code>FROM node:6.16.0</code>。</p>
 <p>我们的产品主要在国内使用，运维人员也都是在国内。为了更方便查看日志中的时间、方便程序中的日期计算，把时区调整为北京时区（即东八区）：<code>RUN rm /etc/localtime &amp;&amp; echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; dpkg-reconfigure -f noninteractive tzdata</code>。注意，Debian Stretch 版本后需要 <code>rm /etc/localtime</code>，否则时区修改可能无法生效（被替换回原值）。</p>
 <p>最后设置镜像的工作目录：<code>WORKDIR /app</code>。这样，我们新的基础镜像就完成了。</p>
@@ -681,6 +681,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/macos-pdf-to-images/" rel="prev" title="MacOS PDF 转图片小探">
+                MacOS PDF 转图片小探 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -755,7 +759,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -813,7 +817,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -938,7 +944,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">18k</span>
+    <span title="Symbols count total">20k</span>
   
 
   
@@ -947,7 +953,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">31 mins.</span>
+    <span title="Reading time total">34 mins.</span>
   
 </div>
 

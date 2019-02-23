@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.kiliwalk.com/nodejs-docker-optimize/</loc>
-    <lastmod>2019-02-16</lastmod>
+    <lastmod>2019-02-21</lastmod>
+  </url>  <url>
+    <loc>https://blog.kiliwalk.com/macos-pdf-to-images/</loc>
+    <lastmod>2019-02-21</lastmod>
   </url>  <url>
     <loc>https://blog.kiliwalk.com/micro-frontend-practice/</loc>
     <lastmod>2019-02-16</lastmod>

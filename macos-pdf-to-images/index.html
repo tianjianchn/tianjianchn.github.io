@@ -104,23 +104,30 @@
 
 
 
-  <meta name="description" content="Life is short, use technique. Long live technology!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kiliwalk">
-<meta property="og:url" content="https://blog.kiliwalk.com/tags/Frontend/index.html">
+  <meta name="description" content="前几天有个朋友咨询我这个“修电脑的”：如果要把一个内部 PDF 文件发给别人，如何脱敏？当然别人也是他的朋友，只是给他参阅下，并不是要发到公网上传播。最简单的办法就是用 PDF 编辑软件把敏感部分都擦除掉啦。然而他用的是 MacOS，这类编辑软件基本都是收费的，他又不想为此特意花那个钱（好像找我帮忙没有成本一样╮(╯_╰)╭）。在远在未来的一顿饭的压迫下，我只能去尝试下免费的方法了。">
+<meta name="keywords" content="PDF,PDF to Images,Desensitization,脱敏,保密,Automator,Preview,预览,Automation,截图,ScreenCapture">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacOS PDF 转图片小探">
+<meta property="og:url" content="https://blog.kiliwalk.com/macos-pdf-to-images/index.html">
 <meta property="og:site_name" content="kiliwalk">
-<meta property="og:description" content="Life is short, use technique. Long live technology!">
+<meta property="og:description" content="前几天有个朋友咨询我这个“修电脑的”：如果要把一个内部 PDF 文件发给别人，如何脱敏？当然别人也是他的朋友，只是给他参阅下，并不是要发到公网上传播。最简单的办法就是用 PDF 编辑软件把敏感部分都擦除掉啦。然而他用的是 MacOS，这类编辑软件基本都是收费的，他又不想为此特意花那个钱（好像找我帮忙没有成本一样╮(╯_╰)╭）。在远在未来的一顿饭的压迫下，我只能去尝试下免费的方法了。">
 <meta property="og:locale" content="en-US">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/macos-pdf-original.png">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/macos-pdf-mosaic.png">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/macos-pdf-automator.png">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/macos-pdf-pdf-to-images.gif">
+<meta property="og:updated_time" content="2019-02-21T13:50:02.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kiliwalk">
-<meta name="twitter:description" content="Life is short, use technique. Long live technology!">
+<meta name="twitter:title" content="MacOS PDF 转图片小探">
+<meta name="twitter:description" content="前几天有个朋友咨询我这个“修电脑的”：如果要把一个内部 PDF 文件发给别人，如何脱敏？当然别人也是他的朋友，只是给他参阅下，并不是要发到公网上传播。最简单的办法就是用 PDF 编辑软件把敏感部分都擦除掉啦。然而他用的是 MacOS，这类编辑软件基本都是收费的，他又不想为此特意花那个钱（好像找我帮忙没有成本一样╮(╯_╰)╭）。在远在未来的一顿饭的压迫下，我只能去尝试下免费的方法了。">
+<meta name="twitter:image" content="https://blog.kiliwalk.com/images/macos-pdf-original.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.kiliwalk.com/tags/Frontend/">
+  <link rel="canonical" href="https://blog.kiliwalk.com/macos-pdf-to-images/">
 
 
 
@@ -130,7 +137,7 @@
   };
 </script>
 
-  <title>Tag: Frontend | kiliwalk</title>
+  <title>MacOS PDF 转图片小探 | kiliwalk</title>
   
 
 
@@ -196,7 +203,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -255,7 +262,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -360,79 +367,341 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Frontend<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/macos-pdf-to-images/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kiliwalk">
+      <meta itemprop="description" content="Life is short, use technique. Long live technology!">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kiliwalk">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/micro-frontend-practice/" itemprop="url">
-              
-                <span itemprop="name">微前端实践</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MacOS PDF 转图片小探
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-11T20:40:18+08:00" content="2019-01-11">
-          01-11
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-17 17:30:18" itemprop="dateCreated datePublished" datetime="2019-02-17T17:30:18+08:00">2019-02-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-21 21:50:02" itemprop="dateModified" datetime="2019-02-21T21:50:02+08:00">2019-02-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/macos-pdf-to-images/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/macos-pdf-to-images/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/macos-pdf-to-images/" class="leancloud_visitors" data-flag-title="MacOS PDF 转图片小探">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">1.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">3 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前几天有个朋友咨询我这个“修电脑的”：如果要把一个内部 PDF 文件发给别人，如何脱敏？当然别人也是他的朋友，只是给他参阅下，并不是要发到公网上传播。最简单的办法就是用 PDF 编辑软件把敏感部分都擦除掉啦。然而他用的是 MacOS，这类编辑软件基本都是收费的，他又不想为此特意花那个钱（好像找我帮忙没有成本一样╮(╯_╰)╭）。在远在未来的一顿饭的压迫下，我只能去尝试下免费的方法了。<br><a id="more"></a></p>
+<h2 id="Preview"><a href="#Preview" class="headerlink" title="Preview"></a>Preview</h2><p>MacOS 的 Preview 是一个很强大的 App，可以查看图片，甚至做一些简单的图片编辑工作。令人惊喜的，它也可以查看 PDF 并且做一些涂鸦。<br>比如有这样一个 PDF 文件：<br><img src="/images/macos-pdf-original.png" alt=""><br>如果要把右侧的 Adobe 标遮掉，可以打开 <code>Show Mockup Toolbar</code>，使用 <code>Draw</code> 工具进行涂抹。<br><img src="/images/macos-pdf-mosaic.png" alt=""><br>但是这种方法有一个弊端，就是 PDF 被再次打开后，涂鸦可以被删除。</p>
+<p>一个办法就是把 PDF 文件转为图片。从 Preview 的菜单 <code>File-&gt;Export</code>，选择格式为 JPEG 即可。但这个办法只能将 PDF 的第一页输出为图片，无法满足我们的要求。</p>
+<h2 id="Automator"><a href="#Automator" class="headerlink" title="Automator"></a>Automator</h2><p>无奈，去网上搜索了一番。无意间发现可以利用 MacOS 的 Automator 来达到批量转换 PDF 所有页到图片。经过对 Automator、Apple Script 一番研究，较为满意实现了以下目标：</p>
+<ol>
+<li>将 PDF 所有页都输出为图片</li>
+<li>在 Finder 中集成右键菜单以便随时、快速地转换</li>
+<li>这些图片可以输出在与 PDF 文件相同的文件夹下</li>
+</ol>
+<p><img src="/images/macos-pdf-automator.png" alt="">  </p>
+<p>首先创建一个 Quick Action 类型的 Document，然后配置其输入为 Finder 中的 PDF 文件。这样只有 PDF 文件，会在右键的 Quick Action 菜单有此服务了。接下来每个步骤介绍如下：</p>
+<ol>
+<li>Set Value of Variable：将选中的文件作为对象赋值到变量 file 上</li>
+<li>Run AppleScript：获取选中文件所在文件夹</li>
+<li>Set Value of Variable：将该文件夹设置到变量 filefolder 上</li>
+<li>Get Value of Variable：将变量 file 上的文件作为下个步骤的输入。如果没有这一步，则 filefolder 会作为下个步骤的输入了。</li>
+<li>Render PDF Pages as Images：将 PDF 文件的每一页输出为图片。这一步就是我们要的批量处理。</li>
+<li>Move Finder Items：将上述图片文件移动到 filefolder 变量所指向的文件夹中，也就是跟源文件相同的目录中。因为上一步默认会把图片存在 /private/var/folders 的某个目录下。</li>
+</ol>
+<p>然后将此 Document 保存，名称可以取为 <code>PDF to Images</code>。我们可以看看具体使用办法： </p>
+<p><img src="/images/macos-pdf-pdf-to-images.gif" alt=""></p>
+<p>但是这个办法还是有一个问题没法解决——有些 PDF 文件设置了导出密码。必须把密码清除了，才能使用 Automator 来处理。如果不知道密码，那就行不通了。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p>那还有其他什么办法吗？截图！当然，不是说手动一张一张去截屏，而是有一个 App 就叫<span class="exturl" data-url="aHR0cHM6Ly9qaWV0dS5xcS5jb20v" title="https://jietu.qq.com/">“截图（Jietu）”<i class="fa fa-external-link"></i></span>。它支持滚动截图，而且是免费的。但是这个滚动截图功能在某些情况会漏掉或重复截屏。也可能因为这样，所以最新的 2.2.2 版本也没有了这个功能。不过还好我有 2.2.1 版本的。用 Preview 打开 PDF 文件后，利用滚动截屏功能顺利地截取到了所有页面的一个长图。没有遗漏或重复，当然也有可能是 PDF 文件页数比较少。好几十页乃至上百页的还没有测试过。</p>
+<p>到这里，总算可以交差了。然而事情并没有结束。当我尝试对十几页的长图片用 Preview 预览，放大时竟然无法正常显示内容（可能由于图片太大的缘故）。于是我又脑洞地把这张长图转为了 PDF。这样的 PDF 只有一页，这一页的中间就是一个细长条的图片，必须放大后才能看清。嗯，把这样的 PDF 发出去，自然也增加了阅读成本，这大概也可以算是脱敏的一部分吧:) </p>
+<p>希望朋友不要忘记这一顿饭。</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat-public-account-qrcode.jpg" alt="kiliwalk wechat" style="width: 200px; max-width: 100%;">
+    <div>Also at wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate and/or comment as you prefer</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-shang.jpg" alt="kiliwalk WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>kiliwalk</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="https://blog.kiliwalk.com/macos-pdf-to-images/" title="MacOS PDF 转图片小探">https://blog.kiliwalk.com/macos-pdf-to-images/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</span> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Tools/" rel="tag"># Tools</a>
+          
+            <a href="/tags/MacOS/" rel="tag"># MacOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/nodejs-docker-optimize/" rel="next" title="NodeJS Docker 打包优化">
+                <i class="fa fa-chevron-left"></i> NodeJS Docker 打包优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -453,8 +722,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -614,6 +892,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preview"><span class="nav-number">1.</span> <span class="nav-text">Preview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Automator"><span class="nav-number">2.</span> <span class="nav-text">Automator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#截图"><span class="nav-number">3.</span> <span class="nav-text">截图</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -764,6 +1059,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
