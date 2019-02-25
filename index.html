@@ -381,6 +381,241 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/visual-studio-code-settings-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kiliwalk">
+      <meta itemprop="description" content="Life is short, use technique. Long live technology!">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kiliwalk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/visual-studio-code-settings-1/" class="post-title-link" itemprop="url">工具利器 Visual Studio Code 之 Settings（一）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-21 22:32:00" itemprop="dateCreated datePublished" datetime="2019-02-21T22:32:00+08:00">2019-02-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-24 23:28:57" itemprop="dateModified" datetime="2019-02-24T23:28:57+08:00">2019-02-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/visual-studio-code-settings-1/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/visual-studio-code-settings-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/visual-studio-code-settings-1/" class="leancloud_visitors" data-flag-title="工具利器 Visual Studio Code 之 Settings（一）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">2.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">3 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Visual Studio Code 虽说是一款轻量的 IDE，但是它的可定制性却非常强大。早先继承了 Web 开发的传统，它使用 JSON 来管理配置。用户也是直接操作 JSON 格式的配置内容。严格来说 JSON 不支持注释，但它额外有了一种叫 JSON with Comments 的格式，支持 JavaScript 的行内、单行、跨行注释语法。这样对我这样的开发人员来说，感觉就很良好了。</p>
+<p>Visual Studio Code 的配置分全局（User Settings）和工作区（Workspace Settings）。全局是对所有工程、所有工作区都生效的。工作区的配置会覆盖全局配置中相同条目的内容。今天我们就主要来看看全局配置。</p>
+<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><p>全局配置要有一定的规范，不能所有配置都需要、都能往里面加的。大概有三项原则：</p>
+<ol>
+<li>将那些通用的、最广泛用到的配置放到这里。</li>
+<li>尽量少，精简为上，不重复默认配置。</li>
+<li>还要考虑那些会被临时打开的文件，尽量不要影响它们。</li>
+</ol>
+<p>第一条、第二条我想大家都很容易理解，但第三条可能就不太注意了。由于开发工作中经常需要临时打开单个文件或目录，甚至还要去修改它们。这些临时打开的文件或目录并没有工作区配置，我们大概也不会想去为它们建一下工作区配置。这样，它们就只会应用全局配置了。所以在这里，我们有时候就要小心一点了。<br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/visual-studio-code-settings-1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/macos-pdf-to-images/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1789,7 +2024,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1957,7 +2192,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">20k</span>
+    <span title="Symbols count total">22k</span>
   
 
   
@@ -1966,7 +2201,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">34 mins.</span>
+    <span title="Reading time total">37 mins.</span>
   
 </div>
 
