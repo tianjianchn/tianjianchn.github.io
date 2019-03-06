@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.kiliwalk.com/visual-studio-code-settings-2/</loc>
+    <lastmod>2019-03-02</lastmod>
+  </url>  <url>
+    <loc>https://blog.kiliwalk.com/tool-sharp-of-visual-studio-code-1/</loc>
+    <lastmod>2019-03-02</lastmod>
+  </url>  <url>
+    <loc>https://blog.kiliwalk.com/macos-pdf-to-images/</loc>
+    <lastmod>2019-03-02</lastmod>
+  </url>  <url>
     <loc>https://blog.kiliwalk.com/macos-capslock-switch-input-source/</loc>
     <lastmod>2019-03-02</lastmod>
   </url>  <url>
@@ -10,17 +19,11 @@
     <loc>https://blog.kiliwalk.com/nodejs-docker-optimize/</loc>
     <lastmod>2019-02-21</lastmod>
   </url>  <url>
-    <loc>https://blog.kiliwalk.com/macos-pdf-to-images/</loc>
-    <lastmod>2019-02-21</lastmod>
-  </url>  <url>
     <loc>https://blog.kiliwalk.com/micro-frontend-practice/</loc>
     <lastmod>2019-02-16</lastmod>
   </url>  <url>
     <loc>https://blog.kiliwalk.com/the-developer-i-want/</loc>
     <lastmod>2019-01-27</lastmod>
-  </url>  <url>
-    <loc>https://blog.kiliwalk.com/tool-sharp-of-visual-studio-code-1/</loc>
-    <lastmod>2019-01-26</lastmod>
   </url>  <url>
     <loc>https://blog.kiliwalk.com/turn-over-a-new-leaf/</loc>
     <lastmod>2019-01-13</lastmod>
