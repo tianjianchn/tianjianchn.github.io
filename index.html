@@ -381,6 +381,237 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/vscode-javascript-project-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kiliwalk">
+      <meta itemprop="description" content="Life is short, use technique. Long live technology!">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kiliwalk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/vscode-javascript-project-1/" class="post-title-link" itemprop="url">如何提升 Visual Studio Code 的 JavaScript 开发效率（一）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-03 10:08:00" itemprop="dateCreated datePublished" datetime="2019-03-03T10:08:00+08:00">2019-03-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-06 23:08:05" itemprop="dateModified" datetime="2019-03-06T23:08:05+08:00">2019-03-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/vscode-javascript-project-1/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/vscode-javascript-project-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/vscode-javascript-project-1/" class="leancloud_visitors" data-flag-title="如何提升 Visual Studio Code 的 JavaScript 开发效率（一）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">2.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">4 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="">前面</a>我们介绍了 Visual Studio Code 各种基础能力，包括常用快捷键、全局配置（User Setting）等内容。我们还没怎么谈到插件、工程方面的运用。虽然现在 VSCode 已经支持多种语言，如 Python、PHP，甚至 Java、C/C++。但作为其最早支持的语言，也是我最喜欢的编程语言——JavaScript，尽管它的弱类型、动态类型等特性在以前是 IDE 的灾难，但是在 VSCode 里，这不再是问题。</p>
+<h2 id="jsconfig-json-文件"><a href="#jsconfig-json-文件" class="headerlink" title="jsconfig.json 文件"></a>jsconfig.json 文件</h2><p>默认情况下，不需要我们做任何额外配置，VSCode 就已经为 Workspace 内的 js 文件提供了 JavaScript 方面的支持，包括 IntelliSense（智能提示）、Snippets（代码片段）、Debug（调试）、Format（格式化）、Validate（校验）等。但是在以下场景，我们就需要一个叫 jsconfig.json 的文件了：</p>
+<ul>
+<li>一个 Workspace 中有多个工程，比如前端、后端工程。IntelliSense 应该以工程边界，而不要跨工程提示。</li>
+<li>使用非相对路径方式的导入工程内的文件，如 <code>import &#39;lib/util.js&#39;</code>，而不是 <code>import &#39;../../lib/util.js&#39;</code>。
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/vscode-javascript-project-1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/visual-studio-code-settings-2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2467,7 +2698,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2637,7 +2868,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">27k</span>
+    <span title="Symbols count total">30k</span>
   
 
   
@@ -2646,7 +2877,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">46 mins.</span>
+    <span title="Reading time total">49 mins.</span>
   
 </div>
 
