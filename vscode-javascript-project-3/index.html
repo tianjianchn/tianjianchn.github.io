@@ -104,23 +104,30 @@
 
 
 
-  <meta name="description" content="Life is short, use technique. Long live technology!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kiliwalk">
-<meta property="og:url" content="https://blog.kiliwalk.com/archives/2019/index.html">
+  <meta name="description" content="前面我们讲了 jsconfig.json 和 Go To Definition 相关内容，现在 JavaScript 的开发已经非常像在传统 IDE 里做静态、编译类型语言的开发体验了。今天我们就再来突破一下，把”静态类型“也加入到 JavaScript 中去！而这，关键就是 JSDoc（http://usejsdoc.org/ ）。">
+<meta name="keywords" content="Tools,工具,Visual Studio Code,VSCode,JavaScript,JS,JSDoc,Type Safe,类型安全,参数校验,静态类型,强类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc">
+<meta property="og:url" content="https://blog.kiliwalk.com/vscode-javascript-project-3/index.html">
 <meta property="og:site_name" content="kiliwalk">
-<meta property="og:description" content="Life is short, use technique. Long live technology!">
+<meta property="og:description" content="前面我们讲了 jsconfig.json 和 Go To Definition 相关内容，现在 JavaScript 的开发已经非常像在传统 IDE 里做静态、编译类型语言的开发体验了。今天我们就再来突破一下，把”静态类型“也加入到 JavaScript 中去！而这，关键就是 JSDoc（http://usejsdoc.org/ ）。">
 <meta property="og:locale" content="en-US">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/vscode-jsdoc-example.png">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/vscode-jsdoc-intelli.gif">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/vscode-jsdoc-check.gif">
+<meta property="og:image" content="https://blog.kiliwalk.com/images/vscode-jsdoc-object-destr.gif">
+<meta property="og:updated_time" content="2019-03-12T15:29:13.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kiliwalk">
-<meta name="twitter:description" content="Life is short, use technique. Long live technology!">
+<meta name="twitter:title" content="提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc">
+<meta name="twitter:description" content="前面我们讲了 jsconfig.json 和 Go To Definition 相关内容，现在 JavaScript 的开发已经非常像在传统 IDE 里做静态、编译类型语言的开发体验了。今天我们就再来突破一下，把”静态类型“也加入到 JavaScript 中去！而这，关键就是 JSDoc（http://usejsdoc.org/ ）。">
+<meta name="twitter:image" content="https://blog.kiliwalk.com/images/vscode-jsdoc-example.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.kiliwalk.com/archives/2019/">
+  <link rel="canonical" href="https://blog.kiliwalk.com/vscode-javascript-project-3/">
 
 
 
@@ -130,7 +137,7 @@
   };
 </script>
 
-  <title>Archive | kiliwalk</title>
+  <title>提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc | kiliwalk</title>
   
 
 
@@ -196,7 +203,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -289,7 +296,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -360,416 +367,333 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/vscode-javascript-project-3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kiliwalk">
+      <meta itemprop="description" content="Life is short, use technique. Long live technology!">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kiliwalk">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-09 14:50:00" itemprop="dateCreated datePublished" datetime="2019-03-09T14:50:00+08:00">2019-03-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-12 23:29:13" itemprop="dateModified" datetime="2019-03-12T23:29:13+08:00">2019-03-12</time>
+              
+            
+          </span>
+
           
-        
-        Um..! 12 posts in total. Keep on posting.
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/vscode-javascript-project-3/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/vscode-javascript-project-3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/vscode-javascript-project-3/" class="leancloud_visitors" data-flag-title="提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/vscode-javascript-project-3/" itemprop="url">
+          
+
+          
+            <div class="post-symbolscount">
               
-                <span itemprop="name">提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc</span>
+
               
-            </a>
-        
-      </h2>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">1.8k</span>
+              
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-09T14:50:00+08:00" content="2019-03-09">
-          03-09
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">3 mins.</span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/vscode-javascript-project-2/" itemprop="url">
-              
-                <span itemprop="name">如何提升 Visual Studio Code 的 JavaScript 开发效率（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-09T14:50:00+08:00" content="2019-03-09">
-          03-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/vscode-javascript-project-1/" itemprop="url">
-              
-                <span itemprop="name">如何提升 Visual Studio Code 的 JavaScript 开发效率（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-03T10:08:00+08:00" content="2019-03-03">
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>前面我们讲了 jsconfig.json 和 Go To Definition 相关内容，现在 JavaScript 的开发已经非常像在传统 IDE 里做静态、编译类型语言的开发体验了。今天我们就再来突破一下，把”静态类型“也加入到 JavaScript 中去！而这，关键就是 JSDoc（<span class="exturl" data-url="aHR0cDovL3VzZWpzZG9jLm9yZy8=" title="http://usejsdoc.org/">http://usejsdoc.org/<i class="fa fa-external-link"></i></span> ）。<br><a id="more"></a></p>
+<h2 id="JSDoc"><a href="#JSDoc" class="headerlink" title="JSDoc"></a>JSDoc</h2><p><img src="/images/vscode-jsdoc-example.png" alt=""></p>
+<p>JSDoc 本身是用来对方法、变量、模块、类等进行结构化文档注释用的。它本身还有一个对应的工具，扫描所有源代码文件里的 JSDoc 注释并生成 API 文档，就像 JavaDoc 一样。</p>
+<p>但是在 VSCode 里，它被赋予了更加强大的地位。它不仅仅是一个文档说明，还可以用来做智能提示（IntelliSense），而且可以做到函数的参数级别。甚至还能做参数类型、值类型的校验！也许你会想到 TypeScript 的 definition 文件（.d.ts）。是的，它也有参数类型校验，但是它没有参数说明。如果要参数说明，还是要写 JSDoc。与其多写一遍 definition，不如直接使用 JavaScript + JSDoc 更加方便。当然这一切都是依赖于 TypeScript，我们不能因此去否定它。</p>
+<p>我们来看看 JSDoc 所带来的强大提示功能。<br><img src="/images/vscode-jsdoc-intelli.gif" alt=""></p>
+<p>从上面的动图可以看到，函数的注释、参数的注释、参数注释的输入跟随都有了。</p>
+<h2 id="参数、类型校验"><a href="#参数、类型校验" class="headerlink" title="参数、类型校验"></a>参数、类型校验</h2><p>文档提示只是第一步。我们知道 JavaScript 是动态类型、弱类型的语言。变量没有类型声明，运行时还可以随意变更值类型，还有很多内置的自动类型转换场景。虽然这是吸引我的很大的一方面，不过在团队协作里，最好还是能够做到约束、检查一下。VSCode 就为我们提供了这么一个能力。</p>
+<p>首先我们要打开 Setting 中的 JavaScript 校验：<code>&quot;javascript.validate.enable&quot;: true</code>。然后在 jsconfig.json 中配置如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">      <span class="attr">"checkJs"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们再来看看：<br><img src="/images/vscode-jsdoc-check.gif" alt=""></p>
+<p>是不是很不错？VSCode 帮我们做了必填参数、参数类型、返回值类型等各项检测与校验。这样我们在写代码的时候，一方面能够看到文档注释，一方面又能随时知道调用方式是否错误，快哉！</p>
+<h2 id="对象解构形式参数"><a href="#对象解构形式参数" class="headerlink" title="对象解构形式参数"></a>对象解构形式参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * set redis key</span></span><br><span class="line"><span class="comment"> * @author kiliwalk</span></span><br><span class="line"><span class="comment"> * @param &#123;Object&#125; params the parameters</span></span><br><span class="line"><span class="comment"> * @param &#123;String&#125; params.key redis key name</span></span><br><span class="line"><span class="comment"> * @param &#123;String&#125; params.value redis key value</span></span><br><span class="line"><span class="comment"> * @param &#123;String&#125; [params.expire] redis key expire time(seconds)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">set</span>(<span class="params">&#123;key, value, expire&#125;</span>)</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如上示例，我们使用了 Object Destruction 定义了方法的参数。对应的，JSDoc 里可以通过 <code>.</code> 来为对象内部的属性提供文档。来看看使用时的效果：</p>
+<p><img src="/images/vscode-jsdoc-object-destr.gif" alt=""></p>
+<p>这里有一个地方要注意，参数文档那一个小窗口，如果一开始没有显示，则要再按一次 <code>ctrl+space</code>（macOS），也就是额外触发一次智能提示。这个在 VSCode 里叫“toggleSuggestionDetails”（可以在快捷键设置里找到它）。</p>
+<p>VSCode 里还支持更加复杂的 JSDoc 类型声明。在涉及到复杂对象的输入、输出时，我们可能就需要用到了。有兴趣的同学可以去这里看看：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL01pY3Jvc29mdC9UeXBlU2NyaXB0L3dpa2kvSnNEb2Mtc3VwcG9ydC1pbi1KYXZhU2NyaXB0" title="https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript">https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript<i class="fa fa-external-link"></i></span> 。</p>
+<p>希望通过这几篇文章，能够改善大家日常的 JavaScript 开发体验。这里面还有很多东西值得我们去探索。</p>
+<p>现在，有没有感觉在 VSCode 里开发 JavaScript 完全是另一番体验？</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/visual-studio-code-settings-2/" itemprop="url">
-              
-                <span itemprop="name">工具利器 Visual Studio Code 之 Settings（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-02T11:08:00+08:00" content="2019-03-02">
-          03-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/macos-capslock-switch-input-source/" itemprop="url">
-              
-                <span itemprop="name">macOS 下使用 CapsLock 键切换 ABC 与搜狗输入法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-25T22:44:01+08:00" content="2019-02-25">
-          02-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/visual-studio-code-settings-1/" itemprop="url">
-              
-                <span itemprop="name">工具利器 Visual Studio Code 之 Settings（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-21T22:32:00+08:00" content="2019-02-21">
-          02-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/macos-pdf-to-images/" itemprop="url">
-              
-                <span itemprop="name">macOS PDF 转图片小探</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-17T17:30:18+08:00" content="2019-02-17">
-          02-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/nodejs-docker-optimize/" itemprop="url">
-              
-                <span itemprop="name">NodeJS Docker 打包优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-23T20:20:18+08:00" content="2019-01-23">
-          01-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/micro-frontend-practice/" itemprop="url">
-              
-                <span itemprop="name">微前端实践</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-11T20:40:18+08:00" content="2019-01-11">
-          01-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/tool-sharp-of-visual-studio-code-1/" itemprop="url">
-              
-                <span itemprop="name">工具利器之 Visual Studio Code（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-09T14:00:00+08:00" content="2019-01-09">
-          01-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat-public-account-qrcode.jpg" alt="kiliwalk wechat" style="width: 200px; max-width: 100%;">
+    <div>Also at wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate and/or comment as you prefer</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-shang.jpg" alt="kiliwalk WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>kiliwalk</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="https://blog.kiliwalk.com/vscode-javascript-project-3/" title="提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc">https://blog.kiliwalk.com/vscode-javascript-project-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</span> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Tools/" rel="tag"># Tools</a>
+          
+            <a href="/tags/VSCode/" rel="tag"># VSCode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/vscode-javascript-project-2/" rel="next" title="如何提升 Visual Studio Code 的 JavaScript 开发效率（二）">
+                <i class="fa fa-chevron-left"></i> 如何提升 Visual Studio Code 的 JavaScript 开发效率（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -790,8 +714,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -953,6 +886,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSDoc"><span class="nav-number">1.</span> <span class="nav-text">JSDoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数、类型校验"><span class="nav-number">2.</span> <span class="nav-text">参数、类型校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象解构形式参数"><span class="nav-number">3.</span> <span class="nav-text">对象解构形式参数</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -1103,6 +1053,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
