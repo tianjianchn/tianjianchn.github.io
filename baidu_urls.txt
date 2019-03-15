@@ -1,3 +1,4 @@
+https://blog.kiliwalk.com/coder-notes-management/
 https://blog.kiliwalk.com/vscode-javascript-project-3/
 https://blog.kiliwalk.com/vscode-javascript-project-2/
 https://blog.kiliwalk.com/vscode-javascript-project-1/
@@ -7,4 +8,3 @@ https://blog.kiliwalk.com/visual-studio-code-settings-1/
 https://blog.kiliwalk.com/macos-pdf-to-images/
 https://blog.kiliwalk.com/nodejs-docker-optimize/
 https://blog.kiliwalk.com/micro-frontend-practice/
-https://blog.kiliwalk.com/tool-sharp-of-visual-studio-code-1/
