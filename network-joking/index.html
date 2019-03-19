@@ -104,23 +104,25 @@
 
 
 
-  <meta name="description" content="Life is short, use technique. Long live technology!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kiliwalk">
-<meta property="og:url" content="https://blog.kiliwalk.com/tags/Tools/index.html">
+  <meta name="description" content="最近工作中需要使用 LVS 负载均衡，而运维告知后端主机所在网段不匹配，可能无法申请。抱着好奇的心理，就去研究了下 LVS。然而网上的文章要么过于粗略，要么还是有一些细节让我百思不得其解。尤为让我疑惑的就是网络数据包的处理与分发。于是重温了有关 NAT、交换机、网关、路由等一系列相关网络概念，查阅各路大 V 的文章。最后在一个评论中不经意看到一本好书：《网络是怎样连接的》，完美地把目标从 LVS">
+<meta name="keywords" content="Network,网络,DevOps,交换机,Switch,MAC,原理,历史,History,Joking">
+<meta property="og:type" content="article">
+<meta property="og:title" content="戏说网络（一）">
+<meta property="og:url" content="https://blog.kiliwalk.com/network-joking/index.html">
 <meta property="og:site_name" content="kiliwalk">
-<meta property="og:description" content="Life is short, use technique. Long live technology!">
+<meta property="og:description" content="最近工作中需要使用 LVS 负载均衡，而运维告知后端主机所在网段不匹配，可能无法申请。抱着好奇的心理，就去研究了下 LVS。然而网上的文章要么过于粗略，要么还是有一些细节让我百思不得其解。尤为让我疑惑的就是网络数据包的处理与分发。于是重温了有关 NAT、交换机、网关、路由等一系列相关网络概念，查阅各路大 V 的文章。最后在一个评论中不经意看到一本好书：《网络是怎样连接的》，完美地把目标从 LVS">
 <meta property="og:locale" content="en-US">
+<meta property="og:updated_time" content="2019-03-17T13:59:12.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kiliwalk">
-<meta name="twitter:description" content="Life is short, use technique. Long live technology!">
+<meta name="twitter:title" content="戏说网络（一）">
+<meta name="twitter:description" content="最近工作中需要使用 LVS 负载均衡，而运维告知后端主机所在网段不匹配，可能无法申请。抱着好奇的心理，就去研究了下 LVS。然而网上的文章要么过于粗略，要么还是有一些细节让我百思不得其解。尤为让我疑惑的就是网络数据包的处理与分发。于是重温了有关 NAT、交换机、网关、路由等一系列相关网络概念，查阅各路大 V 的文章。最后在一个评论中不经意看到一本好书：《网络是怎样连接的》，完美地把目标从 LVS">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.kiliwalk.com/tags/Tools/">
+  <link rel="canonical" href="https://blog.kiliwalk.com/network-joking/">
 
 
 
@@ -130,7 +132,7 @@
   };
 </script>
 
-  <title>Tag: Tools | kiliwalk</title>
+  <title>戏说网络（一） | kiliwalk</title>
   
 
 
@@ -196,7 +198,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -255,7 +257,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -360,261 +362,316 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Tools<small>Tag</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.kiliwalk.com/network-joking/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kiliwalk">
+      <meta itemprop="description" content="Life is short, use technique. Long live technology!">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kiliwalk">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/vscode-javascript-project-2/" itemprop="url">
-              
-                <span itemprop="name">如何提升 Visual Studio Code 的 JavaScript 开发效率（二）</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">戏说网络（一）
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-09T14:50:00+08:00" content="2019-03-09">
-          03-09
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-17 20:12:00 / Modified: 21:59:12" itemprop="dateCreated datePublished" datetime="2019-03-17T20:12:00+08:00">2019-03-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/DevOps/" itemprop="url" rel="index"><span itemprop="name">DevOps</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/network-joking/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/network-joking/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/network-joking/" class="leancloud_visitors" data-flag-title="戏说网络（一）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">2.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">5 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/vscode-javascript-project-3/" itemprop="url">
-              
-                <span itemprop="name">提升 Visual Studio Code 的 JavaScript 开发效率（三）—— JSDoc</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-09T14:50:00+08:00" content="2019-03-09">
-          03-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/vscode-javascript-project-1/" itemprop="url">
-              
-                <span itemprop="name">如何提升 Visual Studio Code 的 JavaScript 开发效率（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-03T10:08:00+08:00" content="2019-03-03">
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/visual-studio-code-settings-2/" itemprop="url">
-              
-                <span itemprop="name">工具利器 Visual Studio Code 之 Settings（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-02T11:08:00+08:00" content="2019-03-02">
-          03-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/macos-capslock-switch-input-source/" itemprop="url">
-              
-                <span itemprop="name">macOS 下使用 CapsLock 键切换 ABC 与搜狗输入法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-25T22:44:01+08:00" content="2019-02-25">
-          02-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/visual-studio-code-settings-1/" itemprop="url">
-              
-                <span itemprop="name">工具利器 Visual Studio Code 之 Settings（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-21T22:32:00+08:00" content="2019-02-21">
-          02-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/macos-pdf-to-images/" itemprop="url">
-              
-                <span itemprop="name">macOS PDF 转图片小探</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-17T17:30:18+08:00" content="2019-02-17">
-          02-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/tool-sharp-of-visual-studio-code-1/" itemprop="url">
-              
-                <span itemprop="name">工具利器之 Visual Studio Code（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-09T14:00:00+08:00" content="2019-01-09">
-          01-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>最近工作中需要使用 LVS 负载均衡，而运维告知后端主机所在网段不匹配，可能无法申请。抱着好奇的心理，就去研究了下 LVS。然而网上的文章要么过于粗略，要么还是有一些细节让我百思不得其解。尤为让我疑惑的就是网络数据包的处理与分发。于是重温了有关 NAT、交换机、网关、路由等一系列相关网络概念，查阅各路大 V 的文章。最后在一个评论中不经意看到一本好书：《网络是怎样连接的》，完美地把目标从 LVS 转为了计算机网络😝。</p>
+<p>这本书讲述的内容，其实跟我以前面试时很喜欢问的一个题目很类似：当你在浏览器里输入一个 URL 会发生什么。这个问题我只用过一段时间，后来就搁置了。当然了，这里主要考验的方面在于服务端以及前端的处理逻辑，跟底层网络的关系倒并不深究。而这本书则着重讲解了网络底层的处理流程，包括各种网络协议、网络设备、信号处理、操作系统 IO 处理等。推荐大家去读一下，能让你对网络有一个更形象化的认识，让你的认识更有层次逻辑。我也打算就本书做一些读书笔记，浓缩一下书中内容（毕竟 300 多页的书），以一个门外汉（Layman）的视角讲述下这里面的内容。<br><a id="more"></a></p>
+<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>网络的目的，就是为了连接。最开始的需求可能是两个人的计算机要连接，互相传递数据。那么每个人的计算机里就各需要有一种设备，可以用来发送和接收数据。这个设备就是网卡。用一根线把这两张网卡连接起来，双方就可以通过信号进行通信。这根线就叫网线。</p>
+<p>两个计算机的通信很简单，A 要给 B 发送什么数据，就构造好数据直接让网卡发出去就行，不需要问怎么到达，也不可能会丢。不过两个人聊天就是会有聊完的时候，不如加一个人一起唱戏。于是第三个人的计算机就加入进来了。那怎么连接这三个计算机呢？可以考虑让一个计算机做中继。像 A<->B<->C 这样由 B 来中继，A 要给 C 发送数据，就先发给 B，然后 B 转给 C。所以 B 上面就得有两张网卡。可是这还不够，B 怎么知道 A 发过来的数据是给自己的还是给 C 的？这里我们就需要确定各自的标识了。这种标识我们就把它叫做地址。当 A 要给 C 发送数据时，数据里额外增加一项地址，填 C，然后由 A 的网卡发出去。所以传送的数据其实是由两部分构成的，一部分是地址，一部分是真正的有效数据。地址一般放在头部，可以更快地提取出来进行识别。B 左侧的网卡（跟 A 相连的）收到后，检查数据头部的地址，发现是给 C 的，不是给自己的。那么它该用哪张网卡来发呢？肯定不能用左侧的网卡了，不然 C 就收不到了。所以左右两张网卡都要有一些标记，表明自己可以通往哪里。这就是地址表。像下面这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 地址 | 网卡     |</span><br><span class="line">| ---- | -------- |</span><br><span class="line">| A    | 左侧网卡 |</span><br><span class="line">| C    | 右侧网卡 |</span><br></pre></td></tr></table></figure></-></-></p>
+<p>这时，B 就知道要用右侧网卡转发数据了，这样 C 就收到了 A 发送的数据。</p>
+<p>三个人唱戏也唱累了，想打麻将了，又拉来了 D。这个时候怎么办？也许我们可以继续串行地连起来：A<->B<->C<->D。但是这样链条有点长，A 可能就不愿意跟 D 玩。还有一种方式像星状一样连接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A&lt;-&gt;B&lt;-&gt;C</span><br><span class="line">    ↕</span><br><span class="line">    D</span><br></pre></td></tr></table></figure></-></-></-></p>
+<p>A 跟 C 和 D 之间的通信，都经过 B。这里 B 就有了 3 张网卡。接下来可能还会有第五个、第六个人加入。B 可能就不太愿意了，凭什么在我身上插满了网卡？那么多数据到我这，真正给我的只有占很少一部分，这种感觉一点也不好。大家觉得也是，的确委屈 B 了。那我们把转发这种功能单独抽取出来如何？</p>
+<h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><p>这种只做网络数据转发的设备，我们就把它叫做交换机。它上面有多个网卡，能够根据地址表转发数据。而 A、B、C 等的网卡地址，专业术语就叫 MAC。MAC 地址由 6 个字节构成，用 16 进制表示就类似 00:00:00:00:00:00。有了 MAC 和交换机，我们就能够让所有接入交换机的计算机彼此进行通信。这就是我们整个网络中的数据链路层，也就是常说的第二层（第一层是物理层，即数字信号或模拟信号传输）。第二层传送的数据包由 MAC 头部和数据块构成。MAC 头部包含发送方的 MAC 地址（来源 MAC）和接收方的 MAC 地址（目的 MAC）。  </p>
+<p>那么在一个有交换机连接的网络里，各个计算机之间如何通信呢？假设有 4 台计算机 A、B、C、D。其中 A 和 B 各有一张网卡，MAC 地址分别是 00:00:00:00:00:AA、00:00:00:00:00:BB。然后它们分别连接到交换机的网卡 1、网卡 2 上。此时交换机里还没有任何地址表，也不需要手动维护地址表。A 要给 B 发送数据，则要填写 B 的 MAC 地址。A 构造数据包，来源 MAC 填写 00:00:00:00:00:AA，目的 MAC 填写 00:00:00:00:00:BB，通过 A 的网卡发送给交换机。交换机从与 A 连接的网卡 1 都收到一个数据包，解析来源 MAC 地址，此时就把 MaC 地址 A 与 网卡 1 写入地址表。此时地址表为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| MAC 地址          | 交换机网卡号 |</span><br><span class="line">| ----------------- | ------------ |</span><br><span class="line">| 00:00:00:00:00:AA | 1            |</span><br></pre></td></tr></table></figure></p>
+<p>接着解析目的 MAC 地址，得到 00:00:00:00:00:BB。但是地址表中没有该地址的记录，交换机不知道该从哪个网卡转发出去数据包。于是交换机就把数据包转发到它自己的所有网卡，除了来源网卡（即网卡 1）。这就叫广播。这样 B、C、D 都会收到该数据包。它们的网卡在收到数据包后，会解析出目地 MAC。其中 C、D 发现跟自己的 MAC 地址不一样，直接丢弃（它要是不丢而是要偷窥怎么办？那么没办法，这就是网络安全地范畴了）。B 发现是发给它的数据包，就接收并处理了。接着 B 回复数据给 A。跟上面的流程类似，交换机收到数据包后会往地址表里增加新的一项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| MAC 地址          | 交换机网卡号 |</span><br><span class="line">| ----------------- | ------------ |</span><br><span class="line">| 00:00:00:00:00:AA | 1            |</span><br><span class="line">| 00:00:00:00:00:BB | 2            |</span><br></pre></td></tr></table></figure></p>
+<p>由于目标地址是 00:00:00:00:00:AA，在交换机地址表里存在，此时就不需要做广播了。</p>
+<p>这样一个小网络就成型了。接下来要接入的人越来越多，数据包也越来越多。我们还想跟遥远的别的人群进行通信。这会不会有问题呢？如果会，又会有哪些问题呢？不妨先想想，后面我们再来看看。</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat-public-account-qrcode.jpg" alt="kiliwalk wechat" style="width: 200px; max-width: 100%;">
+    <div>Also at wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate and/or comment as you prefer</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-shang.jpg" alt="kiliwalk WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>kiliwalk</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="https://blog.kiliwalk.com/network-joking/" title="戏说网络（一）">https://blog.kiliwalk.com/network-joking/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</span> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DevOps/" rel="tag"># DevOps</a>
+          
+            <a href="/tags/Network/" rel="tag"># Network</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/coder-notes-management/" rel="next" title="程序员笔记（知识）管理的一点经验">
+                <i class="fa fa-chevron-left"></i> 程序员笔记（知识）管理的一点经验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -635,8 +692,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -804,6 +870,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缘起"><span class="nav-number">1.</span> <span class="nav-text">缘起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机"><span class="nav-number">2.</span> <span class="nav-text">交换机</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -954,6 +1037,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
