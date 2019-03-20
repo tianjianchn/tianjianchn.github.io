@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>戏说网络（二）</title>
+      <link href="/network-joking2/"/>
+      <url>/network-joking2/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://blog.kiliwalk.com/network-joking/">上一篇</a>我们聊到了从最原始的两个人的连接需求到多个人的连接需求，进而衍生出了 MAC 地址、交换机等网络概念。今天我们来继续瞎聊。</p><h2 id="交换机互联"><a href="#交换机互联" class="headerlink" title="交换机互联"></a>交换机互联</h2><p>当要连接的人越来越多，超过 10 个、20 个、30 个、50 个，我们的一个交换机也没有那么多网口了。聪明的同学肯定想到了，交换机连交换机。每个交换机上连接 10 来个人，来几个交换机就能连接几倍的人数。<a id="more"></a>假设 A、B 接在交换机一的 1、2 网卡上，C、D 接在交换机二的 1、2 网卡上，交换机一和二的 3 号网卡互相连着。则经过若干次广播之后，交换机一的 MAC 地址表会是这样：</p><table><thead><tr><th style="text-align:center">MAC</th><th style="text-align:center">网卡号</th></tr></thead><tbody><tr><td style="text-align:center">A</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">B</td><td style="text-align:center">2</td></tr><tr><td style="text-align:center">C</td><td style="text-align:center">3</td></tr><tr><td style="text-align:center">D</td><td style="text-align:center">3</td></tr></tbody></table><p>交换机二的 MAC 地址表会是这样：</p><table><thead><tr><th style="text-align:center">MAC</th><th style="text-align:center">网卡号</th></tr></thead><tbody><tr><td style="text-align:center">C</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">D</td><td style="text-align:center">2</td></tr><tr><td style="text-align:center">A</td><td style="text-align:center">3</td></tr><tr><td style="text-align:center">B</td><td style="text-align:center">3</td></tr></tbody></table><h2 id="广播风暴"><a href="#广播风暴" class="headerlink" title="广播风暴"></a>广播风暴</h2><p>那么要经过多少次广播呢？广播又会有什么不一样呢？假设当地址表都是空的时候，A 要给 B 发送数据。此时地址表里找不到 B，于是交换机一开始广播。广播的数据也会通过 3 号网卡到达交换机二。交换机二里也是空的，也没有 B，于是又在交换机二里广播。所以 A 给 B 发送数据会导致交换机一、二都发生广播。接下来 A 给 C 发送数据，交换机一地址表没有 C（此时只有 A 和 B），所以又要广播。同样交换机二也要广播。我们可以把所有情况都列下来：</p><table><thead><tr><th style="text-align:center">通信方向</th><th>交换机一广播</th><th>交换机二广播</th><th>通信后交换机一地址表</th><th>通信后交换机二地址表</th></tr></thead><tbody><tr><td style="text-align:center">A-&gt;B</td><td>广播</td><td>广播</td><td>A、B</td><td>A</td></tr><tr><td style="text-align:center">A-&gt;C</td><td>广播</td><td>广播</td><td>A、B、C</td><td>A、C</td></tr><tr><td style="text-align:center">A-&gt;D</td><td>广播</td><td>广播</td><td>A、B、C、D</td><td>A、C、D</td></tr><tr><td style="text-align:center">C-&gt;D</td><td></td><td></td><td>A、B、C、D</td><td>A、C、D</td></tr><tr><td style="text-align:center">C-&gt;B</td><td>广播</td><td>广播</td><td>A、B、C、D</td><td>A、B、C、D</td></tr></tbody></table><p>有没有发现？任何一个交换机的广播，都可能导致连接的另一个交换机也产生广播？广播被逐级放大。互联的交换机越多，在每个交换机产生的广播就越频繁。正常的数据发送通道就被广播给占用了，导致网络不堪重负。</p><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>也许有的同学会有疑问，也就是当地址表中没有对应项时才会发生广播，当每个交换机都有了整个网络的所有地址后，也就不会再有广播了。的确是！但这是建立在网络很稳定的基础上。如果 A 拔了网线换成 E 呢？如果 A 跟 C 交换了位置呢？所以地址表不能一成不变，它必须要适应这种变化。也就是说，我们要在必要的时候刷新它们。最简单的做法，就是定时清除地址表里的记录了。也可以说，地址表仅仅就是一种缓存，并不是永久存储。而且缓存的时间一般不会太长，可能也就几秒到几十秒，避免位置变化导致用户无法通信。</p><h2 id="更大的连接"><a href="#更大的连接" class="headerlink" title="更大的连接"></a>更大的连接</h2><p>这样来看，广播的频率还是比较高。这就限制了通过交换机互联的网络，不宜过大。这样几十人一个交换机网络，就形成一个一个的网络小孤岛。其实也挺好，大家在各自的网络小空间里，悠然自得。但什么事都怕时间二字。时间长了，总会觉得腻的，毕竟外面的世界那么大，谁都想去看看。可我们已经不能用交换机了。怎么办？在找到办法之前，先来看看我们面临的问题：</p><ul><li>不能再任由广播风暴产生了</li><li>小网络圈子里太随意，地址随意填。这样网络对接时，大家使用的地址就可能有冲突</li><li>甚至这个小网络里，大家使用的协议都不一样，有的网络里用的可能并不是 MAC 地址</li><li>将来要连接的网络还会更多，不能任意填写地址了，必须有专门的管理方式</li></ul><p>还有没有其他问题？大家可以先想想。下一篇我们来聊聊解决办法。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DevOps </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DevOps </tag>
+            
+            <tag> Network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>戏说网络（一）</title>
       <link href="/network-joking/"/>
       <url>/network-joking/</url>
