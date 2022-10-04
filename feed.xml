@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Arpit Batra</title>
+  <subtitle>A minimal blog template using eleventy</subtitle>
+  <link href="https://eleventy-blog-mnml.netlify.app" rel="self"/>
+  <link href="https://eleventy-blog-mnml.netlify.app"/>
+  <updated>2022-07-01T00:00:00Z</updated>
+  <id>https://eleventy-blog-mnml.netlify.app</id>
+  <author>
+    <name>Arpit Batra</name>
+    <email>arpitbatra123@gmail.com</email>
+  </author>
+    
+    <entry>
+      <title>怎样才是一个好的开发者</title>
+      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-makes-a-good-developer/"/>
+      <updated>2018-11-23T00:00:00Z</updated>
+      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-makes-a-good-developer/</id>
+      <content type="html">&lt;p&gt;哪些能力是一位优秀的开发人员在技术上应该具备的？这是一个老生常谈的问题。就像很多人简历里所描述的，“解决问题能力强”、”善于学习“、”积极思考“，以及各种“精通某某某”等。毋庸置疑，能做到这些的人的确可以称得上“优秀”。但我总感觉它们就像散落一地的珍珠，缺少那么一根线来串起来。我想要一个具有提纲掣领的评判依据，甚至在这个纲领下，能够从一种更高的高度去引导我们开发人员的发展方向，更好地帮助他们进行技能学习。在这些年的研发、面试、技术管理工作中，我更倾向于从以下三个角度去认识一位开发人员：工具、编码、设计。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2&gt;工具&lt;/h2&gt;
+&lt;p&gt;所谓工具，就是指开发人员对他们用以编程的各种软件、系统，高效率使用、定制化扩展的能力，甚至还包括创造这些辅助软件的能力。马克思曾说，人与动物的区别是制造和使用工具。孔子也有言，工欲善其事，必先利其器。我们不光要使用工具，还要去改进工具，甚至通过工具去制造更加高级的工具。大部分情况下，我们能够做到使用工具，使用一些大众知晓、团队统一的工具。但很多时候，我们对这些工具的使用方式容易形成惯性，对一些没有效率的细节习以为常。即便某些时候，感觉到某些不方便，还是不以为意，不去想是否可以改进。甚至在目前的工具下无法很好、很快地完成某项任务时，我们还会在心里抱怨那些提出这个任务的人。&lt;/p&gt;
+&lt;p&gt;为什么会有这些问题存在呢？我想，可能是我们自己都忽视了，软件开发这项工作，可以说是世界上最具灵活性、扩展性的工作了。它可以以成本非常低廉的方式进行自我进化！在我们开发软件的过程中，可以先开发出额外的软件用以帮助我们的开发工作。如此往复，递归推进，没有哪一个行业具备这样的发展方式。身处其中的我们，很有必要认识到这一点。&lt;/p&gt;
+&lt;p&gt;所以这里把工具放到第一位，是因为它所表现出来的能力水平，往往可以作为一个开发人员是否”觉醒着“的标记。一个对工具没有认识的人，更可能是一个在开发工作中因循守旧、缺乏生机的人。天花板不高，发展潜力有限。而一个能把工具更高效地利用好的人，相信在接下来的编码、设计方面，也能有更好地表现。&lt;/p&gt;
+&lt;p&gt;工具不仅包括跟开发直接相关的部分，如操作系统、IDE、浏览器、命令行、需求管理、版本管理等，还包括日常生活中会使用到的各种软件或服务，如即时通讯、日程管理、邮箱、文件管理、翻译等。除了这些已有的软件或服务外，对一些通用的功能概念也要烂熟于心，如正则表达式、通用文本编辑快捷键等。再者就是对于需要再造工具的场景，要会使用一些脚本语言自行编写，如 Bash、Python、JavaScript。这些脚本语言的运用，自然也需要在编码上下一番功夫。&lt;/p&gt;
+&lt;h2&gt;编码&lt;/h2&gt;
+&lt;p&gt;编码，这大概是开发人员觉得自己最有把握的事情了。编码不就是把功能需求用一门高级语言实现出来嘛！实现的细节不就是各种 if、for、赋值等语句的组装嘛！而且，最终用户可能只关心整个系统的功能是否正常，他们不会关心内部是怎样去实现的。“功能正常”，这既是最高的要求，却往往也是最低的要求。作为开发者，要认识到仅仅让功能正常也许比较简单，但实现时粗糙的编码可能会藏有各种难以发现的问题。这样在某一时刻或情景下，“功能正常”也就无法保证。就像《The Art of Computer Programming》这本书名所表示的那样，如果我们把编程当做一门艺术，抱着雕琢自己作品的态度去面对代码，就不会仅仅只局限于它的外在，而不在乎其内在了。&lt;/p&gt;
+&lt;p&gt;然而在编码这件事上，很多人又容易走极端，极尽所能地去研究那些奇技淫巧，甚至以此作为炫耀的资本。比如利用运算符优先级编写极其复杂的计算表达式、利用语言特性实现极其难以理解的逻辑。每一门语言都有一些犄角旮旯的特性，甚至有所不足或缺陷。但在我们正常的开发工作中，应该尽量去避免触碰这些陷阱。把那些绕脑的、存在歧义的语法与写法通通扔掉。多去研究那些更加现代、安全、人性化的表达方式。&lt;/p&gt;
+&lt;p&gt;好的编码，首先风格就很不一样。一个具有良好目录组织结构的工程、一段具有良好命名的代码，都会让人看起来赏心悦目、心旷神怡。然后就是对语言层面各种语法要运用自如。对各种高级语法的底层实现要抱有一颗求索的心，甚至由此追溯到汇编、机器码乃至计算机硬件。还有安全性、性能、扩展性等各个方面。而后面这些，其实就已经上升到设计层面了。&lt;/p&gt;
+&lt;h2&gt;设计&lt;/h2&gt;
+&lt;p&gt;那什么是设计呢？如果把编码看做”行（xíng）“，那么设计就是”思“。行成于思毁于随，还要三思而后行。”思“，首先要从业务、产品的高度上进行求证：这个功能它的目的是什么？它的工作场景是什么？它有无存在的必要或者改善的可能？其次就是从使用者的角度换位思考：如果我是用户，我需要的是什么？我会如何去做某件事？我完成的效率能否提升？最后就是我们的技术上考量：数据结构该如何去设计？如何应对可能的修改？如何保证程序的健壮性？如何应对高并发的场景？等等，不一而足。良好的设计能够让我们规避代码修改的泥淖、跳过未知缺陷的深渊。&lt;/p&gt;
+&lt;p&gt;希望通过工具、编码、设计这么一根准绳，穿入我们日常的开发工作中，能够让我们时刻保持清醒、明确的研究思路，握紧发展的方向舵。祝愿大家！&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: 怎样才是一个好的开发者&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>微前端实践</title>
+      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/micro-frontend-practice/"/>
+      <updated>2019-01-11T20:40:18Z</updated>
+      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/micro-frontend-practice/</id>
+      <content type="html">&lt;p&gt;在 toB 的前端开发工作中，我们往往就会遇到如下困境：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;工程越来越大，打包越来越慢&lt;/li&gt;
+&lt;li&gt;团队人员多，产品功能复杂，代码冲突频繁、影响面大&lt;/li&gt;
+&lt;li&gt;内心想做 SaaS 产品，但客户总是要做定制化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;不同的团队可能有不同的方法去解决这些问题。在前端开发日新月异、前端工程化蓬勃发展的今天，我想给大家介绍下另一种尝试——微前端。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2&gt;微前端是什么&lt;/h2&gt;
+&lt;p&gt;那什么是微前端？微前端主要是借鉴后端微服务的概念。简单地说，就是将一个巨无霸（Monolith）的前端工程拆分成一个一个的小工程。别小看这些小工程，它们也是“麻雀虽小，五脏俱全”，完全具备独立的开发、运行能力。整个系统就将由这些小工程协同合作，实现所有页面的展示与交互。&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.jpeg&quot; width=&quot;640&quot; height=&quot;243&quot; /&gt;&lt;/picture&gt;&lt;br /&gt;
+可以跟微服务这么对比着去理解：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;微服务&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;微前端&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;一个微服务就是由一组接口构成，接口地址一般是 URL。当微服务收到一个接口的请求时，会进行路由找到相应的逻辑，输出响应内容。&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;一个微前端则是由一组页面构成，页面地址也是 URL。当微前端收到一个页面 URL 的请求时，会进行路由找到相应的组件，渲染页面内容。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;后端微服务会有一个网关，作为单一入口接收所有的客户端接口请求，根据接口 URL 与服务的匹配关系，路由到对应的服务。&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;微前端则会有一个加载器，作为单一入口接收所有页面 URL 的访问，根据页面 URL 与微前端的匹配关系，选择加载对应的微前端，由该微前端进行进行路由响应 URL。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这里要注意跟 iframe 实现页面嵌入机制的区别。微前端没有用到 iframe，它很纯粹地利用 JavaScript、MVVM 等技术来实现页面加载。后面我们将介绍相关的技术实现。&lt;/p&gt;
+&lt;h2&gt;为什么要用微前端&lt;/h2&gt;
+&lt;p&gt;在介绍具体的改造方式之前，我想跟大家先说明下我们当时面临的问题，以及改造后的对比，以便大家以此为对照，评判或决定使用。主要包括打包速度、页面加载速度、多人多地协作、SaaS 产品定制化、产品拆分这几个角度。&lt;/p&gt;
+&lt;p&gt;首先是打包速度。在 6 个月前，我们的 B 端工程那会儿还是一个 Monolith。当时已经有 20 多个依赖、60 多个公共组件、200 多个页面，对接 700 多个接口。我们使用了 Webpack 2，并启用 DLL Plugin、HappyPack 4。在我的个人主机上使用 4 线程编译，大概要 5 分钟。而如果不拆分，算下来现在我们已经有近 400 个页面，对接 1000 多个接口。&lt;br /&gt;
+这个时间意味着什么？它不仅会耽误我们开发人员的时间，还会影响整个团队的效率。上线时，在 Docker、CI 等环境下，耗时还会被延长。如果部署后出几个 Bug，要线上立即修复，那就不知道要熬到几点了。&lt;br /&gt;
+在使用微前端改造后，目前我们已经有 26 个微前端工程，平均打包时间在 30-45 秒之间（注意，这里还没有应用 DLL + HappyPack）。&lt;/p&gt;
+&lt;p&gt;页面加载速度其实影响到并不是很大，因为经过 CDN、gzip 后，资源的大小还能接受。这里只是给大家看一些直观的数据变化。6 个月前，打包生成的 app.js 有 5MB（gzip 后 1MB），vendor.js 有 2MB（gzip 后 700KB），app.css 有 1.5MB（gzip 后 250KB）。这样首屏大概要传输 2MB 的内容。拆分后，目前首屏只需要传输 800KB 左右。&lt;/p&gt;
+&lt;p&gt;在协作上，我们在全国有三个地方的前端团队，这么多人在同一个工程里开发，遭遇代码冲突的概率会很频繁，而且冲突的影响面比较大。如果代码中出现问题，导致 CI 失败，所有其他人的代码提交与更新也都会被阻塞。使用微前端后，这样的风险就平摊到各个工程上去了。&lt;/p&gt;
+&lt;p&gt;再者就是定制化了。我们做的额是一款 toB 的产品，做成 SaaS 标准版产品大概是所有从业者的愿望。但整体市场环境与产品功能所限，经常要面临一些客户要求做本地化与定制化的要求。本地化就会有代码安全方面的考量，最好是不给客户源代码，最差则是只给客户购买功能的源代码。而定制化从易到难则可以分为独立新模块、改造现有模块、替换现有模块。&lt;br /&gt;
+通过微前端技术，我们可以很容易达到本地化代码安全的下限——只给客户他所购买的模块的前端源码。定制化里最简单的独立新模块也变得简单：交付团队增加一个新的微前端工程即可，不需要揉进现有研发工程中，不占用研发团队资源。而定制化中的改造现有模块也可以比较好地实现：比如说某个标准版的页面中需要增加一个面板，则可以通过一个新的微前端工程，同样响应该页面的 URL（当然要控制好顺序），在页面的恰当位置插入一个新的 DOM 节点即可。&lt;/p&gt;
+&lt;p&gt;最后就是产品拆分方面的考量了。我们的产品比较大，有几块功能比较独立、有特色。如果说将来需要独立成一个子产品，有微前端拆分作为铺垫，腾挪组合也会变得更加容易些。&lt;/p&gt;
+&lt;h2&gt;其他目标&lt;/h2&gt;
+&lt;p&gt;有了以上的一些原因与诉求，在决定进行微前端改造前，还需要设定一些额外的小目标：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不能对现有的前端开发方式带来太大变化，至少要有平滑过渡的机制。&lt;/li&gt;
+&lt;li&gt;每个为前端工程都要求可以独立运行，至少在本地开发时要能做到。&lt;/li&gt;
+&lt;li&gt;微前端在加载时，要实现预加载，并可以自由调整预加载顺序，甚至是根据用户的偏好来实现智能化、个性化的加载顺序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;如何改造现有工程&lt;/h2&gt;
+&lt;p&gt;“Talk is cheap，show me the code“。下面就让我们一起来看看具体的改造吧！我们的微前端工程可以划分为 portal 工程、业务工程、common 工程这几类。&lt;/p&gt;
+&lt;h3&gt;portal 工程&lt;/h3&gt;
+&lt;p&gt;portal，顾名思义，就是入口。这也就是上面所说的微前端加载器。当用户打开浏览器，首次进入我们的页面时，不管是什么 URL，首先加载的就是 portal。portal 里会配置所有业务工程的地址、匹配哪些 URL、需要加载哪些资源。如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;// 业务工程的名称&lt;/span&gt;
+&lt;span class=&quot;token literal-property property&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// URL 匹配模式&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;matchUrlHash&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;^/customer&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 微前端地址&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;http://localhost:8101/mfe-customer/index.html&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 资源匹配模式&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;resourcePatterns&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;/app.*.css$&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;/vendor.*.css$&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;/manifest.*.js$&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;/vendor.*.js$&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;/app.*.js$&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;portal 会定时、异步、并发地下载业务工程的资源，并将它们进行注册，此时并不会加载这些业务工程。这里之所以要业务工程的地址（target）、资源（resourcePatterns），是为了加载时确定地知道其所包含的 app.js、vendor.js、app.css 等资源的路径。因为业务工程每次有变更，app.js 等资源路径上都会带有新的文件内容哈希值（Hash），导致路径不可预测。而它的 index.html 的路径是固定的。我们读取该 HTML，解析其内容，通过正则就能匹配到 app.js 等资源的路径。&lt;/p&gt;
+&lt;p&gt;portal 在运行时，会监听 URL 变化。目前我们只支持 URL Hash（如 #/customer）。当 Hash 发生变更时，匹配到业务工程，然后执行卸载、加载的工作。这个机制主要是利用 &lt;code&gt;single-spa&lt;/code&gt; 来实现，但原理就是这么简单。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; registerApplication &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;single-spa&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;registerApplication&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&#39;customer&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// 下载微前端工程，获取三个函数钩子：bootstrap、mount、unmount&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; html &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mfeConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; cssUrls&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; jsUrls &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;html&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; mfeConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;resourcePatterns&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;loadCss&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cssUrls&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;loadJs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jsUrls&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; windows&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;mfe:customer&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// 对当前浏览器 URL Hash 进行匹配，如果匹配（返回 true），则加载该微前端（调用 mount）；否则卸载（调用 unmount）&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hash&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; mfeConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;matchUrlHash&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  mfeConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;customProps
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;业务工程&lt;/h3&gt;
+&lt;p&gt;业务工程就是普通的微前端工程，一般一个模块一个工程。业务工程要扮演两个角色，一个是可独立运行的前端工程，一个是受 portal 控制的运行时。前者主要用于我们本地开发，后者则是线上集成时使用。在独立运行时，它跟原来的前端工程没有什么区别。以 Vue 工程为例，照样使用 &lt;code&gt;new Vue({el: &#39;#app&#39;})&lt;/code&gt; 来启动、渲染页面。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;#app&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  i18n&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  router&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  store&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;&amp;lt;App/&gt;&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; App &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;而当受控运行时，则是利用 UMD 方式输出几个钩子函数，包括初始化、加载、卸载。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;IS_IN_MFE&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 独立运行时&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 受控运行时&lt;/span&gt;
+    module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;bootstrap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 注册时执行&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;mount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;customProps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 加载时执行&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            instance &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;unmount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 卸载时执行&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            instance&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$destroy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;线上环境的 Webpack 配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token literal-property property&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;libraryTarget&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;umd&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;mfe:customer&#39;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;而区分是否受控，则可以通过判断一个全局变量来实现。如 &lt;code&gt;window.IS_IN_MFE&lt;/code&gt;，portal 工程在运行时会将其设置为 &lt;code&gt;true&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;为了支持本地多个工程同时开发，我们需要为每个微前端工程指定一个确定的、独占的端口号。比如从 8100 开始，逐一递增。同时，为了支持线上部署，我们还需要给每个微前端工程指定一个确定的、独占的基础路径（前缀）。这样相同域名下可以用不同路径进行独立访问。路径统一以 &lt;code&gt;/mfe-&lt;/code&gt; 开头，如 &lt;code&gt;/mfe-customer&lt;/code&gt;。这也就是上面 portal 里业务工程的配置示例里所展现的那样。&lt;/p&gt;
+&lt;h3&gt;特殊业务工程：mfe-navs&lt;/h3&gt;
+&lt;p&gt;我们产品的页面结构分为顶部栏、侧边栏、中间内容区三大块。顶部栏和侧边栏在页面跳转过程中，基本上保持不变。所以我们也将它们剥离出来作为一个独立的微前端业务工程，叫做 &lt;code&gt;mfe-navs&lt;/code&gt;。它会匹配所有的 URL，也就是说访问任意 URL 时，都会加载它，而且还要保证先加载它。当它加载完毕后，会在页面内提供一个中间内容区的锚点 DOM（&lt;code&gt;#app&lt;/code&gt;：），供其他业务工程加载时挂载。&lt;/p&gt;
+&lt;h3&gt;Common 工程&lt;/h3&gt;
+&lt;p&gt;上面可以看到，每一个业务工程都是一个独立的前端工程，所以里面会有一些相同的依赖，如 Vue、moment、lodash 等。如果将这些内容都打包到各自的 vendor.js 里，则势必会导致代码冗余太多，浏览器运行内存压力增大。我们把这些公共依赖、公共组件、CSS、Fonts 等都放到一个工程里，由该工程进行打包，将依赖、组件 export，并以 UMD 的方式注入到全局。&lt;/p&gt;
+&lt;p&gt;main.js：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Vue &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;vue&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 公共依赖&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; VueRouter &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;vue-router&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; VueI18n &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;vue-i18n&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;@/css/icon-font/iconfont.css&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ContentSelector &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;@/components/ContentSelector&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 公共组件&lt;/span&gt;
+
+Vue&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;VueI18n&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 大家都要这么做，我们就代劳吧！&lt;/span&gt;
+
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;vue&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Vue&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string-property property&quot;&gt;&#39;vue-router&#39;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; VueRouter&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string-property property&quot;&gt;&#39;content-selector&#39;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ContentSelector&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Webpack 配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token literal-property property&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;libraryTarget&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;umd&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;mfe:common&#39;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;业务工程则通过 Webpack 外部依赖（external）的方式引入到工程中。这样业务工程打包时就不会包含这些公共代码了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; externalModules &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;vue&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;vue-router&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;content-selector&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// webpack 配置项&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+  &lt;span class=&quot;token function-variable function&quot;&gt;externals&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; callback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;externalModules&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;root window[&quot;mfe:common&quot;][&quot;&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; request &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;&quot;]&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;结语&lt;/h2&gt;
+&lt;p&gt;以上就是我们微前端改造与实践方面的一些经验。前路漫漫，这里面还存在很多待完善的地方，如 History 模式支持、i18n 更好地集成、各个业务工程的加载顺序优化及个性化等。除了这些纯粹技术上的探索，在拥有微前端、微服务这些架构的基础上，团队也可以考虑进行垂直拆分：一个小组独立负责一块业务，它有自己的微前端工程和微服务工程。从技术管理到人员管理，将它们糅合在一起统一考虑，这也是我们软件工程的探索方向。期待这些能够对大家带来一些思考和帮助！&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: 微前端实践&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>NodeJS Docker 打包优化</title>
+      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/nodejs-docker-optimize/"/>
+      <updated>2019-01-23T00:00:00Z</updated>
+      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/nodejs-docker-optimize/</id>
+      <content type="html">&lt;p&gt;最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 &lt;code&gt;socket hang up&lt;/code&gt; 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。&lt;/p&gt;
+&lt;p&gt;回到正题。在确认没有其他附带问题后，在试点的基础上，又增加了一些新的目标。总的目标大概如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持优雅停机，要求 Node 进程能够接收到 SIGTERM 软终止信号&lt;/li&gt;
+&lt;li&gt;提升打包速度，充分利用 Docker Layer 缓存机制，降低 yarn install、node_modules 拷贝等高 IO 动作的运行频率&lt;/li&gt;
+&lt;li&gt;保证源代码安全，不要将源代码打包到镜像里&lt;/li&gt;
+&lt;li&gt;尽可能降低最终镜像大小，不要包含不必要的文件（如 node_modules 中的 devDependencies）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面从各个目标一一介绍下我们的优化实践之路。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg&quot; width=&quot;640&quot; height=&quot;285&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2&gt;基础镜像设置&lt;/h2&gt;
+&lt;p&gt;由于之前的基础镜像使用的是 &lt;code&gt;FROM node:6&lt;/code&gt;，只有 major version，没有指定 minor version、patch version。当该基础镜像 minor 或 patch 版本更新后，如果本地的镜像缓存也被清除了，那么打包就会使用新版本的基础镜像。这也是上面不经意升级到 node 6.15.0 的原因。所以这里我们限定了基础镜像的全版本：&lt;code&gt;FROM node:6.16.0&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;我们的产品主要在国内使用，运维人员也都是在国内。为了更方便查看日志中的时间、方便程序中的日期计算，把时区调整为北京时区（即东八区）：&lt;code&gt;RUN rm /etc/localtime &amp;amp;&amp;amp; echo &amp;quot;Asia/Shanghai&amp;quot; &amp;gt; /etc/timezone &amp;amp;&amp;amp; dpkg-reconfigure -f noninteractive tzdata&lt;/code&gt;。注意，Debian Stretch 版本后需要 &lt;code&gt;rm /etc/localtime&lt;/code&gt;，否则时区修改可能无法生效（被替换回原值）。&lt;/p&gt;
+&lt;p&gt;最后设置镜像的工作目录：&lt;code&gt;WORKDIR /app&lt;/code&gt;。这样，我们新的基础镜像就完成了。&lt;/p&gt;
+&lt;h2&gt;支持优雅停机&lt;/h2&gt;
+&lt;p&gt;优雅停机（Gracefully Shutdown），就是当应用（进程）要被关闭时，首先会被发送一个软终止信号。应用在收到这个信号后，执行清理工作，然后自行退出。如果在指定的时间内没有自行退出，则会被强制关闭——这自然就不优雅了。这个软终止信号一般就是指 SIGTERM。NodeJS 进程默认会对 SIGTERM 信号进行响应，执行进程退出。但是默认的监听程序并不会执行清理工作。我们需要显式监听该信号，并在清理完毕后执行 &lt;code&gt;process.exit(0)&lt;/code&gt; 以退出进程。&lt;/p&gt;
+&lt;p&gt;然而，在 Docker 容器里实现优雅停机会有一些新的问题需要面对。当使用 &lt;code&gt;docker stop&lt;/code&gt; 停止一个容器时，docker 会首先发送一个 SIGTERM 信号给容器内的 PID=1 进程，也就是常说的 init 进程。如果 PID=1 进程没有在规定时间（一般 10 秒）内退出，则 docker 会发送 SIGKILL 信号强制退出容器内的所有进程。PID=1 进程比较特殊，在 linux 下，它会忽略所有默认的信号监听程序，也就是说收到 SIGTERM 默认不会退出。&lt;!-- 参考：https://hackernoon.com/my-process-became-pid-1-and-now-signals-behave-strangely-b05c52cc551c --&gt;所以，我们的 PID=1 进程要求能显式监听 SIGTERM 并执行后续动作。&lt;/p&gt;
+&lt;p&gt;然而，当我们使用 shell form 的 ENTRYPOINT 或 CMD 指令时——如 &lt;code&gt;CMD npm run start&lt;/code&gt;，Docker 容器会默认启用一个 Shell 来运行后面的指令。此时 PID=1 进程是 &lt;code&gt;/bin/sh&lt;/code&gt;，完整的运行命令是 &lt;code&gt;/bin/sh -c &#39;npm run start&#39;&lt;/code&gt;。当 sh 收到 SIGTERM 信号时，它自身并不会退出。因为 sh 并没有显式监听 SIGTERM，默认的信号处理器被忽略了。自然 sh 内部也不会把信号转发给子进程。&lt;!-- 参考：https://github.com/nodejs/node/issues/2098 --&gt;最后只会超时，继而被 SIGKILL 强制关闭。&lt;/p&gt;
+&lt;p&gt;Docker 推荐我们用 exec form 的 ENTRYPOINT 或 CMD 指令，如 &lt;code&gt;CMD [&amp;quot;npm&amp;quot;, &amp;quot;run&amp;quot;, &amp;quot;start&amp;quot;]&lt;/code&gt;。这样 PID=1 进程就是 npm 了，不再有 sh 进程了。但继续用 npm scripts 会不会还有问题？这就依赖 Host 环境了。我们来看一下 npm scripts 的运行原理。以 &lt;code&gt;npm run start&lt;/code&gt; 为例，在运行时，首先会起一个 npm 进程。npm 进程会 &lt;code&gt;spawn()&lt;/code&gt; 一个 &lt;code&gt;/bin/sh&lt;/code&gt; 进程（&lt;code&gt;/bin/sh -c&lt;/code&gt;），执行 &lt;code&gt;start&lt;/code&gt; script 的内容（通常就是 &lt;code&gt;node xxx.js&lt;/code&gt;）。这样就形成了三个进程构成的进程树，分别是 npm、sh、node。当 npm 进程收到 SIGTERM 信号时，它内部已经监听 SIGTERM，其逻辑就是转发给子进程，也就是 sh 进程。sh 进程收到信号后退出，接着 npm 也退出了。但是，剩下的 node 进程并没有收到信号，它被忽略了，继而被 Docker 直接 SIGKILL。看起来完全不行嘛，那为什么说依赖 Host 环境呢？因为中间这个 sh 进程在 bash 里（&lt;code&gt;/bin/sh&lt;/code&gt; 指向 bash），是有可能不存在的。是不是很神奇？当使用 &lt;code&gt;-c&lt;/code&gt; 运行命令时，bash 会判断是否需要 &lt;code&gt;fork()&lt;/code&gt; 当前进程以产生一个新的进程来执行该命令。&lt;!-- 参考：https://stackoverflow.com/questions/44576773/bash-swallowing-sub-shell-children-process-when-executing-a-single-command --&gt;当 &lt;code&gt;-c&lt;/code&gt; 命令不包含复杂的结构，如多个命令连接（&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;、&lt;code&gt;||&lt;/code&gt;）、重定向（&lt;code&gt;&amp;gt;&lt;/code&gt;）等情况时，bash 不会 &lt;code&gt;fork()&lt;/code&gt; 出新的子进程，而是直接使用 &lt;code&gt;exec()&lt;/code&gt; 替换当前进程。而 &lt;code&gt;node:6&lt;/code&gt; Docker 镜像所用的 Debian Stretch 操作系统，&lt;code&gt;/bin/sh&lt;/code&gt; 默认指向的是 dash，而不是 bash。所以在这里，我们最好也不要用 npm scripts。&lt;/p&gt;
+&lt;p&gt;那我们就只剩一个选项了：直接将 node 作为 PID=1 的进程，如 &lt;code&gt;CMD [&amp;quot;node&amp;quot;, &amp;quot;dist/server.js&amp;quot;]&lt;/code&gt;。虽然说 PID=1 的进程还要处理僵尸进程（Zombie Process），但我们这里基本上不会有，也就可以不考虑了。&lt;!-- 参考：https://engineeringblog.yelp.com/2016/01/dumb-init-an-init-for-docker.html --&gt;&lt;/p&gt;
+&lt;h2&gt;yarn install 优化&lt;/h2&gt;
+&lt;p&gt;这方面最基础的一个优化就是利用 Docker Layer 缓存特性，降低 yarn install 的发生次数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;# 在 package.json、yarn.lock 没有变化的情况下，后面的 yarn install 会直接复用上次打包的缓存结果&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; package.json yarn.lock&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; yarn install --frozen-lockfile&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;要注意的一个问题是，yarn 会在其他位置建立依赖缓存（cache）。可以用 &lt;code&gt;yarn cache clean&lt;/code&gt; 来移除缓存。不过我们这里并没有用，因为后面的改造方式让我们不需要它了。&lt;/p&gt;
+&lt;p&gt;我们的工程依赖里有私有 Git 仓库，如 &lt;code&gt;&amp;quot;js-util&amp;quot;: &amp;quot;git+ssh://git@gitlab.xxx.com:yyy/library/js-util.git#v2&amp;quot;&lt;/code&gt;。我们原先的 CI 过程，是在宿主机上先安装依赖，然后把整个 node_modules 拷贝到 Docker Server 端中进行打包。宿主机有 SSH Key（一般就是 Gitlab Deploy Key，注意不要加密码，否则无法在 non-interactive shell 下使用），下载私有 Git 仓库不会有权限问题，但是就无法利用上述的缓存优化了。鱼和熊掌不可兼得，那就选中间。如果我们把 SSH Key 也打包到镜像里呢？那就太不安全了。那把它从镜像里又删除呢？可惜还是有安全隐患——Docker 的 Union FS 机制会导致这些文件还存在于原来的 Layer 里。&lt;/p&gt;
+&lt;p&gt;解决这个问题没有特别完美的方法。可以尝试提供一个内网的 SSH Key 在线下载地址，使用一个 RUN 指令完成 wget、ssh-add、yarn install、rm 等一系列操作，保证没有任何一个 Layer 会留存 SSH Key。而我们这里采用的是 Multi Stage Build——多阶段打包机制。在阶段一，复制 SSH Key，获取 Gitlab 服务器的公钥，并执行 yarn install。在阶段二，把阶段一打包出来的内容复制过来，注意这里不要复制 SSH Key。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;# 构建时需要执行的指令&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; node:6.16.0 &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; build&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;WORKDIR&lt;/span&gt; /app&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; .ssh /root/.ssh/&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; chmod 600 /root/.ssh/id_rsa &amp;amp;&amp;amp; ssh-keyscan gitlab.xxx.com &gt; /root/.ssh/known_hosts&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; package.json yarn.lock ./&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; yarn install --frozen-lockfile&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 运行时需要执行的指令&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; node:6.16.0 &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; runtime&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;WORKDIR&lt;/span&gt; /app&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;token options&quot;&gt;&lt;span class=&quot;token property&quot;&gt;--from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;build&lt;/span&gt;&lt;/span&gt; /app/node_modules /app/node_modules/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样，阶段二打包出来的最终镜像，就没有 SSH Key 了。至于阶段一的 .ssh 目录，可以在调用 &lt;code&gt;docker build&lt;/code&gt; 之前，从 &lt;code&gt;$HOME/.ssh/id_rsa&lt;/code&gt; 上复制到当前目录，可千万别上传到 Git 仓库哦。&lt;/p&gt;
+&lt;h2&gt;打包速度优化&lt;/h2&gt;
+&lt;p&gt;在充分利用 Docker Layer 缓存机制的基础上，我们需要把那些不容易产生变更的指令放到上面、把不容易产生变更的部分剥离出来。像 WORKDIR、CMD、ENV、还有一些环境配置指令，都可以放到前面。把文件复制过程中，不容易产生变更的文件单独抽离出来，形成一个新的 COPY 指令，尽量避免 &lt;code&gt;COPY . /p/a/t/h/&lt;/code&gt; 这样的复制方式。说到 COPY，还要注意其跟 Linux &lt;code&gt;cp&lt;/code&gt; 命令有一些不一样的地方。当复制一个目录时，COPY 是将这个目录下的所有文件复制到目标文件夹下，而不是把这个目录自身复制到目标文件夹中。&lt;/p&gt;
+&lt;h2&gt;源代码安全&lt;/h2&gt;
+&lt;p&gt;在最终的镜像里，最好不要包括源代码，而只有 Transpile、Uglify 甚至是 Minify 后的代码。我们使用 &lt;code&gt;npm run build&lt;/code&gt; 来做这些转换工作，它会把 src 源代码目录，转换到 dist 目录。使用上面的多阶段打包，只要在第二阶段 COPY dist 目录即可。&lt;/p&gt;
+&lt;h2&gt;镜像大小优化&lt;/h2&gt;
+&lt;p&gt;最终打包出来的镜像大小，除了基础镜像 &lt;code&gt;node:6.16.0&lt;/code&gt; 占用大部分空间外，剩下的主要就是 &lt;code&gt;node_modules&lt;/code&gt; 目录了——大概有 200-300MB。我们可以考虑把 &lt;code&gt;devDependencies&lt;/code&gt; 从 node_modules 中删除来减少大小。再增加一条指令：&lt;code&gt;RUN yarn install --production&lt;/code&gt; 即可。然而我们并没有这样做，主要有这两个原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我们在注册了 &lt;code&gt;postinstall&lt;/code&gt; npm scripts，它依赖一些 &lt;code&gt;devDpendencies&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;由于还有 &lt;code&gt;npm run build&lt;/code&gt;，它所依赖的 babel 都是 &lt;code&gt;devDpendencies&lt;/code&gt;。由于它必须在 COPY 源代码之后运行，意味着只要源代码有变化，&lt;code&gt;npm run build&lt;/code&gt; 就会被执行。那还在它后面的 &lt;code&gt;yarn install --production&lt;/code&gt; 自然也会被再次执行，可能就会影响打包效率了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;上下文目录优化&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;docker build -t xxx .&lt;/code&gt;，最后的那个 &lt;code&gt;.&lt;/code&gt; 就表示上下文目录位置（&lt;code&gt;.&lt;/code&gt; 就是当前目录）。docker build 是在 go 语言写的一个本地服务端上运行。所以一开始需要把上下文目录打包发送到服务端，然后在服务端内解压，再运行各个指令，生成最终的镜像。这样我们的上下文目录就不能太大，不然 IO 吃不消。我们可以用 .dockerignore 文件来限制上下文目录只包含哪些文件。为了得到一个比较通用的 .dockerignore 文件，我们主要使用排除法规则。排除那些容器运行时不需要的文件；排除那些不会在多阶段打包过程中使用的中间文件，如 node_modules、dist。示例 .dockerignore 文件如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*
+!package.json
+!yarn.lock
+!src
+!bin
+!test
+!gulpfile.js
+!.babel*
+!.eslint*
+!.nycrc
+!.ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;最终的 Dockerfile&lt;/h2&gt;
+&lt;p&gt;把上面各个改造结合在一起，我们的 Dockerfile 就出炉啦！还有一些小细节，期待你自己的发现哦。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;############################################&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#                 构建阶段&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;############################################&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; node:6.16.0 &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; build&lt;/span&gt;
+
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;WORKDIR&lt;/span&gt; /app&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 运行 docker build 前需要把 SSH Keys 复制到当前目录下的 .ssh 中，并在 build 完后删除&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; .ssh /root/.ssh/&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; chmod 600 /root/.ssh/id_rsa &amp;amp;&amp;amp; ssh-keyscan gitlab.xxx.com &gt; /root/.ssh/known_hosts&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 在 package.json、yarn.lock 没有变化的情况下，yarn install 会复用上次的缓存结果&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; package.json yarn.lock ./&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; yarn install --frozen-lockfile&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 注意使用 .dockerignore 来屏蔽掉不必要的文件&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; . ./&lt;/span&gt;
+
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; npm run lint &amp;amp;&amp;amp; npm run build &amp;amp;&amp;amp; npm run test&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;############################################&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#        运行时，也即最终的 Image 内容&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;############################################&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; node:6.16.0 &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; runtime&lt;/span&gt;
+
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;WORKDIR&lt;/span&gt; /app&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 第一行，设置时区为北京时区（东八区）&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# 第二行，解决 npm log 日志中掺杂命令行控制符导致日志解析、匹配困难的问题&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; rm /etc/localtime &amp;amp;&amp;amp; echo &lt;span class=&quot;token string&quot;&gt;&quot;Asia/Shanghai&quot;&lt;/span&gt; &gt; /etc/timezone &amp;amp;&amp;amp; dpkg-reconfigure -f noninteractive tzdata &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+  &amp;amp;&amp;amp; npm config set color false&lt;/span&gt;
+
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;ENV&lt;/span&gt; NODE_ENV=&lt;span class=&quot;token string&quot;&gt;&quot;production&quot;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 不要使用 npm，也不要用 shell form，避免 node 进程无法收到 SIGTERM 信号。&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;ENTRYPOINT&lt;/span&gt; [&lt;span class=&quot;token string&quot;&gt;&quot;node&quot;&lt;/span&gt;]&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CMD&lt;/span&gt; [&lt;span class=&quot;token string&quot;&gt;&quot;dist/server.js&quot;&lt;/span&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 运行时需要的文件&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;token options&quot;&gt;&lt;span class=&quot;token property&quot;&gt;--from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;build&lt;/span&gt;&lt;/span&gt; /app/package.json /app/yarn.lock ./&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;token options&quot;&gt;&lt;span class=&quot;token property&quot;&gt;--from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;build&lt;/span&gt;&lt;/span&gt; /app/node_modules /app/node_modules/&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;COPY&lt;/span&gt; &lt;span class=&quot;token options&quot;&gt;&lt;span class=&quot;token property&quot;&gt;--from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;build&lt;/span&gt;&lt;/span&gt; /app/dist /app/dist/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: NodeJS Docker 打包优化&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>在 Visual Studio Code JavaScript 工程中使用 JSDoc</title>
+      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/"/>
+      <updated>2019-03-09T00:00:00Z</updated>
+      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/</id>
+      <content type="html">&lt;p&gt;不使用 TS 是否也能做到类型提示和校验？在 VSCode 中我们可以通过 &lt;a href=&quot;http://usejsdoc.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JSDoc&lt;/a&gt; 来实现。&lt;/p&gt;
+&lt;h2&gt;JSDoc&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg&quot; width=&quot;640&quot; height=&quot;534&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;JSDoc 本身是用来对方法、变量、模块、类等进行结构化文档注释用的。它本身还有一个对应的工具，扫描所有源代码文件里的 JSDoc 注释并生成 API 文档，就像 JavaDoc 一样。&lt;/p&gt;
+&lt;p&gt;但是在 VSCode 里，它被赋予了更加强大的地位。它不仅仅是一个文档说明，还可以用来做智能提示（IntelliSense），而且可以做到函数的参数级别。甚至还能做参数类型、值类型的校验！也许你会想到 TypeScript 的 definition 文件（.d.ts）。是的，它也有参数类型校验，但是它没有参数说明。如果要参数说明，还是要写 JSDoc。与其多写一遍 definition，不如直接使用 JavaScript + JSDoc 更加方便。当然这一切都是依赖于 TypeScript，我们不能因此去否定它。&lt;/p&gt;
+&lt;p&gt;我们来看看 JSDoc 所带来的强大提示功能。&lt;br /&gt;
+&lt;img src=&quot;https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-intelli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;从上面的动图可以看到，函数的注释、参数的注释、参数注释的输入跟随都有了。&lt;/p&gt;
+&lt;h2&gt;参数、类型校验&lt;/h2&gt;
+&lt;p&gt;文档提示只是第一步。我们知道 JavaScript 是动态类型、弱类型的语言。变量没有类型声明，运行时还可以随意变更值类型，还有很多内置的自动类型转换场景。虽然这是吸引我的很大的一方面，不过在团队协作里，最好还是能够做到约束、检查一下。VSCode 就为我们提供了这么一个能力。&lt;/p&gt;
+&lt;p&gt;首先我们要打开 Setting 中的 JavaScript 校验：&lt;code&gt;&amp;quot;javascript.validate.enable&amp;quot;: true&lt;/code&gt;。然后在 jsconfig.json 中配置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+  &amp;quot;compilerOptions&amp;quot;: {
+    &amp;quot;checkJs&amp;quot;: true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们再来看看：&lt;br /&gt;
+&lt;img src=&quot;https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-check.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;是不是很不错？VSCode 帮我们做了必填参数、参数类型、返回值类型等各项检测与校验。这样我们在写代码的时候，一方面能够看到文档注释，一方面又能随时知道调用方式是否错误，快哉！&lt;/p&gt;
+&lt;h2&gt;对象解构形式参数&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;/**
+ * set redis key
+ * @author kiliwalk
+ * @param {Object} params the parameters
+ * @param {String} params.key redis key name
+ * @param {String} params.value redis key value
+ * @param {String} [params.expire] redis key expire time(seconds)
+ */&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; expire &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如上示例，我们使用了 Object Destruction 定义了方法的参数。对应的，JSDoc 里可以通过 &lt;code&gt;.&lt;/code&gt; 来为对象内部的属性提供文档。来看看使用时的效果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-object-destr.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;这里有一个地方要注意，参数文档那一个小窗口，如果一开始没有显示，则要再按一次 &lt;code&gt;ctrl+space&lt;/code&gt;（macOS），也就是额外触发一次智能提示。这个在 VSCode 里叫“toggleSuggestionDetails”（可以在快捷键设置里找到它）。&lt;/p&gt;
+&lt;p&gt;VSCode 里还支持更加复杂的 JSDoc 类型声明。在涉及到复杂对象的输入、输出时，我们可能就需要用到了。有兴趣的同学可以去这里看看：&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;希望通过这几篇文章，能够改善大家日常的 JavaScript 开发体验。这里面还有很多东西值得我们去探索。&lt;/p&gt;
+&lt;p&gt;现在，有没有感觉在 VSCode 里开发 JavaScript 完全是另一番体验？&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: 在 Visual Studio Code JavaScript 工程中使用 JSDoc&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>What Kind Of Code Is Good Code</title>
+      <link href="https://eleventy-blog-mnml.netlify.app/en/posts/what-kind-of-code-is-a-good-code/"/>
+      <updated>2022-07-01T00:00:00Z</updated>
+      <id>https://eleventy-blog-mnml.netlify.app/en/posts/what-kind-of-code-is-a-good-code/</id>
+      <content type="html">&lt;p&gt;After so many years of coding, from ignorance to freewheel, from trying every languages to focusing serval, from small workshops to large companies, I have got a lot of experience and feeling. If being asked what kind of code is good code, there are thousand Hamlets in thousand people’s eyes.&lt;/p&gt;
+&lt;p&gt;For example, it’s ok for the boss when the code could effectively and quickly support business expansion. For cyber celebrities, they might like the code which could shock and dazzle people. We will limit our discussion here to the development and maintaining in a team or independent developer.&lt;/p&gt;
+&lt;h2&gt;What is bad code?&lt;/h2&gt;
+&lt;p&gt;It might be a bit confusing to directly say what good code is, but I believe we all have a lot of experience when it comes to complaining about what code is not good.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No documents, no comments; or even if there are, they are not updated; or too much to catch.&lt;/li&gt;
+&lt;li&gt;No type constraints, no unit tests, no idea how robust it is under boundary conditions.&lt;/li&gt;
+&lt;li&gt;Abuse of design patterns, deliberate use of un-common syntax and odd techniques.&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those negative lists could go as long as we can make. We could try to avoid these cases, but they are so detailed and trivial that it’s hard to remember and practice them well. It is necessary to catch the most important points.&lt;/p&gt;
+&lt;h2&gt;Good code is like good document&lt;/h2&gt;
+&lt;p&gt;I’ve always had an assertion that &lt;strong&gt;&lt;em&gt;people who write bad code are much possible not being able to write good document either&lt;/em&gt;&lt;/strong&gt;. The reverse is also true.&lt;/p&gt;
+&lt;p&gt;Why? Code and document are both present to other people, and most of the time they are read more than they are written. That is to say, it may be written once, but throughout its life cycle, it will be read countless times, and will be read by countless people. A good document is definitely more for its reader, rather than the author with his passionate output and solitary appreciation. We should take more attention on the structure and words for the reader - reader might have different levels and different backgrounds.&lt;/p&gt;
+&lt;p&gt;Same for code. We are in a team at most time, our code needs to be reviewed and even maintained by our colleagues. Even as a individual developer, we could face the code written before half a year or much more time. The code which could be understood quickly and accurately is said to be the right good code.&lt;/p&gt;
+&lt;p&gt;That’s the &lt;strong&gt;&lt;em&gt;communicability&lt;/em&gt;&lt;/strong&gt;, or maintainability in a professional way. I’d like taking this as one of the most important, if not the only, rule for good code. To get it, the following points are especially important.&lt;/p&gt;
+&lt;h2&gt;Technical design and document first&lt;/h2&gt;
+&lt;p&gt;As the saying goes, think twice before you act. If you don’t go through a thinking process and write where you want, the code will often be disorganized, unsafe and unreliable.&lt;/p&gt;
+&lt;p&gt;Technical design is a process of thinking. Through writing the design document, we could clarify and understand the background, goals and metrics, competing products, and possible implementation paths and their scope of impact, testing scope and maintaining methods. The logic of code will be shown with more approachable and expressive means through natural language, data and diagramming.&lt;/p&gt;
+&lt;p&gt;With the design document, we can invite colleagues to review it in advance. If the design doesn’t work well, then modify it. In this way, we can eliminate bad code in the nascent stage, reducing the overall probability and cost of starting over.&lt;/p&gt;
+&lt;h2&gt;Unit tests cover core logic&lt;/h2&gt;
+&lt;p&gt;Many developers are reluctant to write test code, feeling redundant, useless and even low. But I dare say those who write bad code could also not write test code well either. Since it just increase the workload which is really meaningless.&lt;/p&gt;
+&lt;p&gt;Testing is not separated from development, but used to complement development. Usually when I’m coding, I care more about the main logic; while in testing, I will think its boundary cases. These two perspectives are different, the former is from the producer’s point of view, while the latter is from the consumer-user’s point of view.&lt;/p&gt;
+&lt;p&gt;Not all code has to be covered by unit tests. It’s fine to only cover those core and complicated codes. This can also be betten to achieve a balance between efficiency and quality.&lt;/p&gt;
+&lt;h2&gt;Code searchability&lt;/h2&gt;
+&lt;p&gt;What’s code searchability? It means that functions, variables, etc. in code can be located precisely, whether by type indexing or global file searching.&lt;/p&gt;
+&lt;p&gt;When we have to maintain others’ code, we’ll see how friendly a well-searchable code is.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Taking a URL path to search and get the exact code location when troubleshooting HTTP API.&lt;/li&gt;
+&lt;li&gt;Getting the output location of a log quickly by its literal part.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;How to get there? It requires us to reduce unnecessary encapsulation and expose the literals as completely as possible. Be careful with design patterns that are likely to affect code searchability - such as dependency injection and decorators.&lt;/p&gt;
+&lt;h2&gt;Concludes&lt;/h2&gt;
+&lt;p&gt;Anyway, there might be different opinions about good code in difference people and different stages of same people. In any case, remember our code is written to be communicated.&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: What Kind Of Code Is Good Code&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>什么样的代码才是好的代码</title>
+      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-kind-of-code-is-a-good-code/"/>
+      <updated>2022-07-01T00:00:00Z</updated>
+      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-kind-of-code-is-a-good-code/</id>
+      <content type="html">&lt;p&gt;写了这么多年代码，从懵懵懂懂到随心所欲，从弱水三千到只取一瓢，从小作坊写到大公司，经历与感慨颇多。要问什么代码是好的代码，一千个人眼里就有一千个哈姆雷特。&lt;/p&gt;
+&lt;p&gt;比如对老板而言，能有效、快速支撑业务发展的就是好代码；对于网红来说，能装逼、构思巧妙震惊众人的就是好代码。所以我们这里大体可以限定下，只讨论团队协作时的开发以及独立开发时的维护场景吧。&lt;/p&gt;
+&lt;h2&gt;什么代码不好？&lt;/h2&gt;
+&lt;p&gt;要直接说出好的代码是什么可能有点千头万绪，但要是吐槽下什么代码不好，相信大家都有不少的经验。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没有文档、没有注释；或者即便有了，文档注释不更新、不同步；或者太多太冗长；&lt;/li&gt;
+&lt;li&gt;没有类型约束，也没有单元测试，不知道边界条件下代码健壮性如何；&lt;/li&gt;
+&lt;li&gt;滥用设计模式，刻意使用不常见语法、奇技淫巧；&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样的负面清单，我们可以拉得很长。在实际开发中，我们可以尽量去规避这些不好的情况，但是这些太细节琐碎了，很难记住并执行好。有必要有一个总体的、甚至是感性的认知，并抓住最重要的几个点。&lt;/p&gt;
+&lt;h2&gt;好的代码就如一篇好文档&lt;/h2&gt;
+&lt;p&gt;我一直有一个断言：代码写不好的人大概率文档也写得不怎么样。反过来也差不多。&lt;/p&gt;
+&lt;p&gt;为什么？因为它们都是给别人看的，而且大部分时候是读多写少。也就是说写可能就一次，但在它的整个生命周期里，它会被读无数次，会被无数人读。所以一篇好的文档，肯定是更多地照顾读者，而不是作者的激情输出、孤芳自赏。在文档的立意、结构、行文等方面，要尽量照顾读者——读者有不同层次，有不同背景。&lt;/p&gt;
+&lt;p&gt;代码也是如此。我们大部分时候是处于一个团队中，我们的代码需要被同事评审，乃至维护。哪怕是一个独立开发者，我们也会面临要维护一些时隔半年甚至更长时间的代码。这个时候，能够让同事、过去的你快速理解、准确理解的代码，才称得上是好的代码，才会有更强的生命力。&lt;/p&gt;
+&lt;p&gt;这就是可交流性，或者专业点说就是可维护性。我把这个作为好代码的最重要的一条评判标准，如果不是唯一的话。要写出一份可交流性高的代码，以下几点尤为重要。&lt;/p&gt;
+&lt;h2&gt;技术设计、文档先行&lt;/h2&gt;
+&lt;p&gt;俗话说，三思而后行。技术设计就是“思”的过程。不经历一个思考的过程，想到哪写到哪，这样的代码往往会走向无序混乱，不安全也不可靠。&lt;/p&gt;
+&lt;p&gt;设计就是一个思考的过程。我们可以通过编写设计文档，理清背景、目标及其衡量指标、竞品、各种可能的实现途径及其影响范围、测试范围、维护方式等。通过自然语言、数据、作图等更亲和、更具表现力的手段将代码的逻辑展现出来。&lt;/p&gt;
+&lt;p&gt;有了设计文档，我们可以提前邀请同事评审。如果设计不可行，那就修改设计。这样就我们就可以将不好的代码在萌芽阶段就给消灭，降低整体推倒重来的概率与成本。&lt;/p&gt;
+&lt;h2&gt;核心逻辑要有单元测试覆盖&lt;/h2&gt;
+&lt;p&gt;很多开发人员不愿意写测试代码，觉得冗余、没用，甚至还有鄙视链在里面——测试不如开发，为什么要去做比较低级的事情？但我敢说，代码写不好的，测试也做不好。因为代码本来就写得不怎么样，再弄一个不怎么样的单测，也覆盖不了什么，徒增工作量。&lt;/p&gt;
+&lt;p&gt;测试不是与开发割裂的，而是用来补充开发的。通常写代码时，我主要关心主线逻辑；而在写测试代码时，则要想还有哪些边界场景。两者的角度是不一样的，前者是站在生产者的角度，后者则是消费者——用户的角度。&lt;/p&gt;
+&lt;p&gt;也不是所有的代码都要写单测来覆盖，把那些核心的、复杂的逻辑部分覆盖完整了，整个功能就错不了。这样也能更好地取得效率与质量上的平衡。&lt;/p&gt;
+&lt;h2&gt;代码可搜索&lt;/h2&gt;
+&lt;p&gt;什么是代码可搜索性？它表示代码里的函数、变量等能被精确地定位，不管是通过类型索引还是全局文件搜索。&lt;/p&gt;
+&lt;p&gt;当我们维护别人的代码时，将会发现一个具备良好可搜索性的代码是多么的亲切。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;排查一个 HTTP API 的问题，拿着 URL Path 一搜就能快速找到关键实现位置；&lt;/li&gt;
+&lt;li&gt;拿到一个日志的非变量部分，能快速定位到输出位置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它要求我们减少不必要的封装，尽可能地把常量完整的暴露出来。对于那些很可能影响代码可搜索性的设计模式，要谨慎使用——比如依赖注入、装饰器。&lt;/p&gt;
+&lt;h2&gt;结语&lt;/h2&gt;
+&lt;p&gt;在不同的人心中、同一个人不同的阶段，对好代码都可能有不同的理解。无论如何，记住我们的代码是需要被拿来交流的。&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: 什么样的代码才是好的代码&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+</feed>
