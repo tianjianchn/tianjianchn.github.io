@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="What Kind Of Code Is Good Code" />
+    <title>What Kind Of Code Is Good Code</title>
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Arpit Batra" />
+  </head>
+  <body>
+    <div class="container post-container">
+      <h1>What Kind Of Code Is Good Code</h1>
+      <time>2022-07-01</time>
+      <blockquote><a href="/zh-CN/posts/what-kind-of-code-is-a-good-code/">中文版本</a></blockquote>
+
+      <div class="content markdown-body"><p>After so many years of coding, from ignorance to freewheel, from trying every languages to focusing serval, from small workshops to large companies, I have got a lot of experience and feeling. If being asked what kind of code is good code, there are thousand Hamlets in thousand people’s eyes.</p>
+<p>For example, it’s ok for the boss when the code could effectively and quickly support business expansion. For cyber celebrities, they might like the code which could shock and dazzle people. We will limit our discussion here to the development and maintaining in a team or independent developer.</p>
+<h2>What is bad code?</h2>
+<p>It might be a bit confusing to directly say what good code is, but I believe we all have a lot of experience when it comes to complaining about what code is not good.</p>
+<ul>
+<li>No documents, no comments; or even if there are, they are not updated; or too much to catch.</li>
+<li>No type constraints, no unit tests, no idea how robust it is under boundary conditions.</li>
+<li>Abuse of design patterns, deliberate use of un-common syntax and odd techniques.</li>
+<li>…</li>
+</ul>
+<p>Those negative lists could go as long as we can make. We could try to avoid these cases, but they are so detailed and trivial that it’s hard to remember and practice them well. It is necessary to catch the most important points.</p>
+<h2>Good code is like good document</h2>
+<p>I’ve always had an assertion that <strong><em>people who write bad code are much possible not being able to write good document either</em></strong>. The reverse is also true.</p>
+<p>Why? Code and document are both present to other people, and most of the time they are read more than they are written. That is to say, it may be written once, but throughout its life cycle, it will be read countless times, and will be read by countless people. A good document is definitely more for its reader, rather than the author with his passionate output and solitary appreciation. We should take more attention on the structure and words for the reader - reader might have different levels and different backgrounds.</p>
+<p>Same for code. We are in a team at most time, our code needs to be reviewed and even maintained by our colleagues. Even as a individual developer, we could face the code written before half a year or much more time. The code which could be understood quickly and accurately is said to be the right good code.</p>
+<p>That’s the <strong><em>communicability</em></strong>, or maintainability in a professional way. I’d like taking this as one of the most important, if not the only, rule for good code. To get it, the following points are especially important.</p>
+<h2>Technical design and document first</h2>
+<p>As the saying goes, think twice before you act. If you don’t go through a thinking process and write where you want, the code will often be disorganized, unsafe and unreliable.</p>
+<p>Technical design is a process of thinking. Through writing the design document, we could clarify and understand the background, goals and metrics, competing products, and possible implementation paths and their scope of impact, testing scope and maintaining methods. The logic of code will be shown with more approachable and expressive means through natural language, data and diagramming.</p>
+<p>With the design document, we can invite colleagues to review it in advance. If the design doesn’t work well, then modify it. In this way, we can eliminate bad code in the nascent stage, reducing the overall probability and cost of starting over.</p>
+<h2>Unit tests cover core logic</h2>
+<p>Many developers are reluctant to write test code, feeling redundant, useless and even low. But I dare say those who write bad code could also not write test code well either. Since it just increase the workload which is really meaningless.</p>
+<p>Testing is not separated from development, but used to complement development. Usually when I’m coding, I care more about the main logic; while in testing, I will think its boundary cases. These two perspectives are different, the former is from the producer’s point of view, while the latter is from the consumer-user’s point of view.</p>
+<p>Not all code has to be covered by unit tests. It’s fine to only cover those core and complicated codes. This can also be betten to achieve a balance between efficiency and quality.</p>
+<h2>Code searchability</h2>
+<p>What’s code searchability? It means that functions, variables, etc. in code can be located precisely, whether by type indexing or global file searching.</p>
+<p>When we have to maintain others’ code, we’ll see how friendly a well-searchable code is.</p>
+<ul>
+<li>Taking a URL path to search and get the exact code location when troubleshooting HTTP API.</li>
+<li>Getting the output location of a log quickly by its literal part.</li>
+</ul>
+<p>How to get there? It requires us to reduce unnecessary encapsulation and expose the literals as completely as possible. Be careful with design patterns that are likely to affect code searchability - such as dependency injection and decorators.</p>
+<h2>Concludes</h2>
+<p>Anyway, there might be different opinions about good code in difference people and different stages of same people. In any case, remember our code is written to be communicated.</p>
+</div>
+      <div class="back-link">
+        <!-- <a href="javascript:history.back()">  ← Back  </a> -->
+        <a href="/en">← Home</a>
+      </div>
+    </div>
+
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="tianjianchn/tianjianchn.github.io"
+      data-repo-id="MDEwOlJlcG9zaXRvcnkxMzE4Njc1MDY="
+      data-category="Blog Comments"
+      data-category-id="DIC_kwDOB9wjcs4CRwpv"
+      data-mapping="title"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </body>
+</html>
