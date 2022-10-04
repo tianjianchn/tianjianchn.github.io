@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Arpit Batra</title>
-  <subtitle>A minimal blog template using eleventy</subtitle>
-  <link href="https://eleventy-blog-mnml.netlify.app" rel="self"/>
-  <link href="https://eleventy-blog-mnml.netlify.app"/>
+  <title>Tian Jian&#39;s Blog</title>
+  <subtitle>Tian Jian&#39;s Blog</subtitle>
+  <link href="https://tianjianchn.github.io/" rel="self"/>
+  <link href="https://tianjianchn.github.io/"/>
   <updated>2022-07-01T00:00:00Z</updated>
-  <id>https://eleventy-blog-mnml.netlify.app</id>
+  <id>https://tianjianchn.github.io/</id>
   <author>
-    <name>Arpit Batra</name>
-    <email>arpitbatra123@gmail.com</email>
+    <name>Tian Jian</name>
+    <email>tianjian0703@gmail.com</email>
   </author>
     
     <entry>
       <title>怎样才是一个好的开发者</title>
-      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-makes-a-good-developer/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/what-makes-a-good-developer/"/>
       <updated>2018-11-23T00:00:00Z</updated>
-      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-makes-a-good-developer/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/what-makes-a-good-developer/</id>
       <content type="html">&lt;p&gt;哪些能力是一位优秀的开发人员在技术上应该具备的？这是一个老生常谈的问题。就像很多人简历里所描述的，“解决问题能力强”、”善于学习“、”积极思考“，以及各种“精通某某某”等。毋庸置疑，能做到这些的人的确可以称得上“优秀”。但我总感觉它们就像散落一地的珍珠，缺少那么一根线来串起来。我想要一个具有提纲掣领的评判依据，甚至在这个纲领下，能够从一种更高的高度去引导我们开发人员的发展方向，更好地帮助他们进行技能学习。在这些年的研发、面试、技术管理工作中，我更倾向于从以下三个角度去认识一位开发人员：工具、编码、设计。&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;h2&gt;工具&lt;/h2&gt;
@@ -37,9 +37,9 @@
     
     <entry>
       <title>微前端实践</title>
-      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/micro-frontend-practice/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/micro-frontend-practice/"/>
       <updated>2019-01-11T20:40:18Z</updated>
-      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/micro-frontend-practice/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/micro-frontend-practice/</id>
       <content type="html">&lt;p&gt;在 toB 的前端开发工作中，我们往往就会遇到如下困境：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;工程越来越大，打包越来越慢&lt;/li&gt;
@@ -50,7 +50,7 @@
 &lt;!-- more --&gt;
 &lt;h2&gt;微前端是什么&lt;/h2&gt;
 &lt;p&gt;那什么是微前端？微前端主要是借鉴后端微服务的概念。简单地说，就是将一个巨无霸（Monolith）的前端工程拆分成一个一个的小工程。别小看这些小工程，它们也是“麻雀虽小，五脏俱全”，完全具备独立的开发、运行能力。整个系统就将由这些小工程协同合作，实现所有页面的展示与交互。&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.jpeg&quot; width=&quot;640&quot; height=&quot;243&quot; /&gt;&lt;/picture&gt;&lt;br /&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.jpeg&quot; width=&quot;640&quot; height=&quot;243&quot; /&gt;&lt;/picture&gt;&lt;br /&gt;
 可以跟微服务这么对比着去理解：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -210,9 +210,9 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     
     <entry>
       <title>NodeJS Docker 打包优化</title>
-      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/nodejs-docker-optimize/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/nodejs-docker-optimize/"/>
       <updated>2019-01-23T00:00:00Z</updated>
-      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/nodejs-docker-optimize/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/nodejs-docker-optimize/</id>
       <content type="html">&lt;p&gt;最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 &lt;code&gt;socket hang up&lt;/code&gt; 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。&lt;/p&gt;
 &lt;p&gt;回到正题。在确认没有其他附带问题后，在试点的基础上，又增加了一些新的目标。总的目标大概如下：&lt;/p&gt;
 &lt;ul&gt;
@@ -223,7 +223,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;/ul&gt;
 &lt;p&gt;下面从各个目标一一介绍下我们的优化实践之路。&lt;/p&gt;
 &lt;!-- more --&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg&quot; width=&quot;640&quot; height=&quot;285&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg&quot; width=&quot;640&quot; height=&quot;285&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;h2&gt;基础镜像设置&lt;/h2&gt;
 &lt;p&gt;由于之前的基础镜像使用的是 &lt;code&gt;FROM node:6&lt;/code&gt;，只有 major version，没有指定 minor version、patch version。当该基础镜像 minor 或 patch 版本更新后，如果本地的镜像缓存也被清除了，那么打包就会使用新版本的基础镜像。这也是上面不经意升级到 node 6.15.0 的原因。所以这里我们限定了基础镜像的全版本：&lt;code&gt;FROM node:6.16.0&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;我们的产品主要在国内使用，运维人员也都是在国内。为了更方便查看日志中的时间、方便程序中的日期计算，把时区调整为北京时区（即东八区）：&lt;code&gt;RUN rm /etc/localtime &amp;amp;&amp;amp; echo &amp;quot;Asia/Shanghai&amp;quot; &amp;gt; /etc/timezone &amp;amp;&amp;amp; dpkg-reconfigure -f noninteractive tzdata&lt;/code&gt;。注意，Debian Stretch 版本后需要 &lt;code&gt;rm /etc/localtime&lt;/code&gt;，否则时区修改可能无法生效（被替换回原值）。&lt;/p&gt;
@@ -334,16 +334,16 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     
     <entry>
       <title>在 Visual Studio Code JavaScript 工程中使用 JSDoc</title>
-      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/"/>
       <updated>2019-03-09T00:00:00Z</updated>
-      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/</id>
       <content type="html">&lt;p&gt;不使用 TS 是否也能做到类型提示和校验？在 VSCode 中我们可以通过 &lt;a href=&quot;http://usejsdoc.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JSDoc&lt;/a&gt; 来实现。&lt;/p&gt;
 &lt;h2&gt;JSDoc&lt;/h2&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://eleventy-blog-mnml.netlify.app/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg&quot; width=&quot;640&quot; height=&quot;534&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg&quot; width=&quot;640&quot; height=&quot;534&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;JSDoc 本身是用来对方法、变量、模块、类等进行结构化文档注释用的。它本身还有一个对应的工具，扫描所有源代码文件里的 JSDoc 注释并生成 API 文档，就像 JavaDoc 一样。&lt;/p&gt;
 &lt;p&gt;但是在 VSCode 里，它被赋予了更加强大的地位。它不仅仅是一个文档说明，还可以用来做智能提示（IntelliSense），而且可以做到函数的参数级别。甚至还能做参数类型、值类型的校验！也许你会想到 TypeScript 的 definition 文件（.d.ts）。是的，它也有参数类型校验，但是它没有参数说明。如果要参数说明，还是要写 JSDoc。与其多写一遍 definition，不如直接使用 JavaScript + JSDoc 更加方便。当然这一切都是依赖于 TypeScript，我们不能因此去否定它。&lt;/p&gt;
 &lt;p&gt;我们来看看 JSDoc 所带来的强大提示功能。&lt;br /&gt;
-&lt;img src=&quot;https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-intelli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-intelli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;从上面的动图可以看到，函数的注释、参数的注释、参数注释的输入跟随都有了。&lt;/p&gt;
 &lt;h2&gt;参数、类型校验&lt;/h2&gt;
 &lt;p&gt;文档提示只是第一步。我们知道 JavaScript 是动态类型、弱类型的语言。变量没有类型声明，运行时还可以随意变更值类型，还有很多内置的自动类型转换场景。虽然这是吸引我的很大的一方面，不过在团队协作里，最好还是能够做到约束、检查一下。VSCode 就为我们提供了这么一个能力。&lt;/p&gt;
@@ -355,7 +355,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我们再来看看：&lt;br /&gt;
-&lt;img src=&quot;https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-check.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-check.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;是不是很不错？VSCode 帮我们做了必填参数、参数类型、返回值类型等各项检测与校验。这样我们在写代码的时候，一方面能够看到文档注释，一方面又能随时知道调用方式是否错误，快哉！&lt;/p&gt;
 &lt;h2&gt;对象解构形式参数&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;/**
@@ -369,7 +369,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; expire &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如上示例，我们使用了 Object Destruction 定义了方法的参数。对应的，JSDoc 里可以通过 &lt;code&gt;.&lt;/code&gt; 来为对象内部的属性提供文档。来看看使用时的效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://eleventy-blog-mnml.netlify.app/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-object-destr.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-object-destr.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;这里有一个地方要注意，参数文档那一个小窗口，如果一开始没有显示，则要再按一次 &lt;code&gt;ctrl+space&lt;/code&gt;（macOS），也就是额外触发一次智能提示。这个在 VSCode 里叫“toggleSuggestionDetails”（可以在快捷键设置里找到它）。&lt;/p&gt;
 &lt;p&gt;VSCode 里还支持更加复杂的 JSDoc 类型声明。在涉及到复杂对象的输入、输出时，我们可能就需要用到了。有兴趣的同学可以去这里看看：&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript&lt;/a&gt; 。&lt;/p&gt;
 &lt;p&gt;希望通过这几篇文章，能够改善大家日常的 JavaScript 开发体验。这里面还有很多东西值得我们去探索。&lt;/p&gt;
@@ -381,9 +381,9 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     
     <entry>
       <title>What Kind Of Code Is Good Code</title>
-      <link href="https://eleventy-blog-mnml.netlify.app/en/posts/what-kind-of-code-is-a-good-code/"/>
+      <link href="https://tianjianchn.github.io/en/posts/what-kind-of-code-is-a-good-code/"/>
       <updated>2022-07-01T00:00:00Z</updated>
-      <id>https://eleventy-blog-mnml.netlify.app/en/posts/what-kind-of-code-is-a-good-code/</id>
+      <id>https://tianjianchn.github.io/en/posts/what-kind-of-code-is-a-good-code/</id>
       <content type="html">&lt;p&gt;After so many years of coding, from ignorance to freewheel, from trying every languages to focusing serval, from small workshops to large companies, I have got a lot of experience and feeling. If being asked what kind of code is good code, there are thousand Hamlets in thousand people’s eyes.&lt;/p&gt;
 &lt;p&gt;For example, it’s ok for the boss when the code could effectively and quickly support business expansion. For cyber celebrities, they might like the code which could shock and dazzle people. We will limit our discussion here to the development and maintaining in a team or independent developer.&lt;/p&gt;
 &lt;h2&gt;What is bad code?&lt;/h2&gt;
@@ -425,9 +425,9 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     
     <entry>
       <title>什么样的代码才是好的代码</title>
-      <link href="https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-kind-of-code-is-a-good-code/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/what-kind-of-code-is-a-good-code/"/>
       <updated>2022-07-01T00:00:00Z</updated>
-      <id>https://eleventy-blog-mnml.netlify.app/zh-CN/posts/what-kind-of-code-is-a-good-code/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/what-kind-of-code-is-a-good-code/</id>
       <content type="html">&lt;p&gt;写了这么多年代码，从懵懵懂懂到随心所欲，从弱水三千到只取一瓢，从小作坊写到大公司，经历与感慨颇多。要问什么代码是好的代码，一千个人眼里就有一千个哈姆雷特。&lt;/p&gt;
 &lt;p&gt;比如对老板而言，能有效、快速支撑业务发展的就是好代码；对于网红来说，能装逼、构思巧妙震惊众人的就是好代码。所以我们这里大体可以限定下，只讨论团队协作时的开发以及独立开发时的维护场景吧。&lt;/p&gt;
 &lt;h2&gt;什么代码不好？&lt;/h2&gt;
