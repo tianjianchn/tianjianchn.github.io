@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <url>
-    <loc>/zh-CN/posts/what-makes-a-good-developer/</loc>
-    <lastmod>2018-11-23</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/zh-CN/posts/what-makes-a-good-developer/</loc>
+    <lastmod>2018-11-23T08:00:00.000+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/zh-CN/posts/micro-frontend-practice/</loc>
-    <lastmod>2019-01-11</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/zh-CN/posts/micro-frontend-practice/</loc>
+    <lastmod>2019-01-12T04:40:18.000+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/zh-CN/posts/nodejs-docker-optimize/</loc>
-    <lastmod>2019-01-23</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/zh-CN/posts/nodejs-docker-optimize/</loc>
+    <lastmod>2019-01-23T08:00:00.000+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/zh-CN/posts/vscode-javascript-jsdoc/</loc>
-    <lastmod>2019-03-09</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/</loc>
+    <lastmod>2019-03-09T08:00:00.000+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/en/posts/what-kind-of-code-is-a-good-code/</loc>
-    <lastmod>2022-07-01</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/en/posts/what-kind-of-code-is-a-good-code/</loc>
+    <lastmod>2022-07-01T08:00:00.000+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/zh-CN/posts/what-kind-of-code-is-a-good-code/</loc>
-    <lastmod>2022-07-01</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/zh-CN/posts/what-kind-of-code-is-a-good-code/</loc>
+    <lastmod>2022-07-01T08:00:00.000+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/feed.xml</loc>
-    <lastmod>2022-10-02</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/feed.xml</loc>
+    <lastmod>2022-10-02T20:15:30.301+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/</loc>
-    <lastmod>2022-10-02</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/</loc>
+    <lastmod>2022-10-02T20:15:30.301+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/en/</loc>
-    <lastmod>2022-10-03</lastmod>
-  </url> 
+    <loc>https://tianjianchn.github.io/en/</loc>
+    <lastmod>2022-10-03T15:36:40.288+08:00</lastmod>
+  </url>
+  
   <url>
-    <loc>/zh-CN/</loc>
-    <lastmod>2022-10-03</lastmod>
+    <loc>https://tianjianchn.github.io/zh-CN/</loc>
+    <lastmod>2022-10-03T15:36:42.584+08:00</lastmod>
   </url>
 </urlset>
