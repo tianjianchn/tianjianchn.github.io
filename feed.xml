@@ -416,7 +416,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;/ul&gt;
 &lt;p&gt;How to get there? It requires us to reduce unnecessary encapsulation and expose the literals as completely as possible. Be careful with design patterns that are likely to affect code searchability - such as dependency injection and decorators.&lt;/p&gt;
 &lt;h2&gt;Concludes&lt;/h2&gt;
-&lt;p&gt;Anyway, there might be different opinions about good code in difference people and different stages of same people. In any case, remember our code is written to be communicated.&lt;/p&gt;
+&lt;p&gt;Anyway, there might be different opinions about good code in different people and different stages of same people. In any case, remember our code is written to be communicated.&lt;/p&gt;
 
         &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: What Kind Of Code Is Good Code&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
       </content>
