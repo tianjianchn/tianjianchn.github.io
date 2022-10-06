@@ -47,7 +47,6 @@
 &lt;li&gt;内心想做 SaaS 产品，但客户总是要做定制化&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;不同的团队可能有不同的方法去解决这些问题。在前端开发日新月异、前端工程化蓬勃发展的今天，我想给大家介绍下另一种尝试——微前端。&lt;/p&gt;
-&lt;!-- more --&gt;
 &lt;h2&gt;微前端是什么&lt;/h2&gt;
 &lt;p&gt;那什么是微前端？微前端主要是借鉴后端微服务的概念。简单地说，就是将一个巨无霸（Monolith）的前端工程拆分成一个一个的小工程。别小看这些小工程，它们也是“麻雀虽小，五脏俱全”，完全具备独立的开发、运行能力。整个系统就将由这些小工程协同合作，实现所有页面的展示与交互。&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.jpeg&quot; width=&quot;640&quot; height=&quot;243&quot; /&gt;&lt;/picture&gt;&lt;br /&gt;
@@ -431,7 +430,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
       <content type="html">&lt;p&gt;写了这么多年代码，从懵懵懂懂到随心所欲，从弱水三千到只取一瓢，从小作坊写到大公司，经历与感慨颇多。要问什么代码是好的代码，一千个人眼里就有一千个哈姆雷特。&lt;/p&gt;
 &lt;p&gt;比如对老板而言，能有效、快速支撑业务发展的就是好代码；对于网红来说，能装逼、构思巧妙震惊众人的就是好代码。所以我们这里大体可以限定下，只讨论团队协作时的开发以及独立开发时的维护场景吧。&lt;/p&gt;
 &lt;h2&gt;什么代码不好？&lt;/h2&gt;
-&lt;p&gt;要直接说出好的代码是什么可能有点千头万绪，但要是吐槽下什么代码不好，相信大家都有不少的经验。&lt;/p&gt;
+&lt;p&gt;要是问到如何写好代码可能有点千头万绪，但要是吐槽下什么代码不好，相信大家都有不少的经验。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;没有文档、没有注释；或者即便有了，文档注释不更新、不同步；或者太多太冗长；&lt;/li&gt;
 &lt;li&gt;没有类型约束，也没有单元测试，不知道边界条件下代码健壮性如何；&lt;/li&gt;

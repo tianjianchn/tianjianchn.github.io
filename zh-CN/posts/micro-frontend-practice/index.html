@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="微前端实践" />
-    <title>Micro-frontend Practice</title>
+    <!-- Google does not use keywords, see https://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag -->
+    <!-- <meta name="keywords" content="" /> -->
+    <meta property="og:title" content="Micro-frontend Practice" />
+    <title>微前端实践</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/styles/post.css" />
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Tian Jian" />
@@ -23,7 +25,6 @@
 <li>内心想做 SaaS 产品，但客户总是要做定制化</li>
 </ol>
 <p>不同的团队可能有不同的方法去解决这些问题。在前端开发日新月异、前端工程化蓬勃发展的今天，我想给大家介绍下另一种尝试——微前端。</p>
-<!-- more -->
 <h2>微前端是什么</h2>
 <p>那什么是微前端？微前端主要是借鉴后端微服务的概念。简单地说，就是将一个巨无霸（Monolith）的前端工程拆分成一个一个的小工程。别小看这些小工程，它们也是“麻雀虽小，五脏俱全”，完全具备独立的开发、运行能力。整个系统就将由这些小工程协同合作，实现所有页面的展示与交互。</p>
 <p><picture><source type="image/avif" srcset="/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.jpeg" width="640" height="243"></picture><br>
@@ -192,11 +193,11 @@ module<span class="token punctuation">.</span>exports <span class="token operato
       data-repo-id="MDEwOlJlcG9zaXRvcnkxMzE4Njc1MDY="
       data-category="Blog Comments"
       data-category-id="DIC_kwDOB9wjcs4CRwpv"
-      data-mapping="title"
-      data-strict="0"
+      data-mapping="og:title"
+      data-strict="1"
       data-reactions-enabled="1"
       data-emit-metadata="0"
-      data-input-position="top"
+      data-input-position="bottom"
       data-theme="light"
       data-lang="en"
       data-loading="lazy"
