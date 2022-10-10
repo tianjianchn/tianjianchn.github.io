@@ -39,7 +39,13 @@
       <time>2019-01-23</time>
       
 
-      <div class="content markdown-body"><p>最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 <code>socket hang up</code> 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。</p>
+      <aside class="toc-container">
+        <div class="title">目录</div>
+        <nav class="toc" >
+        <ul><li><a href="#%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE">基础镜像设置</a></li><li><a href="#%E6%94%AF%E6%8C%81%E4%BC%98%E9%9B%85%E5%81%9C%E6%9C%BA">支持优雅停机</a></li><li><a href="#yarn-install-%E4%BC%98%E5%8C%96">yarn install 优化</a></li><li><a href="#%E6%89%93%E5%8C%85%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96">打包速度优化</a></li><li><a href="#%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%89%E5%85%A8">源代码安全</a></li><li><a href="#%E9%95%9C%E5%83%8F%E5%A4%A7%E5%B0%8F%E4%BC%98%E5%8C%96">镜像大小优化</a></li><li><a href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%9B%AE%E5%BD%95%E4%BC%98%E5%8C%96">上下文目录优化</a></li><li><a href="#%E6%9C%80%E7%BB%88%E7%9A%84-dockerfile">最终的 Dockerfile</a></li></ul>
+      </nav>
+      </aside>
+      <article class="content markdown-body"><p>最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 <code>socket hang up</code> 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。</p>
 <p>回到正题。在确认没有其他附带问题后，在试点的基础上，又增加了一些新的目标。总的目标大概如下：</p>
 <ul>
 <li>支持优雅停机，要求 Node 进程能够接收到 SIGTERM 软终止信号</li>
@@ -50,17 +56,17 @@
 <p>下面从各个目标一一介绍下我们的优化实践之路。</p>
 <!-- more -->
 <p><picture><source type="image/avif" srcset="/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg" width="640" height="285"></picture></p>
-<h2>基础镜像设置</h2>
+<h2 id="%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE" tabindex="-1">基础镜像设置</h2>
 <p>由于之前的基础镜像使用的是 <code>FROM node:6</code>，只有 major version，没有指定 minor version、patch version。当该基础镜像 minor 或 patch 版本更新后，如果本地的镜像缓存也被清除了，那么打包就会使用新版本的基础镜像。这也是上面不经意升级到 node 6.15.0 的原因。所以这里我们限定了基础镜像的全版本：<code>FROM node:6.16.0</code>。</p>
 <p>我们的产品主要在国内使用，运维人员也都是在国内。为了更方便查看日志中的时间、方便程序中的日期计算，把时区调整为北京时区（即东八区）：<code>RUN rm /etc/localtime &amp;&amp; echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; dpkg-reconfigure -f noninteractive tzdata</code>。注意，Debian Stretch 版本后需要 <code>rm /etc/localtime</code>，否则时区修改可能无法生效（被替换回原值）。</p>
 <p>最后设置镜像的工作目录：<code>WORKDIR /app</code>。这样，我们新的基础镜像就完成了。</p>
-<h2>支持优雅停机</h2>
+<h2 id="%E6%94%AF%E6%8C%81%E4%BC%98%E9%9B%85%E5%81%9C%E6%9C%BA" tabindex="-1">支持优雅停机</h2>
 <p>优雅停机（Gracefully Shutdown），就是当应用（进程）要被关闭时，首先会被发送一个软终止信号。应用在收到这个信号后，执行清理工作，然后自行退出。如果在指定的时间内没有自行退出，则会被强制关闭——这自然就不优雅了。这个软终止信号一般就是指 SIGTERM。NodeJS 进程默认会对 SIGTERM 信号进行响应，执行进程退出。但是默认的监听程序并不会执行清理工作。我们需要显式监听该信号，并在清理完毕后执行 <code>process.exit(0)</code> 以退出进程。</p>
 <p>然而，在 Docker 容器里实现优雅停机会有一些新的问题需要面对。当使用 <code>docker stop</code> 停止一个容器时，docker 会首先发送一个 SIGTERM 信号给容器内的 PID=1 进程，也就是常说的 init 进程。如果 PID=1 进程没有在规定时间（一般 10 秒）内退出，则 docker 会发送 SIGKILL 信号强制退出容器内的所有进程。PID=1 进程比较特殊，在 linux 下，它会忽略所有默认的信号监听程序，也就是说收到 SIGTERM 默认不会退出。<!-- 参考：https://hackernoon.com/my-process-became-pid-1-and-now-signals-behave-strangely-b05c52cc551c -->所以，我们的 PID=1 进程要求能显式监听 SIGTERM 并执行后续动作。</p>
 <p>然而，当我们使用 shell form 的 ENTRYPOINT 或 CMD 指令时——如 <code>CMD npm run start</code>，Docker 容器会默认启用一个 Shell 来运行后面的指令。此时 PID=1 进程是 <code>/bin/sh</code>，完整的运行命令是 <code>/bin/sh -c 'npm run start'</code>。当 sh 收到 SIGTERM 信号时，它自身并不会退出。因为 sh 并没有显式监听 SIGTERM，默认的信号处理器被忽略了。自然 sh 内部也不会把信号转发给子进程。<!-- 参考：https://github.com/nodejs/node/issues/2098 -->最后只会超时，继而被 SIGKILL 强制关闭。</p>
 <p>Docker 推荐我们用 exec form 的 ENTRYPOINT 或 CMD 指令，如 <code>CMD [&quot;npm&quot;, &quot;run&quot;, &quot;start&quot;]</code>。这样 PID=1 进程就是 npm 了，不再有 sh 进程了。但继续用 npm scripts 会不会还有问题？这就依赖 Host 环境了。我们来看一下 npm scripts 的运行原理。以 <code>npm run start</code> 为例，在运行时，首先会起一个 npm 进程。npm 进程会 <code>spawn()</code> 一个 <code>/bin/sh</code> 进程（<code>/bin/sh -c</code>），执行 <code>start</code> script 的内容（通常就是 <code>node xxx.js</code>）。这样就形成了三个进程构成的进程树，分别是 npm、sh、node。当 npm 进程收到 SIGTERM 信号时，它内部已经监听 SIGTERM，其逻辑就是转发给子进程，也就是 sh 进程。sh 进程收到信号后退出，接着 npm 也退出了。但是，剩下的 node 进程并没有收到信号，它被忽略了，继而被 Docker 直接 SIGKILL。看起来完全不行嘛，那为什么说依赖 Host 环境呢？因为中间这个 sh 进程在 bash 里（<code>/bin/sh</code> 指向 bash），是有可能不存在的。是不是很神奇？当使用 <code>-c</code> 运行命令时，bash 会判断是否需要 <code>fork()</code> 当前进程以产生一个新的进程来执行该命令。<!-- 参考：https://stackoverflow.com/questions/44576773/bash-swallowing-sub-shell-children-process-when-executing-a-single-command -->当 <code>-c</code> 命令不包含复杂的结构，如多个命令连接（<code>&amp;&amp;</code>、<code>||</code>）、重定向（<code>&gt;</code>）等情况时，bash 不会 <code>fork()</code> 出新的子进程，而是直接使用 <code>exec()</code> 替换当前进程。而 <code>node:6</code> Docker 镜像所用的 Debian Stretch 操作系统，<code>/bin/sh</code> 默认指向的是 dash，而不是 bash。所以在这里，我们最好也不要用 npm scripts。</p>
 <p>那我们就只剩一个选项了：直接将 node 作为 PID=1 的进程，如 <code>CMD [&quot;node&quot;, &quot;dist/server.js&quot;]</code>。虽然说 PID=1 的进程还要处理僵尸进程（Zombie Process），但我们这里基本上不会有，也就可以不考虑了。<!-- 参考：https://engineeringblog.yelp.com/2016/01/dumb-init-an-init-for-docker.html --></p>
-<h2>yarn install 优化</h2>
+<h2 id="yarn-install-%E4%BC%98%E5%8C%96" tabindex="-1">yarn install 优化</h2>
 <p>这方面最基础的一个优化就是利用 Docker Layer 缓存特性，降低 yarn install 的发生次数。</p>
 <pre><code><span class="token comment"># 在 package.json、yarn.lock 没有变化的情况下，后面的 yarn install 会直接复用上次打包的缓存结果</span>
 <span class="token instruction"><span class="token keyword">COPY</span> package.json yarn.lock</span>
@@ -83,17 +89,17 @@
 <span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">build</span></span> /app/node_modules /app/node_modules/</span>
 </code></pre>
 <p>这样，阶段二打包出来的最终镜像，就没有 SSH Key 了。至于阶段一的 .ssh 目录，可以在调用 <code>docker build</code> 之前，从 <code>$HOME/.ssh/id_rsa</code> 上复制到当前目录，可千万别上传到 Git 仓库哦。</p>
-<h2>打包速度优化</h2>
+<h2 id="%E6%89%93%E5%8C%85%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96" tabindex="-1">打包速度优化</h2>
 <p>在充分利用 Docker Layer 缓存机制的基础上，我们需要把那些不容易产生变更的指令放到上面、把不容易产生变更的部分剥离出来。像 WORKDIR、CMD、ENV、还有一些环境配置指令，都可以放到前面。把文件复制过程中，不容易产生变更的文件单独抽离出来，形成一个新的 COPY 指令，尽量避免 <code>COPY . /p/a/t/h/</code> 这样的复制方式。说到 COPY，还要注意其跟 Linux <code>cp</code> 命令有一些不一样的地方。当复制一个目录时，COPY 是将这个目录下的所有文件复制到目标文件夹下，而不是把这个目录自身复制到目标文件夹中。</p>
-<h2>源代码安全</h2>
+<h2 id="%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%89%E5%85%A8" tabindex="-1">源代码安全</h2>
 <p>在最终的镜像里，最好不要包括源代码，而只有 Transpile、Uglify 甚至是 Minify 后的代码。我们使用 <code>npm run build</code> 来做这些转换工作，它会把 src 源代码目录，转换到 dist 目录。使用上面的多阶段打包，只要在第二阶段 COPY dist 目录即可。</p>
-<h2>镜像大小优化</h2>
+<h2 id="%E9%95%9C%E5%83%8F%E5%A4%A7%E5%B0%8F%E4%BC%98%E5%8C%96" tabindex="-1">镜像大小优化</h2>
 <p>最终打包出来的镜像大小，除了基础镜像 <code>node:6.16.0</code> 占用大部分空间外，剩下的主要就是 <code>node_modules</code> 目录了——大概有 200-300MB。我们可以考虑把 <code>devDependencies</code> 从 node_modules 中删除来减少大小。再增加一条指令：<code>RUN yarn install --production</code> 即可。然而我们并没有这样做，主要有这两个原因：</p>
 <ol>
 <li>我们在注册了 <code>postinstall</code> npm scripts，它依赖一些 <code>devDpendencies</code>。</li>
 <li>由于还有 <code>npm run build</code>，它所依赖的 babel 都是 <code>devDpendencies</code>。由于它必须在 COPY 源代码之后运行，意味着只要源代码有变化，<code>npm run build</code> 就会被执行。那还在它后面的 <code>yarn install --production</code> 自然也会被再次执行，可能就会影响打包效率了。</li>
 </ol>
-<h2>上下文目录优化</h2>
+<h2 id="%E4%B8%8A%E4%B8%8B%E6%96%87%E7%9B%AE%E5%BD%95%E4%BC%98%E5%8C%96" tabindex="-1">上下文目录优化</h2>
 <p><code>docker build -t xxx .</code>，最后的那个 <code>.</code> 就表示上下文目录位置（<code>.</code> 就是当前目录）。docker build 是在 go 语言写的一个本地服务端上运行。所以一开始需要把上下文目录打包发送到服务端，然后在服务端内解压，再运行各个指令，生成最终的镜像。这样我们的上下文目录就不能太大，不然 IO 吃不消。我们可以用 .dockerignore 文件来限制上下文目录只包含哪些文件。为了得到一个比较通用的 .dockerignore 文件，我们主要使用排除法规则。排除那些容器运行时不需要的文件；排除那些不会在多阶段打包过程中使用的中间文件，如 node_modules、dist。示例 .dockerignore 文件如下：</p>
 <pre><code>*
 !package.json
@@ -107,7 +113,7 @@
 !.nycrc
 !.ssh
 </code></pre>
-<h2>最终的 Dockerfile</h2>
+<h2 id="%E6%9C%80%E7%BB%88%E7%9A%84-dockerfile" tabindex="-1">最终的 Dockerfile</h2>
 <p>把上面各个改造结合在一起，我们的 Dockerfile 就出炉啦！还有一些小细节，期待你自己的发现哦。</p>
 <pre><code><span class="token comment">############################################</span>
 <span class="token comment">#                 构建阶段</span>
@@ -153,7 +159,7 @@
 <span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">build</span></span> /app/node_modules /app/node_modules/</span>
 <span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">build</span></span> /app/dist /app/dist/</span>
 </code></pre>
-</div>
+</article>
       <div class="back-link">
         <!-- <a href="javascript:history.back()">  ← 返回  </a> -->
         <a href="/zh-CN">← 首页</a>

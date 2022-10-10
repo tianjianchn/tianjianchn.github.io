@@ -39,15 +39,21 @@
       <time>2019-03-09</time>
       
 
-      <div class="content markdown-body"><p>不使用 TS 是否也能做到类型提示和校验？在 VSCode 中我们可以通过 <a href="http://usejsdoc.org/" target="_blank" rel="noopener">JSDoc</a> 来实现。</p>
-<h2>JSDoc</h2>
+      <aside class="toc-container">
+        <div class="title">目录</div>
+        <nav class="toc" >
+        <ul><li><a href="#jsdoc">JSDoc</a></li><li><a href="#%E5%8F%82%E6%95%B0%E3%80%81%E7%B1%BB%E5%9E%8B%E6%A0%A1%E9%AA%8C">参数、类型校验</a></li><li><a href="#%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84%E5%BD%A2%E5%BC%8F%E5%8F%82%E6%95%B0">对象解构形式参数</a></li></ul>
+      </nav>
+      </aside>
+      <article class="content markdown-body"><p>不使用 TS 是否也能做到类型提示和校验？在 VSCode 中我们可以通过 <a href="http://usejsdoc.org/" target="_blank" rel="noopener">JSDoc</a> 来实现。</p>
+<h2 id="jsdoc" tabindex="-1">JSDoc</h2>
 <p><picture><source type="image/avif" srcset="/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg" width="640" height="534"></picture></p>
 <p>JSDoc 本身是用来对方法、变量、模块、类等进行结构化文档注释用的。它本身还有一个对应的工具，扫描所有源代码文件里的 JSDoc 注释并生成 API 文档，就像 JavaDoc 一样。</p>
 <p>但是在 VSCode 里，它被赋予了更加强大的地位。它不仅仅是一个文档说明，还可以用来做智能提示（IntelliSense），而且可以做到函数的参数级别。甚至还能做参数类型、值类型的校验！也许你会想到 TypeScript 的 definition 文件（.d.ts）。是的，它也有参数类型校验，但是它没有参数说明。如果要参数说明，还是要写 JSDoc。与其多写一遍 definition，不如直接使用 JavaScript + JSDoc 更加方便。当然这一切都是依赖于 TypeScript，我们不能因此去否定它。</p>
 <p>我们来看看 JSDoc 所带来的强大提示功能。<br>
 <img src="./vscode-jsdoc-intelli.gif" alt=""></p>
 <p>从上面的动图可以看到，函数的注释、参数的注释、参数注释的输入跟随都有了。</p>
-<h2>参数、类型校验</h2>
+<h2 id="%E5%8F%82%E6%95%B0%E3%80%81%E7%B1%BB%E5%9E%8B%E6%A0%A1%E9%AA%8C" tabindex="-1">参数、类型校验</h2>
 <p>文档提示只是第一步。我们知道 JavaScript 是动态类型、弱类型的语言。变量没有类型声明，运行时还可以随意变更值类型，还有很多内置的自动类型转换场景。虽然这是吸引我的很大的一方面，不过在团队协作里，最好还是能够做到约束、检查一下。VSCode 就为我们提供了这么一个能力。</p>
 <p>首先我们要打开 Setting 中的 JavaScript 校验：<code>&quot;javascript.validate.enable&quot;: true</code>。然后在 jsconfig.json 中配置如下：</p>
 <pre><code class="language-json">{
@@ -59,7 +65,7 @@
 <p>我们再来看看：<br>
 <img src="./vscode-jsdoc-check.gif" alt=""></p>
 <p>是不是很不错？VSCode 帮我们做了必填参数、参数类型、返回值类型等各项检测与校验。这样我们在写代码的时候，一方面能够看到文档注释，一方面又能随时知道调用方式是否错误，快哉！</p>
-<h2>对象解构形式参数</h2>
+<h2 id="%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84%E5%BD%A2%E5%BC%8F%E5%8F%82%E6%95%B0" tabindex="-1">对象解构形式参数</h2>
 <pre><code><span class="token comment">/**
  * set redis key
  * @author kiliwalk
@@ -76,7 +82,7 @@
 <p>VSCode 里还支持更加复杂的 JSDoc 类型声明。在涉及到复杂对象的输入、输出时，我们可能就需要用到了。有兴趣的同学可以去这里看看：<a href="https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript" target="_blank" rel="noopener">https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript</a> 。</p>
 <p>希望通过这几篇文章，能够改善大家日常的 JavaScript 开发体验。这里面还有很多东西值得我们去探索。</p>
 <p>现在，有没有感觉在 VSCode 里开发 JavaScript 完全是另一番体验？</p>
-</div>
+</article>
       <div class="back-link">
         <!-- <a href="javascript:history.back()">  ← 返回  </a> -->
         <a href="/zh-CN">← 首页</a>
