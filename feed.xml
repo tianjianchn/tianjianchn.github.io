@@ -553,38 +553,41 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;p&gt;Suppose we now have a macOS computer (O) in the office, and we wanna connect to a macOS computer (H) at home.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Purchase a public server (V) with a public IP from VPS Provider. Its bandwidth might have to be larger, see below. Assume the public IP is 123.1.2.3, and its sshd port is 22.&lt;/li&gt;
-&lt;li&gt;Turn on VNC server in home computer H: Go to &lt;code&gt;System Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Share&lt;/code&gt;, check &lt;code&gt;Screen Share&lt;/code&gt;. It will listen at 127.0.0.1:5900.&lt;/li&gt;
-&lt;li&gt;Turn on sshd server in home computer H: Go to &lt;code&gt;System Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Share&lt;/code&gt;, check &lt;code&gt;Remote Login&lt;/code&gt;. It will listen at 127.0.0.1:22.&lt;/li&gt;
-&lt;li&gt;Start SSH reverse tunnel in home computer H: &lt;code&gt;ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3&lt;/code&gt;. It means a sshd proxy server is listening at port 7000 in public server V. 7000 is a sample port, you could change it yourself.&lt;/li&gt;
-&lt;li&gt;Open VNC proxy server in public server V via the sshd proxy server: &lt;code&gt;ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1&lt;/code&gt;. Admin is a sample login name in home computer H, please change it to your own.&lt;/li&gt;
-&lt;li&gt;Open VNC Proxy server in office computer O via ssh tunnel: &lt;code&gt;ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Connect VNC server in office computer O: &lt;code&gt;open vnc://127.0.0.1:5900&lt;/code&gt;. You could also use &lt;code&gt;Finder&lt;/code&gt;-&amp;gt;&lt;code&gt;Go&lt;/code&gt;-&amp;gt;&lt;code&gt;Connect to Server&lt;/code&gt;, and fill in &lt;code&gt;vnc://127.0.0.1&lt;/code&gt;, and then enter your login name and password of home computer H.&lt;/li&gt;
+&lt;li&gt;Turn on VNC server in home computer (H): Go to &lt;code&gt;System Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Share&lt;/code&gt;, check &lt;code&gt;Screen Share&lt;/code&gt;. It will listen at 127.0.0.1:5900.&lt;/li&gt;
+&lt;li&gt;Turn on sshd server in home computer (H): Go to &lt;code&gt;System Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Share&lt;/code&gt;, check &lt;code&gt;Remote Login&lt;/code&gt;. It will listen at 127.0.0.1:22.&lt;/li&gt;
+&lt;li&gt;Start SSH reverse tunnel in home computer (H): &lt;code&gt;ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3&lt;/code&gt;. It means a sshd proxy server is listening at port 7000 in public server (V). 7000 is a sample port, you could change it yourself.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;At this point, we can log into home computer (H) from public server (V), and access all network services on home computer (H). This is how we get intranet penetration. Next, let’s see how to support remote desktop.&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Open VNC proxy server in public server (V) via the sshd proxy server: &lt;code&gt;ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1&lt;/code&gt;. Admin is a sample login name in home computer (H), please change it to your own.&lt;/li&gt;
+&lt;li&gt;Open VNC Proxy server in office computer (O) via ssh tunnel: &lt;code&gt;ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Connect VNC server in office computer (O): &lt;code&gt;open vnc://127.0.0.1:5900&lt;/code&gt;. You could also use &lt;code&gt;Finder&lt;/code&gt;-&amp;gt;&lt;code&gt;Go&lt;/code&gt;-&amp;gt;&lt;code&gt;Connect to Server&lt;/code&gt;, and fill in &lt;code&gt;vnc://127.0.0.1&lt;/code&gt;, and then enter your login name and password of home computer (H).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;When remote desktop is connected, the data flow of operation like mouse moving is:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Office computer H: 127.0.0.1:5900
 ↓
-Public server V:   123.1.2.3:22
+Public server (V):   123.1.2.3:22
 ↓
-Public server V:   127.0.0.1:5900
+Public server (V):   127.0.0.1:5900
 ↓
-Public server V:   127.0.0.1:7000
+Public server (V):   127.0.0.1:7000
 ↓
-Public server V:   123.1.2.3:22
+Public server (V):   123.1.2.3:22
 ↓
-Home computer H:   127.0.0.1:22
+Home computer (H):   127.0.0.1:22
 ↓
-Home computer H:   0.0.0.0:5900
+Home computer (H):   0.0.0.0:5900
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;result&quot; tabindex=&quot;-1&quot;&gt;Result&lt;/h2&gt;
-&lt;p&gt;All of the ports above are listened at localhost, except that the public server V should expose its sshd port (22). Using SSH to encrypt data is safe.&lt;/p&gt;
-&lt;p&gt;But there are also some issues. One of the biggest problems is lagging. If the bandwidth of public server V is 1Mbit/s(which is 100KB actually), then:&lt;/p&gt;
+&lt;p&gt;All of the ports above are listened at localhost, except that the public server (V) should expose its sshd port (22). Using SSH to encrypt data is safe.&lt;/p&gt;
+&lt;p&gt;But there are also some issues. One of the biggest problems is lagging. If the bandwidth of public server (V) is 1Mbit/s(which is 100KB actually), then:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Typing will be ok.&lt;/li&gt;
 &lt;li&gt;Transferring files will cause the vnc client losing response totally as the bandwidth is taken up.&lt;/li&gt;
 &lt;li&gt;Web browsing is also a bit lag, you can see the significant delays, especially while scrolling the web page.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The free version of Team Viewer is much better than this. This is probably due to the fact that VNC protocol is not as good as Team Viewer’s proprietary protocol.&lt;/p&gt;
-&lt;p&gt;But if you increase the bandwidth up to 10MBit/s, it will go better enough. Also you should make sure the home computer has enough upload bandwidth, which could be tested by &lt;a href=&quot;http://www.speedtest.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.speedtest.cn/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But if you increase the bandwidth up to 10MBit/s, it will go better enough. Also you should make sure the home computer (h)as enough upload bandwidth, which could be tested by &lt;a href=&quot;http://www.speedtest.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.speedtest.cn/&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;other-issues&quot; tabindex=&quot;-1&quot;&gt;Other issues&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;SSH connections are sometimes unstable. Consider using something like &lt;code&gt;autossh&lt;/code&gt; or adding Keep Alive option into ssh.&lt;/li&gt;
@@ -614,6 +617,9 @@ Home computer H:   0.0.0.0:5900
 &lt;li&gt;在家里的主机 H 上，开启 VNC 服务：前往 System Preferences-&amp;gt;Share，勾选 Screen Share。它会监听本机的 5900 端口；&lt;/li&gt;
 &lt;li&gt;在家里的主机 H 上，开启 sshd 服务：前往 System Preferences-&amp;gt;Share，勾选 Remote Login。它会监听本机的 22 端口；&lt;/li&gt;
 &lt;li&gt;在家里的主机 H 上，开启 SSH 反向隧道：&lt;code&gt;ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3&lt;/code&gt;。这里相当于在公网服务器 V 上开了一个新的 sshd 服务代理，其端口是 7000（这里是示例端口，可以自己修改，下同）；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;到这里，我们就可以从公网服务器 V 上登录家里的主机 H 了，也就可以访问家里的主机 H 上的所有网络服务。这样就是实现了内网穿透。接下来我们看如何支持远程桌面。&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
 &lt;li&gt;在公网服务器 V 上，通过 7000 端口代理的 sshd 服务，建立一个到家里的主机 H 的 VNC 服务的反向代理：&lt;code&gt;ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1&lt;/code&gt;（admin 表示家里的主机 H 的登录用户名，请改成自己使用的）。这里就相当于公网服务器 V 提供了一个 VNC 服务，其端口为 5900；&lt;/li&gt;
 &lt;li&gt;在办公室的主机 O 上，建立一个到公网服务器 V 的 VNC 服务的反向代理：&lt;code&gt;ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3&lt;/code&gt;。这里就相当于办公室的主机 O 提供了一个 VNC 服务，其端口为 5900；&lt;/li&gt;
 &lt;li&gt;在办公室的主机 O 上，打开 Finder-&amp;gt;Go-&amp;gt;Connect to Server，填写 &lt;code&gt;vnc://127.0.0.1&lt;/code&gt;，然后在弹出的用户密码框中输入远程主机的登录用户名（如示例的 admin）及其密码，就可以访问咯。或者用命令行打开：&lt;code&gt;open vnc://127.0.0.1:5900&lt;/code&gt;。&lt;/li&gt;

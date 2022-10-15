@@ -52,38 +52,41 @@
 <p>Suppose we now have a macOS computer (O) in the office, and we wanna connect to a macOS computer (H) at home.</p>
 <ol>
 <li>Purchase a public server (V) with a public IP from VPS Provider. Its bandwidth might have to be larger, see below. Assume the public IP is 123.1.2.3, and its sshd port is 22.</li>
-<li>Turn on VNC server in home computer H: Go to <code>System Preferences</code>-&gt;<code>Share</code>, check <code>Screen Share</code>. It will listen at 127.0.0.1:5900.</li>
-<li>Turn on sshd server in home computer H: Go to <code>System Preferences</code>-&gt;<code>Share</code>, check <code>Remote Login</code>. It will listen at 127.0.0.1:22.</li>
-<li>Start SSH reverse tunnel in home computer H: <code>ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3</code>. It means a sshd proxy server is listening at port 7000 in public server V. 7000 is a sample port, you could change it yourself.</li>
-<li>Open VNC proxy server in public server V via the sshd proxy server: <code>ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1</code>. Admin is a sample login name in home computer H, please change it to your own.</li>
-<li>Open VNC Proxy server in office computer O via ssh tunnel: <code>ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3</code>.</li>
-<li>Connect VNC server in office computer O: <code>open vnc://127.0.0.1:5900</code>. You could also use <code>Finder</code>-&gt;<code>Go</code>-&gt;<code>Connect to Server</code>, and fill in <code>vnc://127.0.0.1</code>, and then enter your login name and password of home computer H.</li>
+<li>Turn on VNC server in home computer (H): Go to <code>System Preferences</code>-&gt;<code>Share</code>, check <code>Screen Share</code>. It will listen at 127.0.0.1:5900.</li>
+<li>Turn on sshd server in home computer (H): Go to <code>System Preferences</code>-&gt;<code>Share</code>, check <code>Remote Login</code>. It will listen at 127.0.0.1:22.</li>
+<li>Start SSH reverse tunnel in home computer (H): <code>ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3</code>. It means a sshd proxy server is listening at port 7000 in public server (V). 7000 is a sample port, you could change it yourself.</li>
+</ol>
+<p>At this point, we can log into home computer (H) from public server (V), and access all network services on home computer (H). This is how we get intranet penetration. Next, let’s see how to support remote desktop.</p>
+<ol start="5">
+<li>Open VNC proxy server in public server (V) via the sshd proxy server: <code>ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1</code>. Admin is a sample login name in home computer (H), please change it to your own.</li>
+<li>Open VNC Proxy server in office computer (O) via ssh tunnel: <code>ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3</code>.</li>
+<li>Connect VNC server in office computer (O): <code>open vnc://127.0.0.1:5900</code>. You could also use <code>Finder</code>-&gt;<code>Go</code>-&gt;<code>Connect to Server</code>, and fill in <code>vnc://127.0.0.1</code>, and then enter your login name and password of home computer (H).</li>
 </ol>
 <p>When remote desktop is connected, the data flow of operation like mouse moving is:</p>
 <pre><code>Office computer H: 127.0.0.1:5900
 ↓
-Public server V:   123.1.2.3:22
+Public server (V):   123.1.2.3:22
 ↓
-Public server V:   127.0.0.1:5900
+Public server (V):   127.0.0.1:5900
 ↓
-Public server V:   127.0.0.1:7000
+Public server (V):   127.0.0.1:7000
 ↓
-Public server V:   123.1.2.3:22
+Public server (V):   123.1.2.3:22
 ↓
-Home computer H:   127.0.0.1:22
+Home computer (H):   127.0.0.1:22
 ↓
-Home computer H:   0.0.0.0:5900
+Home computer (H):   0.0.0.0:5900
 </code></pre>
 <h2 id="result" tabindex="-1">Result</h2>
-<p>All of the ports above are listened at localhost, except that the public server V should expose its sshd port (22). Using SSH to encrypt data is safe.</p>
-<p>But there are also some issues. One of the biggest problems is lagging. If the bandwidth of public server V is 1Mbit/s(which is 100KB actually), then:</p>
+<p>All of the ports above are listened at localhost, except that the public server (V) should expose its sshd port (22). Using SSH to encrypt data is safe.</p>
+<p>But there are also some issues. One of the biggest problems is lagging. If the bandwidth of public server (V) is 1Mbit/s(which is 100KB actually), then:</p>
 <ul>
 <li>Typing will be ok.</li>
 <li>Transferring files will cause the vnc client losing response totally as the bandwidth is taken up.</li>
 <li>Web browsing is also a bit lag, you can see the significant delays, especially while scrolling the web page.</li>
 </ul>
 <p>The free version of Team Viewer is much better than this. This is probably due to the fact that VNC protocol is not as good as Team Viewer’s proprietary protocol.</p>
-<p>But if you increase the bandwidth up to 10MBit/s, it will go better enough. Also you should make sure the home computer has enough upload bandwidth, which could be tested by <a href="http://www.speedtest.cn/" target="_blank" rel="noopener">http://www.speedtest.cn/</a>.</p>
+<p>But if you increase the bandwidth up to 10MBit/s, it will go better enough. Also you should make sure the home computer (h)as enough upload bandwidth, which could be tested by <a href="http://www.speedtest.cn/" target="_blank" rel="noopener">http://www.speedtest.cn/</a>.</p>
 <h2 id="other-issues" tabindex="-1">Other issues</h2>
 <ol>
 <li>SSH connections are sometimes unstable. Consider using something like <code>autossh</code> or adding Keep Alive option into ssh.</li>
