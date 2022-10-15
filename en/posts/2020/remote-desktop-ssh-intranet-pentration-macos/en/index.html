@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta property="og:title" content="Remote Desktop With SSH Intranet Penetration In macOS" />
+<title>Remote Desktop With SSH Intranet Penetration In macOS | Tian Jian&#39;s Blog</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?46dcb08806edc2e971c354f20d50df0e';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LD3T07Q5JG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-LD3T07Q5JG');
+</script>
+
+    <link rel="stylesheet" href="/styles/post.css" />
+  </head>
+  <body>
+    <div class="container post-container">
+      <h1>Remote Desktop With SSH Intranet Penetration In macOS</h1>
+      <time>Sep 24, 2020</time>
+      
+
+      <aside class="toc-container">
+        <div class="title">Table of Contents</div>
+        <nav class="toc" >
+        <ul><li><a href="#final-architecture">Final Architecture</a></li><li><a href="#steps">Steps</a></li><li><a href="#result">Result</a></li><li><a href="#other-issues">Other issues</a></li></ul>
+      </nav>
+      </aside>
+      <article class="content markdown-body"><p>For remote desktop on two LAN hosts, intranet penetration is necessary. <a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">frp</a> is a good option for this. However, it can be actually done without relying on external tools. We could use SSH, which may be better in terms of security.</p>
+<h2 id="final-architecture" tabindex="-1">Final Architecture</h2>
+<p><picture><source type="image/avif" srcset="/images/en_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawio0e6HJQjFyb-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/en_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawio0e6HJQjFyb-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/en_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawio0e6HJQjFyb-640.jpeg" width="640" height="213"></picture></p>
+<h2 id="steps" tabindex="-1">Steps</h2>
+<p>假设我们现在在办公室有一台 MacOS 主机 O（Office），要连接家里的 MacOS 主机 H（Home）。</p>
+<p>Suppose we now have a macOS computer (O) in the office, and we wanna connect to a macOS computer (H) at home.</p>
+<ol>
+<li>Purchase a public server (V) with a public IP from VPS Provider. Its bandwidth might have to be larger, see below. Assume the public IP is 123.1.2.3, and its sshd port is 22.</li>
+<li>Turn on VNC server in home computer H: Go to <code>System Preferences</code>-&gt;<code>Share</code>, check <code>Screen Share</code>. It will listen at 127.0.0.1:5900.</li>
+<li>Turn on sshd server in home computer H: Go to <code>System Preferences</code>-&gt;<code>Share</code>, check <code>Remote Login</code>. It will listen at 127.0.0.1:22.</li>
+<li>Start SSH reverse tunnel in home computer H: <code>ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3</code>. It means a sshd proxy server is listening at port 7000 in public server V. 7000 is a sample port, you could change it yourself.</li>
+<li>Open VNC proxy server in public server V via the sshd proxy server: <code>ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1</code>. Admin is a sample login name in home computer H, please change it to your own.</li>
+<li>Open VNC Proxy server in office computer O via ssh tunnel: <code>ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3</code>.</li>
+<li>Connect VNC server in office computer O: <code>open vnc://127.0.0.1:5900</code>. You could also use <code>Finder</code>-&gt;<code>Go</code>-&gt;<code>Connect to Server</code>, and fill in <code>vnc://127.0.0.1</code>, and then enter your login name and password of home computer H.</li>
+</ol>
+<p>When remote desktop is connected, the data flow of operation like mouse moving is:</p>
+<pre><code>Office computer H: 127.0.0.1:5900
+↓
+Public server V:   123.1.2.3:22
+↓
+Public server V:   127.0.0.1:5900
+↓
+Public server V:   127.0.0.1:7000
+↓
+Public server V:   123.1.2.3:22
+↓
+Home computer H:   127.0.0.1:22
+↓
+Home computer H:   0.0.0.0:5900
+</code></pre>
+<h2 id="result" tabindex="-1">Result</h2>
+<p>All of the ports above are listened at localhost, except that the public server V should expose its sshd port (22). Using SSH to encrypt data is safe.</p>
+<p>But there are also some issues. One of the biggest problems is lagging. If the bandwidth of public server V is 1Mbit/s(which is 100KB actually), then:</p>
+<ul>
+<li>Typing will be ok.</li>
+<li>Transferring files will cause the vnc client losing response totally as the bandwidth is taken up.</li>
+<li>Web browsing is also a bit lag, you can see the significant delays, especially while scrolling the web page.</li>
+</ul>
+<p>The free version of Team Viewer is much better than this. This is probably due to the fact that VNC protocol is not as good as Team Viewer’s proprietary protocol.</p>
+<p>But if you increase the bandwidth up to 10MBit/s, it will go better enough. Also you should make sure the home computer has enough upload bandwidth, which could be tested by <a href="http://www.speedtest.cn/" target="_blank" rel="noopener">http://www.speedtest.cn/</a>.</p>
+<h2 id="other-issues" tabindex="-1">Other issues</h2>
+<ol>
+<li>SSH connections are sometimes unstable. Consider using something like <code>autossh</code> or adding Keep Alive option into ssh.</li>
+<li>There is a large caret when you’re typing, which might be a bug.</li>
+<li>If you wanna transfer files, you can only use drag &amp; drop in macOS vnc client. CMD+C and CMD+V is not working for this.</li>
+<li>It will be really slow when you wanna cancel the screen saver of remote computer. At this time, disconnecting first then reconnecting is a good choice. It may be related to the bandwidth.</li>
+</ol>
+<p>This is generally fine as a backup for the free version of Team Viewer. For example, it will be unable to connect with Team Viewer when the screen of remote computer is lock or Team Viewer in remote computer is minimized, then you could use this method to connect to the remote computer to troubleshoot the problem.</p>
+</article>
+      <div class="back-link">
+        <!-- <a href="javascript:history.back()">  ← Back  </a> -->
+        <a href="/en">← Home</a>
+      </div>
+    </div>
+
+    <script
+  src="https://giscus.app/client.js"
+  data-repo="tianjianchn/tianjianchn.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnkxMzE4Njc1MDY="
+  data-category="Blog Comments"
+  data-category-id="DIC_kwDOB9wjcs4CRwpv"
+  data-mapping="og:title"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+ <footer>Copyright &copy; 2018 - 2022 <a href="https://github.com/tianjianchn">Tian Jian</a>.</footer>
+
+  </body>
+</html>

@@ -13,9 +13,9 @@
     
     <entry>
       <title>怎样才是一个好的开发者</title>
-      <link href="https://tianjianchn.github.io/zh-CN/posts/what-makes-a-good-developer/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2019/what-makes-a-good-developer/"/>
       <updated>2018-11-23T00:00:00Z</updated>
-      <id>https://tianjianchn.github.io/zh-CN/posts/what-makes-a-good-developer/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2019/what-makes-a-good-developer/</id>
       <content type="html">&lt;p&gt;哪些能力是一位优秀的开发人员在技术上应该具备的？这是一个老生常谈的问题。就像很多人简历里所描述的，“解决问题能力强”、”善于学习“、”积极思考“，以及各种“精通某某某”等。毋庸置疑，能做到这些的人的确可以称得上“优秀”。但我总感觉它们就像散落一地的珍珠，缺少那么一根线来串起来。我想要一个具有提纲掣领的评判依据，甚至在这个纲领下，能够从一种更高的高度去引导我们开发人员的发展方向，更好地帮助他们进行技能学习。在这些年的研发、面试、技术管理工作中，我更倾向于从以下三个角度去认识一位开发人员：工具、编码、设计。&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;h2 id=&quot;%E5%B7%A5%E5%85%B7&quot; tabindex=&quot;-1&quot;&gt;工具&lt;/h2&gt;
@@ -37,9 +37,9 @@
     
     <entry>
       <title>微前端实践</title>
-      <link href="https://tianjianchn.github.io/zh-CN/posts/micro-frontend-practice/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2019/micro-frontend-practice/"/>
       <updated>2019-01-11T20:40:18Z</updated>
-      <id>https://tianjianchn.github.io/zh-CN/posts/micro-frontend-practice/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2019/micro-frontend-practice/</id>
       <content type="html">&lt;p&gt;在 toB 的前端开发工作中，我们往往就会遇到如下困境：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;工程越来越大，打包越来越慢&lt;/li&gt;
@@ -49,7 +49,7 @@
 &lt;p&gt;不同的团队可能有不同的方法去解决这些问题。在前端开发日新月异、前端工程化蓬勃发展的今天，我想给大家介绍下另一种尝试——微前端。&lt;/p&gt;
 &lt;h2 id=&quot;%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%98%AF%E4%BB%80%E4%B9%88&quot; tabindex=&quot;-1&quot;&gt;微前端是什么&lt;/h2&gt;
 &lt;p&gt;那什么是微前端？微前端主要是借鉴后端微服务的概念。简单地说，就是将一个巨无霸（Monolith）的前端工程拆分成一个一个的小工程。别小看这些小工程，它们也是“麻雀虽小，五脏俱全”，完全具备独立的开发、运行能力。整个系统就将由这些小工程协同合作，实现所有页面的展示与交互。&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.jpeg&quot; width=&quot;640&quot; height=&quot;243&quot; /&gt;&lt;/picture&gt;&lt;br /&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_micro-frontend-practice_micro-service-vs-micro-frontendnhZ4yz9SEm-640.jpeg&quot; width=&quot;640&quot; height=&quot;243&quot; /&gt;&lt;/picture&gt;&lt;br /&gt;
 可以跟微服务这么对比着去理解：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -209,9 +209,9 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     
     <entry>
       <title>NodeJS Docker 打包优化</title>
-      <link href="https://tianjianchn.github.io/zh-CN/posts/nodejs-docker-optimize/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2019/nodejs-docker-optimize/"/>
       <updated>2019-01-23T00:00:00Z</updated>
-      <id>https://tianjianchn.github.io/zh-CN/posts/nodejs-docker-optimize/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2019/nodejs-docker-optimize/</id>
       <content type="html">&lt;p&gt;最近 NodeJS 后端工程的 Docker 打包优化工作总算告一段落了。其实去年 12 月份就开始试点改造，期间遇到了很难复现的间歇性 &lt;code&gt;socket hang up&lt;/code&gt; 问题，不得不延后。上周终于抽出时间全力排查了下，发现是升级 NodeJS 到 6.15.0 后，其有一个 HTTP Keep-alive 连接超时的 Bug。不得不感慨：这小版本升级也要格外小心啊。&lt;/p&gt;
 &lt;p&gt;回到正题。在确认没有其他附带问题后，在试点的基础上，又增加了一些新的目标。总的目标大概如下：&lt;/p&gt;
 &lt;ul&gt;
@@ -222,7 +222,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;/ul&gt;
 &lt;p&gt;下面从各个目标一一介绍下我们的优化实践之路。&lt;/p&gt;
 &lt;!-- more --&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg&quot; width=&quot;640&quot; height=&quot;285&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg&quot; width=&quot;640&quot; height=&quot;285&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;h2 id=&quot;%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE&quot; tabindex=&quot;-1&quot;&gt;基础镜像设置&lt;/h2&gt;
 &lt;p&gt;由于之前的基础镜像使用的是 &lt;code&gt;FROM node:6&lt;/code&gt;，只有 major version，没有指定 minor version、patch version。当该基础镜像 minor 或 patch 版本更新后，如果本地的镜像缓存也被清除了，那么打包就会使用新版本的基础镜像。这也是上面不经意升级到 node 6.15.0 的原因。所以这里我们限定了基础镜像的全版本：&lt;code&gt;FROM node:6.16.0&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;我们的产品主要在国内使用，运维人员也都是在国内。为了更方便查看日志中的时间、方便程序中的日期计算，把时区调整为北京时区（即东八区）：&lt;code&gt;RUN rm /etc/localtime &amp;amp;&amp;amp; echo &amp;quot;Asia/Shanghai&amp;quot; &amp;gt; /etc/timezone &amp;amp;&amp;amp; dpkg-reconfigure -f noninteractive tzdata&lt;/code&gt;。注意，Debian Stretch 版本后需要 &lt;code&gt;rm /etc/localtime&lt;/code&gt;，否则时区修改可能无法生效（被替换回原值）。&lt;/p&gt;
@@ -333,16 +333,16 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     
     <entry>
       <title>在 Visual Studio Code JavaScript 工程中使用 JSDoc</title>
-      <link href="https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2019/vscode-javascript-jsdoc/"/>
       <updated>2019-03-09T00:00:00Z</updated>
-      <id>https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2019/vscode-javascript-jsdoc/</id>
       <content type="html">&lt;p&gt;不使用 TS 是否也能做到类型提示和校验？在 VSCode 中我们可以通过 &lt;a href=&quot;http://usejsdoc.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JSDoc&lt;/a&gt; 来实现。&lt;/p&gt;
 &lt;h2 id=&quot;jsdoc&quot; tabindex=&quot;-1&quot;&gt;JSDoc&lt;/h2&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg&quot; width=&quot;640&quot; height=&quot;534&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2019_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg&quot; width=&quot;640&quot; height=&quot;534&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;JSDoc 本身是用来对方法、变量、模块、类等进行结构化文档注释用的。它本身还有一个对应的工具，扫描所有源代码文件里的 JSDoc 注释并生成 API 文档，就像 JavaDoc 一样。&lt;/p&gt;
 &lt;p&gt;但是在 VSCode 里，它被赋予了更加强大的地位。它不仅仅是一个文档说明，还可以用来做智能提示（IntelliSense），而且可以做到函数的参数级别。甚至还能做参数类型、值类型的校验！也许你会想到 TypeScript 的 definition 文件（.d.ts）。是的，它也有参数类型校验，但是它没有参数说明。如果要参数说明，还是要写 JSDoc。与其多写一遍 definition，不如直接使用 JavaScript + JSDoc 更加方便。当然这一切都是依赖于 TypeScript，我们不能因此去否定它。&lt;/p&gt;
 &lt;p&gt;我们来看看 JSDoc 所带来的强大提示功能。&lt;br /&gt;
-&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-intelli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/2019/vscode-javascript-jsdoc/vscode-jsdoc-intelli.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;从上面的动图可以看到，函数的注释、参数的注释、参数注释的输入跟随都有了。&lt;/p&gt;
 &lt;h2 id=&quot;%E5%8F%82%E6%95%B0%E3%80%81%E7%B1%BB%E5%9E%8B%E6%A0%A1%E9%AA%8C&quot; tabindex=&quot;-1&quot;&gt;参数、类型校验&lt;/h2&gt;
 &lt;p&gt;文档提示只是第一步。我们知道 JavaScript 是动态类型、弱类型的语言。变量没有类型声明，运行时还可以随意变更值类型，还有很多内置的自动类型转换场景。虽然这是吸引我的很大的一方面，不过在团队协作里，最好还是能够做到约束、检查一下。VSCode 就为我们提供了这么一个能力。&lt;/p&gt;
@@ -354,7 +354,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我们再来看看：&lt;br /&gt;
-&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-check.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/2019/vscode-javascript-jsdoc/vscode-jsdoc-check.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;是不是很不错？VSCode 帮我们做了必填参数、参数类型、返回值类型等各项检测与校验。这样我们在写代码的时候，一方面能够看到文档注释，一方面又能随时知道调用方式是否错误，快哉！&lt;/p&gt;
 &lt;h2 id=&quot;%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84%E5%BD%A2%E5%BC%8F%E5%8F%82%E6%95%B0&quot; tabindex=&quot;-1&quot;&gt;对象解构形式参数&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;/**
@@ -368,7 +368,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; expire &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如上示例，我们使用了 Object Destruction 定义了方法的参数。对应的，JSDoc 里可以通过 &lt;code&gt;.&lt;/code&gt; 来为对象内部的属性提供文档。来看看使用时的效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/vscode-jsdoc-object-destr.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tianjianchn.github.io/zh-CN/posts/2019/vscode-javascript-jsdoc/vscode-jsdoc-object-destr.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;这里有一个地方要注意，参数文档那一个小窗口，如果一开始没有显示，则要再按一次 &lt;code&gt;ctrl+space&lt;/code&gt;（macOS），也就是额外触发一次智能提示。这个在 VSCode 里叫“toggleSuggestionDetails”（可以在快捷键设置里找到它）。&lt;/p&gt;
 &lt;p&gt;VSCode 里还支持更加复杂的 JSDoc 类型声明。在涉及到复杂对象的输入、输出时，我们可能就需要用到了。有兴趣的同学可以去这里看看：&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript&lt;/a&gt; 。&lt;/p&gt;
 &lt;p&gt;希望通过这几篇文章，能够改善大家日常的 JavaScript 开发体验。这里面还有很多东西值得我们去探索。&lt;/p&gt;
@@ -379,10 +379,281 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     </entry>
     
     <entry>
+      <title>戏说网络（一）</title>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2019/parody-network-1/"/>
+      <updated>2019-03-17T00:00:00Z</updated>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2019/parody-network-1/</id>
+      <content type="html">&lt;p&gt;最近工作中需要使用 LVS 负载均衡，而运维告知后端主机所在网段不匹配，可能无法申请。抱着好奇的心理，就去研究了下 LVS。过程中重温了下有关 NAT、交换机、网关、路由等一系列相关网络概念。在这里推荐一本好书：《网络是怎样连接的》。&lt;/p&gt;
+&lt;p&gt;这本书讲述的内容，其实跟我以前面试时很喜欢问的一个题目很类似：当你在浏览器里输入一个 URL 会发生什么。这里主要考查的是服务端以及前端的处理逻辑，跟底层网络的关系倒并不深究。而这本书则着重讲解了网络底层的处理流程，包括各种网络协议、网络设备、信号处理、操作系统 IO 处理等。推荐大家去读一下，能让你对网络有一个更形象化的认识，让你的认识更有层次逻辑。我也打算就本书做一些读书笔记，浓缩一下书中内容（毕竟 300 多页的书），以一个门外汉（Layman）的视角讲述下这里面的内容。&lt;/p&gt;
+&lt;h2 id=&quot;%E7%BC%98%E8%B5%B7&quot; tabindex=&quot;-1&quot;&gt;缘起&lt;/h2&gt;
+&lt;p&gt;网络的目的，就是为了连接。最开始的需求可能是两个人的计算机要连接，互相传递数据。那么每个人的计算机里就各需要有一种设备，可以用来发送和接收数据。这个设备就是网卡。用一根线把这两张网卡连接起来，双方就可以通过信号进行通信。这根线就叫网线。&lt;/p&gt;
+&lt;p&gt;两个计算机的通信很简单，A 要给 B 发送什么数据，就构造好数据直接让网卡发出去就行，不需要问怎么到达，也不可能会丢。不过两个人聊天就是会有聊完的时候，不如加一个人一起唱戏。于是第三个人的计算机就加入进来了。那怎么连接这三个计算机呢？可以考虑让一个计算机做中继。像 A&amp;lt;-&amp;gt;B&amp;lt;-&amp;gt;C 这样由 B 来中继，A 要给 C 发送数据，就先发给 B，然后 B 转给 C。所以 B 上面就得有两张网卡。可是这还不够，B 怎么知道 A 发过来的数据是给自己的还是给 C 的？这里我们就需要确定各自的标识了。这种标识我们就把它叫做地址。当 A 要给 C 发送数据时，数据里额外增加一项地址，填 C，然后由 A 的网卡发出去。所以传送的数据其实是由两部分构成的，一部分是地址，一部分是真正的有效数据。地址一般放在头部，可以更快地提取出来进行识别。B 左侧的网卡（跟 A 相连的）收到后，检查数据头部的地址，发现是给 C 的，不是给自己的。那么它该用哪张网卡来发呢？肯定不能用左侧的网卡了，不然 C 就收不到了。所以左右两张网卡都要有一些标记，表明自己可以通往哪里。这就是地址表。像下面这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| 地址 | 网卡     |
+| ---- | -------- |
+| A    | 左侧网卡 |
+| C    | 右侧网卡 |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这时，B 就知道要用右侧网卡转发数据了，这样 C 就收到了 A 发送的数据。&lt;/p&gt;
+&lt;p&gt;三个人唱戏也唱累了，想打麻将了，又拉来了 D。这个时候怎么办？也许我们可以继续串行地连起来：A&amp;lt;-&amp;gt;B&amp;lt;-&amp;gt;C&amp;lt;-&amp;gt;D。但是这样链条有点长，A 可能就不愿意跟 D 玩。还有一种方式像星状一样连接：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;A&amp;lt;-&amp;gt;B&amp;lt;-&amp;gt;C
+    ↕
+    D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A 跟 C 和 D 之间的通信，都经过 B。这里 B 就有了 3 张网卡。接下来可能还会有第五个、第六个人加入。B 可能就不太愿意了，凭什么在我身上插满了网卡？那么多数据到我这，真正给我的只有占很少一部分，这种感觉一点也不好。大家觉得也是，的确委屈 B 了。那我们把转发这种功能单独抽取出来如何？&lt;/p&gt;
+&lt;h2 id=&quot;%E4%BA%A4%E6%8D%A2%E6%9C%BA&quot; tabindex=&quot;-1&quot;&gt;交换机&lt;/h2&gt;
+&lt;p&gt;这种只做网络数据转发的设备，我们就把它叫做交换机。它上面有多个网卡，能够根据地址表转发数据。而 A、B、C 等的网卡地址，专业术语就叫 MAC。MAC 地址由 6 个字节构成，用 16 进制表示就类似 00:00:00:00:00:00。有了 MAC 和交换机，我们就能够让所有接入交换机的计算机彼此进行通信。这就是我们整个网络中的数据链路层，也就是常说的第二层（第一层是物理层，即数字信号或模拟信号传输）。第二层传送的数据包由 MAC 头部和数据块构成。MAC 头部包含发送方的 MAC 地址（来源 MAC）和接收方的 MAC 地址（目的 MAC）。&lt;/p&gt;
+&lt;p&gt;那么在一个有交换机连接的网络里，各个计算机之间如何通信呢？假设有 4 台计算机 A、B、C、D。其中 A 和 B 各有一张网卡，MAC 地址分别是 00:00:00:00:00:AA、00:00:00:00:00:BB。然后它们分别连接到交换机的网卡 1、网卡 2 上。此时交换机里还没有任何地址表，也不需要手动维护地址表。A 要给 B 发送数据，则要填写 B 的 MAC 地址。A 构造数据包，来源 MAC 填写 00:00:00:00:00:AA，目的 MAC 填写 00:00:00:00:00:BB，通过 A 的网卡发送给交换机。交换机从与 A 连接的网卡 1 都收到一个数据包，解析来源 MAC 地址，此时就把 MaC 地址 A 与 网卡 1 写入地址表。此时地址表为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| MAC 地址          | 交换机网卡号 |
+| ----------------- | ------------ |
+| 00:00:00:00:00:AA | 1            |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接着解析目的 MAC 地址，得到 00:00:00:00:00:BB。但是地址表中没有该地址的记录，交换机不知道该从哪个网卡转发出去数据包。于是交换机就把数据包转发到它自己的所有网卡，除了来源网卡（即网卡 1）。这就叫广播。这样 B、C、D 都会收到该数据包。它们的网卡在收到数据包后，会解析出目地 MAC。其中 C、D 发现跟自己的 MAC 地址不一样，直接丢弃（它要是不丢而是要偷窥怎么办？那么没办法，这就是网络安全地范畴了）。B 发现是发给它的数据包，就接收并处理了。接着 B 回复数据给 A。跟上面的流程类似，交换机收到数据包后会往地址表里增加新的一项：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| MAC 地址          | 交换机网卡号 |
+| ----------------- | ------------ |
+| 00:00:00:00:00:AA | 1            |
+| 00:00:00:00:00:BB | 2            |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于目标地址是 00:00:00:00:00:AA，在交换机地址表里存在，此时就不需要做广播了。&lt;/p&gt;
+&lt;p&gt;这样一个小网络就成型了。接下来要接入的人越来越多，数据包也越来越多。我们还想跟遥远的别的人群进行通信。这会不会有问题呢？如果会，又会有哪些问题呢？不妨先想想，后面我们再来看看。&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: 戏说网络（一）&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>戏说网络（二）</title>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2019/parody-network-2/"/>
+      <updated>2019-03-19T00:00:00Z</updated>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2019/parody-network-2/</id>
+      <content type="html">&lt;p&gt;&lt;a href=&quot;https://tianjianchn.github.io/zh-CN/posts/2019/parody-network-1/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;上一篇&lt;/a&gt;我们聊到了从最原始的两个人的连接需求到多个人的连接需求，进而衍生出了 MAC 地址、交换机等网络概念。今天我们来继续瞎聊。&lt;/p&gt;
+&lt;h2 id=&quot;%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%BA%92%E8%81%94&quot; tabindex=&quot;-1&quot;&gt;交换机互联&lt;/h2&gt;
+&lt;p&gt;当要连接的人越来越多，超过 10 个、20 个、30 个、50 个，我们的一个交换机也没有那么多网口了。聪明的同学肯定想到了，交换机连交换机。每个交换机上连接 10 来个人，来几个交换机就能连接几倍的人数。假设 A、B 接在交换机一的 1、2 网卡上，C、D 接在交换机二的 1、2 网卡上，交换机一和二的 3 号网卡互相连着。则经过若干次广播之后，交换机一的 MAC 地址表会是这样：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;MAC&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;网卡号&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;A&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;B&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;C&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;D&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;交换机二的 MAC 地址表会是这样：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;MAC&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;网卡号&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;C&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;D&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;A&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;B&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;%E5%B9%BF%E6%92%AD%E9%A3%8E%E6%9A%B4&quot; tabindex=&quot;-1&quot;&gt;广播风暴&lt;/h2&gt;
+&lt;p&gt;那么要经过多少次广播呢？广播又会有什么不一样呢？假设当地址表都是空的时候，A 要给 B 发送数据。此时地址表里找不到 B，于是交换机一开始广播。广播的数据也会通过 3 号网卡到达交换机二。交换机二里也是空的，也没有 B，于是又在交换机二里广播。所以 A 给 B 发送数据会导致交换机一、二都发生广播。接下来 A 给 C 发送数据，交换机一地址表没有 C（此时只有 A 和 B），所以又要广播。同样交换机二也要广播。我们可以把所有情况都列下来：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;通信方向&lt;/th&gt;
+&lt;th&gt;交换机一广播&lt;/th&gt;
+&lt;th&gt;交换机二广播&lt;/th&gt;
+&lt;th&gt;通信后交换机一地址表&lt;/th&gt;
+&lt;th&gt;通信后交换机二地址表&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;A-&amp;gt;B&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;A、B&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;A-&amp;gt;C&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;A、B、C&lt;/td&gt;
+&lt;td&gt;A、C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;A-&amp;gt;D&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;A、B、C、D&lt;/td&gt;
+&lt;td&gt;A、C、D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;C-&amp;gt;B&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;A、B、C、D&lt;/td&gt;
+&lt;td&gt;A、B、C、D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;有没有发现？任何一个交换机的广播，都可能导致连接的另一个交换机也产生广播？广播被逐级放大。互联的交换机越多，在每个交换机产生的广播就越频繁。正常的数据发送通道就被广播给占用了，导致网络不堪重负。&lt;/p&gt;
+&lt;h2 id=&quot;%E7%BC%93%E5%AD%98&quot; tabindex=&quot;-1&quot;&gt;缓存&lt;/h2&gt;
+&lt;p&gt;也许有的同学会有疑问，也就是当地址表中没有对应项时才会发生广播，当每个交换机都有了整个网络的所有地址后，也就不会再有广播了。的确是！但这是建立在网络很稳定的基础上。如果 A 拔了网线换成 E 呢？如果 A 跟 C 交换了位置呢？所以地址表不能一成不变，它必须要适应这种变化。也就是说，我们要在必要的时候刷新它们。最简单的做法，就是定时清除地址表里的记录了。也可以说，地址表仅仅就是一种缓存，并不是永久存储。而且缓存的时间一般不会太长，可能也就几秒到几十秒，避免位置变化导致用户无法通信。&lt;/p&gt;
+&lt;h2 id=&quot;%E6%9B%B4%E5%A4%A7%E7%9A%84%E8%BF%9E%E6%8E%A5&quot; tabindex=&quot;-1&quot;&gt;更大的连接&lt;/h2&gt;
+&lt;p&gt;这样来看，广播的频率还是比较高。这就限制了通过交换机互联的网络，不宜过大。这样几十人一个交换机网络，就形成一个一个的网络小孤岛。其实也挺好，大家在各自的网络小空间里，悠然自得。但什么事都怕时间二字。时间长了，总会觉得腻的，毕竟外面的世界那么大，谁都想去看看。可我们已经不能用交换机了。怎么办？在找到办法之前，先来看看我们面临的问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不能再任由广播风暴产生了&lt;/li&gt;
+&lt;li&gt;小网络圈子里太随意，地址随意填。这样网络对接时，大家使用的地址就可能有冲突&lt;/li&gt;
+&lt;li&gt;甚至这个小网络里，大家使用的协议都不一样，有的网络里用的可能并不是 MAC 地址&lt;/li&gt;
+&lt;li&gt;将来要连接的网络还会更多，不能任意填写地址了，必须有专门的管理方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有没有其他问题？大家可以先想想。下一篇我们来聊聊解决办法。&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: 戏说网络（二）&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>Remote Desktop With SSH Intranet Penetration In macOS</title>
+      <link href="https://tianjianchn.github.io/en/posts/2020/remote-desktop-ssh-intranet-pentration-macos/"/>
+      <updated>2020-09-24T00:00:00Z</updated>
+      <id>https://tianjianchn.github.io/en/posts/2020/remote-desktop-ssh-intranet-pentration-macos/</id>
+      <content type="html">&lt;p&gt;For remote desktop on two LAN hosts, intranet penetration is necessary. &lt;a href=&quot;https://github.com/fatedier/frp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;frp&lt;/a&gt; is a good option for this. However, it can be actually done without relying on external tools. We could use SSH, which may be better in terms of security.&lt;/p&gt;
+&lt;h2 id=&quot;final-architecture&quot; tabindex=&quot;-1&quot;&gt;Final Architecture&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/en_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawio0e6HJQjFyb-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/en_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawio0e6HJQjFyb-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/en_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawio0e6HJQjFyb-640.jpeg&quot; width=&quot;640&quot; height=&quot;213&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;steps&quot; tabindex=&quot;-1&quot;&gt;Steps&lt;/h2&gt;
+&lt;p&gt;Suppose we now have a macOS computer (O) in the office, and we wanna connect to a macOS computer (H) at home.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Purchase a public server (V) with a public IP from VPS Provider. Its bandwidth might have to be larger, see below. Assume the public IP is 123.1.2.3, and its sshd port is 22.&lt;/li&gt;
+&lt;li&gt;Turn on VNC server in home computer H: Go to &lt;code&gt;System Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Share&lt;/code&gt;, check &lt;code&gt;Screen Share&lt;/code&gt;. It will listen at 127.0.0.1:5900.&lt;/li&gt;
+&lt;li&gt;Turn on sshd server in home computer H: Go to &lt;code&gt;System Preferences&lt;/code&gt;-&amp;gt;&lt;code&gt;Share&lt;/code&gt;, check &lt;code&gt;Remote Login&lt;/code&gt;. It will listen at 127.0.0.1:22.&lt;/li&gt;
+&lt;li&gt;Start SSH reverse tunnel in home computer H: &lt;code&gt;ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3&lt;/code&gt;. It means a sshd proxy server is listening at port 7000 in public server V. 7000 is a sample port, you could change it yourself.&lt;/li&gt;
+&lt;li&gt;Open VNC proxy server in public server V via the sshd proxy server: &lt;code&gt;ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1&lt;/code&gt;. Admin is a sample login name in home computer H, please change it to your own.&lt;/li&gt;
+&lt;li&gt;Open VNC Proxy server in office computer O via ssh tunnel: &lt;code&gt;ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Connect VNC server in office computer O: &lt;code&gt;open vnc://127.0.0.1:5900&lt;/code&gt;. You could also use &lt;code&gt;Finder&lt;/code&gt;-&amp;gt;&lt;code&gt;Go&lt;/code&gt;-&amp;gt;&lt;code&gt;Connect to Server&lt;/code&gt;, and fill in &lt;code&gt;vnc://127.0.0.1&lt;/code&gt;, and then enter your login name and password of home computer H.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When remote desktop is connected, the data flow of operation like mouse moving is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Office computer H: 127.0.0.1:5900
+↓
+Public server V:   123.1.2.3:22
+↓
+Public server V:   127.0.0.1:5900
+↓
+Public server V:   127.0.0.1:7000
+↓
+Public server V:   123.1.2.3:22
+↓
+Home computer H:   127.0.0.1:22
+↓
+Home computer H:   0.0.0.0:5900
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;result&quot; tabindex=&quot;-1&quot;&gt;Result&lt;/h2&gt;
+&lt;p&gt;All of the ports above are listened at localhost, except that the public server V should expose its sshd port (22). Using SSH to encrypt data is safe.&lt;/p&gt;
+&lt;p&gt;But there are also some issues. One of the biggest problems is lagging. If the bandwidth of public server V is 1Mbit/s(which is 100KB actually), then:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Typing will be ok.&lt;/li&gt;
+&lt;li&gt;Transferring files will cause the vnc client losing response totally as the bandwidth is taken up.&lt;/li&gt;
+&lt;li&gt;Web browsing is also a bit lag, you can see the significant delays, especially while scrolling the web page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The free version of Team Viewer is much better than this. This is probably due to the fact that VNC protocol is not as good as Team Viewer’s proprietary protocol.&lt;/p&gt;
+&lt;p&gt;But if you increase the bandwidth up to 10MBit/s, it will go better enough. Also you should make sure the home computer has enough upload bandwidth, which could be tested by &lt;a href=&quot;http://www.speedtest.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.speedtest.cn/&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;other-issues&quot; tabindex=&quot;-1&quot;&gt;Other issues&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;SSH connections are sometimes unstable. Consider using something like &lt;code&gt;autossh&lt;/code&gt; or adding Keep Alive option into ssh.&lt;/li&gt;
+&lt;li&gt;There is a large caret when you’re typing, which might be a bug.&lt;/li&gt;
+&lt;li&gt;If you wanna transfer files, you can only use drag &amp;amp; drop in macOS vnc client. CMD+C and CMD+V is not working for this.&lt;/li&gt;
+&lt;li&gt;It will be really slow when you wanna cancel the screen saver of remote computer. At this time, disconnecting first then reconnecting is a good choice. It may be related to the bandwidth.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is generally fine as a backup for the free version of Team Viewer. For example, it will be unable to connect with Team Viewer when the screen of remote computer is lock or Team Viewer in remote computer is minimized, then you could use this method to connect to the remote computer to troubleshoot the problem.&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: Remote Desktop With SSH Intranet Penetration In macOS&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
+      <title>MacOS SSH 内网穿透实现远程桌面</title>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2020/remote-desktop-ssh-intranet-pentration-macos/"/>
+      <updated>2020-09-24T00:00:00Z</updated>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2020/remote-desktop-ssh-intranet-pentration-macos/</id>
+      <content type="html">&lt;p&gt;两个局域网的主机要进行远程桌面，必须进行内网穿透。&lt;a href=&quot;https://github.com/fatedier/frp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;frp&lt;/a&gt; 是一个不错的选项。但其实不依赖外部的工具，仅仅利用系统的 SSH 也能实现，而且在安全性上可能会更好。&lt;/p&gt;
+&lt;h2 id=&quot;%E6%9C%80%E7%BB%88%E6%9E%B6%E6%9E%84&quot; tabindex=&quot;-1&quot;&gt;最终架构&lt;/h2&gt;
+&lt;p&gt;参与该网络的各个机器、端口、执行的命令及其顺序如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawioKozuEhCfs7-640.avif 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawioKozuEhCfs7-640.webp 640w&quot; sizes=&quot;100vw&quot; /&gt;&lt;img class=&quot;markdown-image&quot; decoding=&quot;async&quot; alt=&quot;&quot; src=&quot;https://tianjianchn.github.io/images/zh-CN_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawioKozuEhCfs7-640.jpeg&quot; width=&quot;640&quot; height=&quot;213&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4&quot; tabindex=&quot;-1&quot;&gt;实现步骤&lt;/h2&gt;
+&lt;p&gt;假设我们现在在办公室有一台 MacOS 主机 O（Office），要连接家里的 MacOS 主机 H（Home）。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;购买一台公网服务器 V（VPS），且具有公网 IP。带宽可能要的比较大，见下文的说明。假设公网 IP 为 123.1.2.3，其 sshd 端口为 22；&lt;/li&gt;
+&lt;li&gt;在家里的主机 H 上，开启 VNC 服务：前往 System Preferences-&amp;gt;Share，勾选 Screen Share。它会监听本机的 5900 端口；&lt;/li&gt;
+&lt;li&gt;在家里的主机 H 上，开启 sshd 服务：前往 System Preferences-&amp;gt;Share，勾选 Remote Login。它会监听本机的 22 端口；&lt;/li&gt;
+&lt;li&gt;在家里的主机 H 上，开启 SSH 反向隧道：&lt;code&gt;ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3&lt;/code&gt;。这里相当于在公网服务器 V 上开了一个新的 sshd 服务代理，其端口是 7000（这里是示例端口，可以自己修改，下同）；&lt;/li&gt;
+&lt;li&gt;在公网服务器 V 上，通过 7000 端口代理的 sshd 服务，建立一个到家里的主机 H 的 VNC 服务的反向代理：&lt;code&gt;ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1&lt;/code&gt;（admin 表示家里的主机 H 的登录用户名，请改成自己使用的）。这里就相当于公网服务器 V 提供了一个 VNC 服务，其端口为 5900；&lt;/li&gt;
+&lt;li&gt;在办公室的主机 O 上，建立一个到公网服务器 V 的 VNC 服务的反向代理：&lt;code&gt;ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3&lt;/code&gt;。这里就相当于办公室的主机 O 提供了一个 VNC 服务，其端口为 5900；&lt;/li&gt;
+&lt;li&gt;在办公室的主机 O 上，打开 Finder-&amp;gt;Go-&amp;gt;Connect to Server，填写 &lt;code&gt;vnc://127.0.0.1&lt;/code&gt;，然后在弹出的用户密码框中输入远程主机的登录用户名（如示例的 admin）及其密码，就可以访问咯。或者用命令行打开：&lt;code&gt;open vnc://127.0.0.1:5900&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当用户进行远程桌面时，比如移动一下鼠标，此时其请求数据流向为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;办公室的主机 H: 127.0.0.1:5900
+↓
+公网服务器 V:   123.1.2.3:22
+↓
+公网服务器 V:   127.0.0.1:5900
+↓
+公网服务器 V:   127.0.0.1:7000
+↓
+公网服务器 V:   123.1.2.3:22
+↓
+家里的主机 H:   127.0.0.1:22
+↓
+家里的主机 H:   0.0.0.0:5900
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;%E6%95%88%E6%9E%9C&quot; tabindex=&quot;-1&quot;&gt;效果&lt;/h2&gt;
+&lt;p&gt;以上所有的端口都是本地 127.0.0.1 的，除了公网服务器 V 需要对外暴露 sshd 端口（22），无需再暴露任何其他主机、其他端口，而且使用 OpenSSH 加密通信数据，相对来说比较安全。当然上面用了公网服务器的 root 用户，你也可以新建一个低权限用户来做这个，进一步提升安全性。&lt;/p&gt;
+&lt;p&gt;但是也存在一些需要关注的问题、优化的地方。最大的一个问题就是卡顿。在 1Mbit/s（其实只有 100KB）的公网带宽服务器上，效果一般。打字什么的没什么问题。要是传送文件，挤占带宽后会导致屏幕完全没法操作。浏览网页比较卡顿，可以看到明显的延迟（尤其是滚动页面时）。这一点相比 TeamViewer 免费版来说都差很多。很大的原因可能还是 VNC 的协议不如 TeamViewer，OpenSSL 的加密也比较重。公网带宽提升到 10Mbit/s 可能会比较流畅，当然还要确保家里的电脑的上传带宽也足够（&amp;gt;=10Mbit/s），可以用 &lt;a href=&quot;http://www.speedtest.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.speedtest.cn/&lt;/a&gt; 测试下网速。&lt;/p&gt;
+&lt;h2 id=&quot;%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98&quot; tabindex=&quot;-1&quot;&gt;其他问题&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;SSH 连接有时候不太稳定，容易断掉。可以考虑使用 autossh 之类或给 SSH 增加 Keep Alive；&lt;/li&gt;
+&lt;li&gt;输入文字时会有一个大的光标，可能是 VNC 协议实现的问题；&lt;/li&gt;
+&lt;li&gt;使用 MacOS 自带的 VNC 客户端，复制文件只能通过拖拽方式，无法直接 CMD+C、CMD+V。但复制文字可以用快捷键；&lt;/li&gt;
+&lt;li&gt;如果远程主机配置了屏保，有时候取消屏保特别慢。这个时候可以先断开连接，重新连。可能还是带宽不足的原因。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个方式一般来说作为 TeamViewer 免费版的一个备份还可以。有时候 TeamViewer 在电脑屏保或锁屏或最小化时，无法连接上。可以通过本方法先登录远程主机来排查解决。Windows 及其 RDP 协议的也差不多类似，只是把上面 VNC 的部分替换成 RDP，使用 Microsoft Remote Desktop 等客户端来连接即可。&lt;/p&gt;
+
+        &lt;hr/&gt; &lt;p&gt;&lt;a href=&#39;mailto:arpitbatra123@gmail.com?subject=Reply: MacOS SSH 内网穿透实现远程桌面&#39;&gt;Reply via email&lt;/a&gt; &lt;/p&gt;
+      </content>
+    </entry>
+    
+    <entry>
       <title>What Kind Of Code Is Good Code</title>
-      <link href="https://tianjianchn.github.io/en/posts/what-kind-of-code-is-a-good-code/"/>
+      <link href="https://tianjianchn.github.io/en/posts/2022/what-kind-of-code-is-a-good-code/"/>
       <updated>2022-07-01T00:00:00Z</updated>
-      <id>https://tianjianchn.github.io/en/posts/what-kind-of-code-is-a-good-code/</id>
+      <id>https://tianjianchn.github.io/en/posts/2022/what-kind-of-code-is-a-good-code/</id>
       <content type="html">&lt;p&gt;After so many years of coding, from ignorance to freewheel, from trying every languages to focusing serval, from small workshops to large companies, I have got a lot of experience and feeling. If being asked what kind of code is good code, there are thousand Hamlets in thousand people’s eyes.&lt;/p&gt;
 &lt;p&gt;For example, it’s ok for the boss when the code could effectively and quickly support business expansion. For cyber celebrities, they might like the code which could shock and dazzle people. We will limit our discussion here to the development and maintaining in a team or independent developer.&lt;/p&gt;
 &lt;h2 id=&quot;what-is-bad-code%3F&quot; tabindex=&quot;-1&quot;&gt;What is bad code?&lt;/h2&gt;
@@ -424,9 +695,9 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
     
     <entry>
       <title>什么样的代码才是好的代码</title>
-      <link href="https://tianjianchn.github.io/zh-CN/posts/what-kind-of-code-is-a-good-code/"/>
+      <link href="https://tianjianchn.github.io/zh-CN/posts/2022/what-kind-of-code-is-a-good-code/"/>
       <updated>2022-07-01T00:00:00Z</updated>
-      <id>https://tianjianchn.github.io/zh-CN/posts/what-kind-of-code-is-a-good-code/</id>
+      <id>https://tianjianchn.github.io/zh-CN/posts/2022/what-kind-of-code-is-a-good-code/</id>
       <content type="html">&lt;p&gt;写了这么多年代码，从懵懵懂懂到随心所欲，从弱水三千到只取一瓢，从小作坊写到大公司，经历与感慨颇多。要问什么代码是好的代码，一千个人眼里就有一千个哈姆雷特。&lt;/p&gt;
 &lt;p&gt;比如对老板而言，能有效、快速支撑业务发展的就是好代码；对于网红来说，能装逼、构思巧妙震惊众人的就是好代码。所以我们这里大体可以限定下，只讨论团队协作时的开发以及独立开发时的维护场景吧。&lt;/p&gt;
 &lt;h2 id=&quot;%E4%BB%80%E4%B9%88%E4%BB%A3%E7%A0%81%E4%B8%8D%E5%A5%BD%EF%BC%9F&quot; tabindex=&quot;-1&quot;&gt;什么代码不好？&lt;/h2&gt;

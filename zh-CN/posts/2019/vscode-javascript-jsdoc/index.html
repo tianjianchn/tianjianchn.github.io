@@ -47,7 +47,7 @@
       </aside>
       <article class="content markdown-body"><p>不使用 TS 是否也能做到类型提示和校验？在 VSCode 中我们可以通过 <a href="http://usejsdoc.org/" target="_blank" rel="noopener">JSDoc</a> 来实现。</p>
 <h2 id="jsdoc" tabindex="-1">JSDoc</h2>
-<p><picture><source type="image/avif" srcset="/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg" width="640" height="534"></picture></p>
+<p><picture><source type="image/avif" srcset="/images/zh-CN_posts_2019_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_2019_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_2019_vscode-javascript-jsdoc_vscode-jsdoc-examplepoJg9y-ZK0-640.jpeg" width="640" height="534"></picture></p>
 <p>JSDoc 本身是用来对方法、变量、模块、类等进行结构化文档注释用的。它本身还有一个对应的工具，扫描所有源代码文件里的 JSDoc 注释并生成 API 文档，就像 JavaDoc 一样。</p>
 <p>但是在 VSCode 里，它被赋予了更加强大的地位。它不仅仅是一个文档说明，还可以用来做智能提示（IntelliSense），而且可以做到函数的参数级别。甚至还能做参数类型、值类型的校验！也许你会想到 TypeScript 的 definition 文件（.d.ts）。是的，它也有参数类型校验，但是它没有参数说明。如果要参数说明，还是要写 JSDoc。与其多写一遍 definition，不如直接使用 JavaScript + JSDoc 更加方便。当然这一切都是依赖于 TypeScript，我们不能因此去否定它。</p>
 <p>我们来看看 JSDoc 所带来的强大提示功能。<br>

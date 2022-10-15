@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta property="og:title" content="Parody Network - Part I" />
+<title>戏说网络（一） | Tian Jian&#39;s Blog</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?46dcb08806edc2e971c354f20d50df0e';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LD3T07Q5JG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-LD3T07Q5JG');
+</script>
+
+    <link rel="stylesheet" href="/styles/post.css" />
+  </head>
+  <body>
+    <div class="container post-container">
+      <h1>戏说网络（一）</h1>
+      <time>2019-03-17</time>
+      
+
+      <aside class="toc-container">
+        <div class="title">目录</div>
+        <nav class="toc" >
+        <ul><li><a href="#%E7%BC%98%E8%B5%B7">缘起</a></li><li><a href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a></li></ul>
+      </nav>
+      </aside>
+      <article class="content markdown-body"><p>最近工作中需要使用 LVS 负载均衡，而运维告知后端主机所在网段不匹配，可能无法申请。抱着好奇的心理，就去研究了下 LVS。过程中重温了下有关 NAT、交换机、网关、路由等一系列相关网络概念。在这里推荐一本好书：《网络是怎样连接的》。</p>
+<p>这本书讲述的内容，其实跟我以前面试时很喜欢问的一个题目很类似：当你在浏览器里输入一个 URL 会发生什么。这里主要考查的是服务端以及前端的处理逻辑，跟底层网络的关系倒并不深究。而这本书则着重讲解了网络底层的处理流程，包括各种网络协议、网络设备、信号处理、操作系统 IO 处理等。推荐大家去读一下，能让你对网络有一个更形象化的认识，让你的认识更有层次逻辑。我也打算就本书做一些读书笔记，浓缩一下书中内容（毕竟 300 多页的书），以一个门外汉（Layman）的视角讲述下这里面的内容。</p>
+<h2 id="%E7%BC%98%E8%B5%B7" tabindex="-1">缘起</h2>
+<p>网络的目的，就是为了连接。最开始的需求可能是两个人的计算机要连接，互相传递数据。那么每个人的计算机里就各需要有一种设备，可以用来发送和接收数据。这个设备就是网卡。用一根线把这两张网卡连接起来，双方就可以通过信号进行通信。这根线就叫网线。</p>
+<p>两个计算机的通信很简单，A 要给 B 发送什么数据，就构造好数据直接让网卡发出去就行，不需要问怎么到达，也不可能会丢。不过两个人聊天就是会有聊完的时候，不如加一个人一起唱戏。于是第三个人的计算机就加入进来了。那怎么连接这三个计算机呢？可以考虑让一个计算机做中继。像 A&lt;-&gt;B&lt;-&gt;C 这样由 B 来中继，A 要给 C 发送数据，就先发给 B，然后 B 转给 C。所以 B 上面就得有两张网卡。可是这还不够，B 怎么知道 A 发过来的数据是给自己的还是给 C 的？这里我们就需要确定各自的标识了。这种标识我们就把它叫做地址。当 A 要给 C 发送数据时，数据里额外增加一项地址，填 C，然后由 A 的网卡发出去。所以传送的数据其实是由两部分构成的，一部分是地址，一部分是真正的有效数据。地址一般放在头部，可以更快地提取出来进行识别。B 左侧的网卡（跟 A 相连的）收到后，检查数据头部的地址，发现是给 C 的，不是给自己的。那么它该用哪张网卡来发呢？肯定不能用左侧的网卡了，不然 C 就收不到了。所以左右两张网卡都要有一些标记，表明自己可以通往哪里。这就是地址表。像下面这样：</p>
+<pre><code>| 地址 | 网卡     |
+| ---- | -------- |
+| A    | 左侧网卡 |
+| C    | 右侧网卡 |
+</code></pre>
+<p>这时，B 就知道要用右侧网卡转发数据了，这样 C 就收到了 A 发送的数据。</p>
+<p>三个人唱戏也唱累了，想打麻将了，又拉来了 D。这个时候怎么办？也许我们可以继续串行地连起来：A&lt;-&gt;B&lt;-&gt;C&lt;-&gt;D。但是这样链条有点长，A 可能就不愿意跟 D 玩。还有一种方式像星状一样连接：</p>
+<pre><code>A&lt;-&gt;B&lt;-&gt;C
+    ↕
+    D
+</code></pre>
+<p>A 跟 C 和 D 之间的通信，都经过 B。这里 B 就有了 3 张网卡。接下来可能还会有第五个、第六个人加入。B 可能就不太愿意了，凭什么在我身上插满了网卡？那么多数据到我这，真正给我的只有占很少一部分，这种感觉一点也不好。大家觉得也是，的确委屈 B 了。那我们把转发这种功能单独抽取出来如何？</p>
+<h2 id="%E4%BA%A4%E6%8D%A2%E6%9C%BA" tabindex="-1">交换机</h2>
+<p>这种只做网络数据转发的设备，我们就把它叫做交换机。它上面有多个网卡，能够根据地址表转发数据。而 A、B、C 等的网卡地址，专业术语就叫 MAC。MAC 地址由 6 个字节构成，用 16 进制表示就类似 00:00:00:00:00:00。有了 MAC 和交换机，我们就能够让所有接入交换机的计算机彼此进行通信。这就是我们整个网络中的数据链路层，也就是常说的第二层（第一层是物理层，即数字信号或模拟信号传输）。第二层传送的数据包由 MAC 头部和数据块构成。MAC 头部包含发送方的 MAC 地址（来源 MAC）和接收方的 MAC 地址（目的 MAC）。</p>
+<p>那么在一个有交换机连接的网络里，各个计算机之间如何通信呢？假设有 4 台计算机 A、B、C、D。其中 A 和 B 各有一张网卡，MAC 地址分别是 00:00:00:00:00:AA、00:00:00:00:00:BB。然后它们分别连接到交换机的网卡 1、网卡 2 上。此时交换机里还没有任何地址表，也不需要手动维护地址表。A 要给 B 发送数据，则要填写 B 的 MAC 地址。A 构造数据包，来源 MAC 填写 00:00:00:00:00:AA，目的 MAC 填写 00:00:00:00:00:BB，通过 A 的网卡发送给交换机。交换机从与 A 连接的网卡 1 都收到一个数据包，解析来源 MAC 地址，此时就把 MaC 地址 A 与 网卡 1 写入地址表。此时地址表为：</p>
+<pre><code>| MAC 地址          | 交换机网卡号 |
+| ----------------- | ------------ |
+| 00:00:00:00:00:AA | 1            |
+</code></pre>
+<p>接着解析目的 MAC 地址，得到 00:00:00:00:00:BB。但是地址表中没有该地址的记录，交换机不知道该从哪个网卡转发出去数据包。于是交换机就把数据包转发到它自己的所有网卡，除了来源网卡（即网卡 1）。这就叫广播。这样 B、C、D 都会收到该数据包。它们的网卡在收到数据包后，会解析出目地 MAC。其中 C、D 发现跟自己的 MAC 地址不一样，直接丢弃（它要是不丢而是要偷窥怎么办？那么没办法，这就是网络安全地范畴了）。B 发现是发给它的数据包，就接收并处理了。接着 B 回复数据给 A。跟上面的流程类似，交换机收到数据包后会往地址表里增加新的一项：</p>
+<pre><code>| MAC 地址          | 交换机网卡号 |
+| ----------------- | ------------ |
+| 00:00:00:00:00:AA | 1            |
+| 00:00:00:00:00:BB | 2            |
+</code></pre>
+<p>由于目标地址是 00:00:00:00:00:AA，在交换机地址表里存在，此时就不需要做广播了。</p>
+<p>这样一个小网络就成型了。接下来要接入的人越来越多，数据包也越来越多。我们还想跟遥远的别的人群进行通信。这会不会有问题呢？如果会，又会有哪些问题呢？不妨先想想，后面我们再来看看。</p>
+</article>
+      <div class="back-link">
+        <!-- <a href="javascript:history.back()">  ← 返回  </a> -->
+        <a href="/zh-CN">← 首页</a>
+      </div>
+    </div>
+
+    <script
+  src="https://giscus.app/client.js"
+  data-repo="tianjianchn/tianjianchn.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnkxMzE4Njc1MDY="
+  data-category="Blog Comments"
+  data-category-id="DIC_kwDOB9wjcs4CRwpv"
+  data-mapping="og:title"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+ <footer>Copyright &copy; 2018 - 2022 <a href="https://github.com/tianjianchn">Tian Jian</a>.</footer>
+
+  </body>
+</html>

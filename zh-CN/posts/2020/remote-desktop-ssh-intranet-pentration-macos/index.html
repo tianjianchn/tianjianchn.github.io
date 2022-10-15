@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta property="og:title" content="Remote Desktop With SSH Intranet Penetration In macOS" />
+<title>MacOS SSH 内网穿透实现远程桌面 | Tian Jian&#39;s Blog</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?46dcb08806edc2e971c354f20d50df0e';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LD3T07Q5JG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-LD3T07Q5JG');
+</script>
+
+    <link rel="stylesheet" href="/styles/post.css" />
+  </head>
+  <body>
+    <div class="container post-container">
+      <h1>MacOS SSH 内网穿透实现远程桌面</h1>
+      <time>2020-09-24</time>
+      <blockquote><a href="/en/posts/2020/remote-desktop-ssh-intranet-pentration-macos/">English Version</a></blockquote>
+
+      <aside class="toc-container">
+        <div class="title">目录</div>
+        <nav class="toc" >
+        <ul><li><a href="#%E6%9C%80%E7%BB%88%E6%9E%B6%E6%9E%84">最终架构</a></li><li><a href="#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4">实现步骤</a></li><li><a href="#%E6%95%88%E6%9E%9C">效果</a></li><li><a href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98">其他问题</a></li></ul>
+      </nav>
+      </aside>
+      <article class="content markdown-body"><p>两个局域网的主机要进行远程桌面，必须进行内网穿透。<a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">frp</a> 是一个不错的选项。但其实不依赖外部的工具，仅仅利用系统的 SSH 也能实现，而且在安全性上可能会更好。</p>
+<h2 id="%E6%9C%80%E7%BB%88%E6%9E%B6%E6%9E%84" tabindex="-1">最终架构</h2>
+<p>参与该网络的各个机器、端口、执行的命令及其顺序如下图所示：</p>
+<p><picture><source type="image/avif" srcset="/images/zh-CN_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawioKozuEhCfs7-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawioKozuEhCfs7-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_2020_remote-desktop-ssh-intranet-pentration-macos_ssh-vnc-remote-desktop.drawioKozuEhCfs7-640.jpeg" width="640" height="213"></picture></p>
+<h2 id="%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4" tabindex="-1">实现步骤</h2>
+<p>假设我们现在在办公室有一台 MacOS 主机 O（Office），要连接家里的 MacOS 主机 H（Home）。</p>
+<ol>
+<li>购买一台公网服务器 V（VPS），且具有公网 IP。带宽可能要的比较大，见下文的说明。假设公网 IP 为 123.1.2.3，其 sshd 端口为 22；</li>
+<li>在家里的主机 H 上，开启 VNC 服务：前往 System Preferences-&gt;Share，勾选 Screen Share。它会监听本机的 5900 端口；</li>
+<li>在家里的主机 H 上，开启 sshd 服务：前往 System Preferences-&gt;Share，勾选 Remote Login。它会监听本机的 22 端口；</li>
+<li>在家里的主机 H 上，开启 SSH 反向隧道：<code>ssh -gNTR 127.0.0.1:7000:127.0.0.1:22 root@123.1.2.3</code>。这里相当于在公网服务器 V 上开了一个新的 sshd 服务代理，其端口是 7000（这里是示例端口，可以自己修改，下同）；</li>
+<li>在公网服务器 V 上，通过 7000 端口代理的 sshd 服务，建立一个到家里的主机 H 的 VNC 服务的反向代理：<code>ssh -p 7000 -N -L 127.0.0.1:5900:127.0.0.1:5900 admin@127.0.0.1</code>（admin 表示家里的主机 H 的登录用户名，请改成自己使用的）。这里就相当于公网服务器 V 提供了一个 VNC 服务，其端口为 5900；</li>
+<li>在办公室的主机 O 上，建立一个到公网服务器 V 的 VNC 服务的反向代理：<code>ssh -N -L 127.0.0.1:5900:127.0.0.1:5900 root@123.1.2.3</code>。这里就相当于办公室的主机 O 提供了一个 VNC 服务，其端口为 5900；</li>
+<li>在办公室的主机 O 上，打开 Finder-&gt;Go-&gt;Connect to Server，填写 <code>vnc://127.0.0.1</code>，然后在弹出的用户密码框中输入远程主机的登录用户名（如示例的 admin）及其密码，就可以访问咯。或者用命令行打开：<code>open vnc://127.0.0.1:5900</code>。</li>
+</ol>
+<p>当用户进行远程桌面时，比如移动一下鼠标，此时其请求数据流向为：</p>
+<pre><code>办公室的主机 H: 127.0.0.1:5900
+↓
+公网服务器 V:   123.1.2.3:22
+↓
+公网服务器 V:   127.0.0.1:5900
+↓
+公网服务器 V:   127.0.0.1:7000
+↓
+公网服务器 V:   123.1.2.3:22
+↓
+家里的主机 H:   127.0.0.1:22
+↓
+家里的主机 H:   0.0.0.0:5900
+</code></pre>
+<h2 id="%E6%95%88%E6%9E%9C" tabindex="-1">效果</h2>
+<p>以上所有的端口都是本地 127.0.0.1 的，除了公网服务器 V 需要对外暴露 sshd 端口（22），无需再暴露任何其他主机、其他端口，而且使用 OpenSSH 加密通信数据，相对来说比较安全。当然上面用了公网服务器的 root 用户，你也可以新建一个低权限用户来做这个，进一步提升安全性。</p>
+<p>但是也存在一些需要关注的问题、优化的地方。最大的一个问题就是卡顿。在 1Mbit/s（其实只有 100KB）的公网带宽服务器上，效果一般。打字什么的没什么问题。要是传送文件，挤占带宽后会导致屏幕完全没法操作。浏览网页比较卡顿，可以看到明显的延迟（尤其是滚动页面时）。这一点相比 TeamViewer 免费版来说都差很多。很大的原因可能还是 VNC 的协议不如 TeamViewer，OpenSSL 的加密也比较重。公网带宽提升到 10Mbit/s 可能会比较流畅，当然还要确保家里的电脑的上传带宽也足够（&gt;=10Mbit/s），可以用 <a href="http://www.speedtest.cn/" target="_blank" rel="noopener">http://www.speedtest.cn/</a> 测试下网速。</p>
+<h2 id="%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98" tabindex="-1">其他问题</h2>
+<ol>
+<li>SSH 连接有时候不太稳定，容易断掉。可以考虑使用 autossh 之类或给 SSH 增加 Keep Alive；</li>
+<li>输入文字时会有一个大的光标，可能是 VNC 协议实现的问题；</li>
+<li>使用 MacOS 自带的 VNC 客户端，复制文件只能通过拖拽方式，无法直接 CMD+C、CMD+V。但复制文字可以用快捷键；</li>
+<li>如果远程主机配置了屏保，有时候取消屏保特别慢。这个时候可以先断开连接，重新连。可能还是带宽不足的原因。</li>
+</ol>
+<p>这个方式一般来说作为 TeamViewer 免费版的一个备份还可以。有时候 TeamViewer 在电脑屏保或锁屏或最小化时，无法连接上。可以通过本方法先登录远程主机来排查解决。Windows 及其 RDP 协议的也差不多类似，只是把上面 VNC 的部分替换成 RDP，使用 Microsoft Remote Desktop 等客户端来连接即可。</p>
+</article>
+      <div class="back-link">
+        <!-- <a href="javascript:history.back()">  ← 返回  </a> -->
+        <a href="/zh-CN">← 首页</a>
+      </div>
+    </div>
+
+    <script
+  src="https://giscus.app/client.js"
+  data-repo="tianjianchn/tianjianchn.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnkxMzE4Njc1MDY="
+  data-category="Blog Comments"
+  data-category-id="DIC_kwDOB9wjcs4CRwpv"
+  data-mapping="og:title"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+ <footer>Copyright &copy; 2018 - 2022 <a href="https://github.com/tianjianchn">Tian Jian</a>.</footer>
+
+  </body>
+</html>

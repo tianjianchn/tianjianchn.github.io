@@ -55,7 +55,7 @@
 </ul>
 <p>下面从各个目标一一介绍下我们的优化实践之路。</p>
 <!-- more -->
-<p><picture><source type="image/avif" srcset="/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg" width="640" height="285"></picture></p>
+<p><picture><source type="image/avif" srcset="/images/zh-CN_posts_2019_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.avif 640w" sizes="100vw"><source type="image/webp" srcset="/images/zh-CN_posts_2019_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.webp 640w" sizes="100vw"><img class="markdown-image" decoding="async" alt="" src="/images/zh-CN_posts_2019_nodejs-docker-optimize_nodejs-dockereVizFx_aZt-640.jpeg" width="640" height="285"></picture></p>
 <h2 id="%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE" tabindex="-1">基础镜像设置</h2>
 <p>由于之前的基础镜像使用的是 <code>FROM node:6</code>，只有 major version，没有指定 minor version、patch version。当该基础镜像 minor 或 patch 版本更新后，如果本地的镜像缓存也被清除了，那么打包就会使用新版本的基础镜像。这也是上面不经意升级到 node 6.15.0 的原因。所以这里我们限定了基础镜像的全版本：<code>FROM node:6.16.0</code>。</p>
 <p>我们的产品主要在国内使用，运维人员也都是在国内。为了更方便查看日志中的时间、方便程序中的日期计算，把时区调整为北京时区（即东八区）：<code>RUN rm /etc/localtime &amp;&amp; echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; dpkg-reconfigure -f noninteractive tzdata</code>。注意，Debian Stretch 版本后需要 <code>rm /etc/localtime</code>，否则时区修改可能无法生效（被替换回原值）。</p>

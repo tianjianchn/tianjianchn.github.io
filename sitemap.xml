@@ -2,43 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tianjianchn.github.io/zh-CN/posts/what-makes-a-good-developer/</loc>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2019/what-makes-a-good-developer/</loc>
     <lastmod>2018-11-23</lastmod>
   </url>
   
   <url>
-    <loc>https://tianjianchn.github.io/zh-CN/posts/micro-frontend-practice/</loc>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2019/micro-frontend-practice/</loc>
     <lastmod>2019-01-12</lastmod>
   </url>
   
   <url>
-    <loc>https://tianjianchn.github.io/zh-CN/posts/nodejs-docker-optimize/</loc>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2019/nodejs-docker-optimize/</loc>
     <lastmod>2019-01-23</lastmod>
   </url>
   
   <url>
-    <loc>https://tianjianchn.github.io/zh-CN/posts/vscode-javascript-jsdoc/</loc>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2019/vscode-javascript-jsdoc/</loc>
     <lastmod>2019-03-09</lastmod>
   </url>
   
   <url>
-    <loc>https://tianjianchn.github.io/en/posts/what-kind-of-code-is-a-good-code/</loc>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2019/parody-network-1/</loc>
+    <lastmod>2019-03-17</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2019/parody-network-2/</loc>
+    <lastmod>2019-03-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tianjianchn.github.io/en/posts/2020/remote-desktop-ssh-intranet-pentration-macos/</loc>
+    <lastmod>2020-09-24</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2020/remote-desktop-ssh-intranet-pentration-macos/</loc>
+    <lastmod>2020-09-24</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tianjianchn.github.io/en/posts/2022/what-kind-of-code-is-a-good-code/</loc>
     <lastmod>2022-07-01</lastmod>
   </url>
   
   <url>
-    <loc>https://tianjianchn.github.io/zh-CN/posts/what-kind-of-code-is-a-good-code/</loc>
+    <loc>https://tianjianchn.github.io/zh-CN/posts/2022/what-kind-of-code-is-a-good-code/</loc>
     <lastmod>2022-07-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tianjianchn.github.io/404.html</loc>
-    <lastmod>2022-10-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tianjianchn.github.io/feed.xml</loc>
-    <lastmod>2022-10-02</lastmod>
   </url>
   
   <url>
