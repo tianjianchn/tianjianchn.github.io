@@ -583,7 +583,7 @@ Home computer (H):   0.0.0.0:5900
 &lt;p&gt;But there are also some issues. One of the biggest problems is lagging. If the bandwidth of public server (V) is 1Mbit/s(which is 100KB actually), then:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Typing will be ok.&lt;/li&gt;
-&lt;li&gt;Transferring files will cause the vnc client losing response totally as the bandwidth is taken up.&lt;/li&gt;
+&lt;li&gt;Transferring files will cause the VNC client losing response totally as the bandwidth is taken up.&lt;/li&gt;
 &lt;li&gt;Web browsing is also a bit lag, you can see the significant delays, especially while scrolling the web page.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The free version of Team Viewer is much better than this. This is probably due to the fact that VNC protocol is not as good as Team Viewer’s proprietary protocol.&lt;/p&gt;
@@ -592,7 +592,7 @@ Home computer (H):   0.0.0.0:5900
 &lt;ol&gt;
 &lt;li&gt;SSH connections are sometimes unstable. Consider using something like &lt;code&gt;autossh&lt;/code&gt; or adding Keep Alive option into ssh.&lt;/li&gt;
 &lt;li&gt;There is a large caret when you’re typing, which might be a bug.&lt;/li&gt;
-&lt;li&gt;If you wanna transfer files, you can only use drag &amp;amp; drop in macOS vnc client. CMD+C and CMD+V is not working for this.&lt;/li&gt;
+&lt;li&gt;If you wanna transfer files, you can only use drag &amp;amp; drop in macOS VNC client. CMD+C and CMD+V is not working for this.&lt;/li&gt;
 &lt;li&gt;It will be really slow when you wanna cancel the screen saver of remote computer. At this time, disconnecting first then reconnecting is a good choice. It may be related to the bandwidth.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This is generally fine as a backup for the free version of Team Viewer. For example, it will be unable to connect with Team Viewer when the screen of remote computer is lock or Team Viewer in remote computer is minimized, then you could use this method to connect to the remote computer to troubleshoot the problem.&lt;/p&gt;
@@ -681,9 +681,9 @@ Home computer (H):   0.0.0.0:5900
 &lt;p&gt;Technical design is a process of thinking. Through writing the design document, we could clarify and understand the background, goals and metrics, competing products, and possible implementation paths and their scope of impact, testing scope and maintaining methods. The logic of code will be shown with more approachable and expressive means through natural language, data and diagramming.&lt;/p&gt;
 &lt;p&gt;With the design document, we can invite colleagues to review it in advance. If the design doesn’t work well, then modify it. In this way, we can eliminate bad code in the nascent stage, reducing the overall probability and cost of starting over.&lt;/p&gt;
 &lt;h2 id=&quot;unit-tests-cover-core-logic&quot; tabindex=&quot;-1&quot;&gt;Unit tests cover core logic&lt;/h2&gt;
-&lt;p&gt;Many developers are reluctant to write test code, feeling redundant, useless and even low. But I dare say those who write bad code could also not write test code well either. Since it just increase the workload which is really meaningless.&lt;/p&gt;
+&lt;p&gt;Many developers are reluctant to write test code, feeling redundant, useless and even low. But I dare say those who write bad code could also not write test code well either. Since it just seems like increasing the workload for them, which is really meaningless.&lt;/p&gt;
 &lt;p&gt;Testing is not separated from development, but used to complement development. Usually when I’m coding, I care more about the main logic; while in testing, I will think its boundary cases. These two perspectives are different, the former is from the producer’s point of view, while the latter is from the consumer-user’s point of view.&lt;/p&gt;
-&lt;p&gt;Not all code has to be covered by unit tests. It’s fine to only cover those core and complicated codes. This can also be betten to achieve a balance between efficiency and quality.&lt;/p&gt;
+&lt;p&gt;Not all code has to be covered by unit tests. It’s fine to only cover those core and complicated codes. This can also be better to achieve a balance between efficiency and quality.&lt;/p&gt;
 &lt;h2 id=&quot;code-searchability&quot; tabindex=&quot;-1&quot;&gt;Code searchability&lt;/h2&gt;
 &lt;p&gt;What’s code searchability? It means that functions, variables, etc. in code can be located precisely, whether by type indexing or global file searching.&lt;/p&gt;
 &lt;p&gt;When we have to maintain others’ code, we’ll see how friendly a well-searchable code is.&lt;/p&gt;
